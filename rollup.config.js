@@ -4,21 +4,14 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 
-const packageJson = require("./package.json");
-
 export default {
-	input: "src/index.ts",
+	input: ["src/index.ts", "src/TestComponent/TestComponent.tsx"],
 	output: [
-        // This is because we want to support tools that use CommonJS (Webpack, Node.js) and tools that work with ES Modules (Webpack 2+, Rollup)
 		{
-			file: packageJson.main,
-			format: "cjs",
-			sourcemap: true,
-		},
-		{
-			file: packageJson.module,
+			dir: "build",
 			format: "esm",
 			sourcemap: true,
+			preserveModules: true,
 		},
 	],
 	plugins: [
