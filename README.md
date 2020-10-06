@@ -2,17 +2,11 @@
 
 A set of beautiful and colorful React components to build a modern and beautiful application.
 
-<br>
-
 ## How to install
-
-<br>
 
 ## Usage
 
 `import TestComponent from 'react-component-library/build/TestComponent';`
-
-<br>
 
 ## Basic Commands
 
