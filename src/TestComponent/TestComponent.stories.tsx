@@ -3,6 +3,7 @@ import TestComponent from './TestComponent';
 
 export default {
     title: 'TestComponent',
+    component: TestComponent,
 };
 
 export const Primary = () => <TestComponent theme="primary" />;
