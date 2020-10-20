@@ -33,15 +33,19 @@
         "@rollup/plugin-node-resolve": "^9.0.0",
         "@storybook/addon-essentials": "^6.0.26",
         "@storybook/react": "^6.0.22",
+        "@testing-library/dom": "^7.26.3",
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.0.4",
+        "@testing-library/user-event": "^12.1.8",
         "@types/jest": "^26.0.14",
         "@types/react": "^16.9.49",
         "babel-loader": "^8.1.0",
+        "babel-plugin-emotion": "^10.0.33",
         "babel-preset-react-app": "^9.1.2",
         "docz": "^2.3.1",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^26.4.2",
+        "jest-emotion": "^10.0.32",
         "prettier": "^2.1.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
@@ -59,5 +63,10 @@
     },
     "files": [
         "build"
-    ]
+    ],
+    "dependencies": {
+        "@emotion/core": "^10.0.35",
+        "emotion-theming": "^10.0.27",
+        "react-grid-system": "^7.1.1"
+    }
 }
