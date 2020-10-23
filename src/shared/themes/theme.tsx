@@ -1,8 +1,9 @@
 const theme = {
     colors: {
-        green: '#2FBDB0',
-        red: '#DC5F4F',
-        gray: '#8B929C',
+        success: '#2FBDB0',
+        danger: '#DC5F4F',
+        muted: '#8B929C',
+        dark: '#3C4858',
     },
 };
 

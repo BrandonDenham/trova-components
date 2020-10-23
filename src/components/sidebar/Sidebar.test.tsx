@@ -1,8 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { matchers } from 'jest-emotion';
-import Sidebar, { SidebarItem, SidebarMenu } from './Sidebar';
-import { SidebarProps } from './Sidebar.types';
+import Sidebar from './Sidebar';
+import SidebarItem from './SidebarItem';
+import SidebarMenu from './SidebarMenu';
+import SidebarProps from './Sidebar.types';
 import { ThemeProvider } from 'emotion-theming';
 import theme from '../../shared/themes/theme';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { matchers } from 'jest-emotion';
-import { SidebarItem } from './Sidebar';
-import { SidebarItemProps } from './Sidebar.types';
+import SidebarItem from './SidebarItem';
+import SidebarItemProps from './SidebarItem.types';
 import { ThemeProvider } from 'emotion-theming';
 import userEvent from '@testing-library/user-event';
 import theme from '../../shared/themes/theme';
@@ -83,7 +83,7 @@ describe('Sidebar Item', () => {
     it('status text default color should be green', () => {
         const { getByText } = renderStatusTextDefaultColorComponent();
         const element = getByText('Status text');
-        expect(element).toHaveStyleRule('color', theme.colors.green);
+        expect(element).toHaveStyleRule('color', theme.colors.success);
     });
 
     it('unselected background color should be white', () => {

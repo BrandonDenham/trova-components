@@ -1,20 +1,21 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-
+import RobotoBold from '../../../shared/fonts/Roboto-Bold.ttf';
+import RobotoRegular from '../../../shared/fonts/Roboto-Regular.ttf';
 const GlobalStyles: React.FC = () => {
     return (
         <Global
             styles={() => css`
                 @font-face {
                     font-family: 'Roboto-Bold';
-                    src: url('../../shared/fonts/Roboto-Bold.ttf');
+                    src: url(${RobotoBold}) format('truetype');
                     font-weight: normal;
                     font-style: normal;
                 }
 
                 @font-face {
                     font-family: 'Roboto-Regular';
-                    src: url('../shared/fonts/Roboto-Regular.ttf')
+                    src: url(${RobotoRegular})
                         format('truetype');
                     font-weight: normal;
                     font-style: normal;

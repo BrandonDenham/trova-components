@@ -1,7 +1,8 @@
 export interface Theme {
     colors: {
-        green: string;
-        red: string;
-        gray: string;
+        success: string;
+        danger: string;
+        muted: string;
+        dark: string;
     };
 }
