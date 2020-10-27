@@ -4,5 +4,6 @@ export interface Theme {
         danger: string;
         muted: string;
         dark: string;
+        lightGray: string;
     };
 }
