@@ -3,5 +3,7 @@ export interface Theme {
         green: string;
         red: string;
         gray: string;
+        black: string;
+        lightGray: string;
     };
 }

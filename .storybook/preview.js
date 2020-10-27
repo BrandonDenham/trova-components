@@ -12,3 +12,5 @@ addDecorator((story) => (
 ));
 
 addDecorator(EmotionThemeProvider);
+
+export const parameters = { layout: 'fullscreen' };

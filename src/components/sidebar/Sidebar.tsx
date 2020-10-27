@@ -10,7 +10,7 @@ import {
 } from './Sidebar.types';
 import { Theme } from '../Theme/Theme.types';
 import './Sidebar.css';
-const imgArrow = require('../../shared/images/small gray arrow.svg') as string;
+const imgArrow = require('../../shared/images/logo/small gray arrow.svg') as string;
 
 const Sidebar: React.FC<SidebarProps> = ({ children, visible = true }) => (
     <div>
