@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { SidebarMenu, SidebarItem } from './Sidebar';
+import SidebarMenu from './SidebarMenu';
+import SidebarItem from './SidebarItem';
 
 export default {
     title: 'Sidebar Menu',

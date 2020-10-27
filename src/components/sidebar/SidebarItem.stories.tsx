@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SidebarItem } from './Sidebar';
+import SidebarItem from './SidebarItem';
 
 export default {
     title: 'Sidebar Item',
