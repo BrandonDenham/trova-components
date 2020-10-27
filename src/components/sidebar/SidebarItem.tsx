@@ -1,11 +1,17 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import { SyntheticEvent } from 'react';
 import { useTheme } from 'emotion-theming';
 import React, { useCallback } from 'react';
 
 import SidebarItemProps from './SidebarItem.types';
 import { Theme } from '../Theme/Theme.types';
+import {
+    sidebarItem,
+    sidebarItemTitle,
+    sidebarItemSubtitle,
+    sidebarItemStatusText,
+} from './SidebarItem.styles';
 
 const SidebarItem: React.FC<SidebarItemProps> = ({
     title,
@@ -26,55 +32,26 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     return (
         <div
             data-testid="sidebar__item"
-            css={css`
-                background-color: white;
-                border-radius: 13px;
-                font-family: 'Roboto-Bold';
-                padding: 0.5rem 1rem;
-                cursor: pointer;
-                ${selected === true && `background-color: #eff1f7;`}
-                &:hover {
-                    background-color: #eff1f7;
-                    transition: 0.5s;
-                }
-                margin: 0.5rem 0rem;
-            `}
+            css={[
+                sidebarItem,
+                `${selected === true && `background-color: #eff1f7;`}`,
+            ]}
             onClick={itemClicked}
         >
-            <p
-                css={css`
-                    font-size: 14px;
-                    line-height: 18px;
-                    margin: 0px;
-                    color: ${theme.colors.dark};
-                `}
-            >
+            <p css={[sidebarItemTitle, `color: ${theme.colors.dark};`]}>
                 {title}
             </p>
-            <p
-                css={css`
-                    font-family: 'Roboto-Regular';
-                    font-size: 12px;
-                    line-height: 14px;
-                    color: #626c79;
-                    letter-spacing: 0.3px;
-                    padding-top: 0.2rem;
-                `}
-            >
-                {subtitle}
-            </p>
+            <p css={sidebarItemSubtitle}>{subtitle}</p>
             {statusText && (
                 <p
-                    css={css`
-                        font-family: 'Roboto-Regular';
-                        font-size: 12px;
-                        line-height: 14px;
-                        letter-spacing: 0.3px;
-                        padding-top: 0.2rem;
-                        ${statusTextColor
-                            ? `color: ${statusTextColor}`
-                            : `color: ${theme.colors.success}`}
-                    `}
+                    css={[
+                        sidebarItemStatusText,
+                        `${
+                            statusTextColor
+                                ? `color: ${statusTextColor}`
+                                : `color: ${theme.colors.success}`
+                        }`,
+                    ]}
                 >
                     {statusText}
                 </p>
