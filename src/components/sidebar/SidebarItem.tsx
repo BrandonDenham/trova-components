@@ -32,27 +32,13 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     return (
         <div
             data-testid="sidebar__item"
-            css={[
-                sidebarItem,
-                `${selected === true && `background-color: #eff1f7;`}`,
-            ]}
+            css={sidebarItem(selected)}
             onClick={itemClicked}
         >
-            <p css={[sidebarItemTitle, `color: ${theme.colors.dark};`]}>
-                {title}
-            </p>
+            <p css={sidebarItemTitle(theme)}>{title}</p>
             <p css={sidebarItemSubtitle}>{subtitle}</p>
             {statusText && (
-                <p
-                    css={[
-                        sidebarItemStatusText,
-                        `${
-                            statusTextColor
-                                ? `color: ${statusTextColor}`
-                                : `color: ${theme.colors.success}`
-                        }`,
-                    ]}
-                >
+                <p css={sidebarItemStatusText(statusTextColor, theme)}>
                     {statusText}
                 </p>
             )}

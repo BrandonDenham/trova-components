@@ -37,7 +37,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
             css={sidebarMenu}
         >
             <div css={sidebarMenuDiv}>
-                <h5 css={[sidebarMenuDivH5, `color: ${theme.colors.muted};`]}>{title}</h5>
+                <h5 css={sidebarMenuDivH5(theme)}>{title}</h5>
                 <img alt="Arrow" src={imgArrow} css={sidebarMenuDivImg} />
             </div>
             {openMenu ? children : null}

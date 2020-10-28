@@ -13,4 +13,30 @@ addDecorator((story) => (
 
 addDecorator(EmotionThemeProvider);
 
-export const parameters = { layout: 'fullscreen' };
+
+const customViewports = {
+    mobile: {
+        name: 'Mobile',
+        styles: {
+            height: '665px',
+            width: '400px',
+        },
+        type: 'mobile',
+    },
+    tablet: {
+        name: 'Tablet',
+        styles: {
+            height: '1112px',
+            width: '834px',
+        },
+        type: 'tablet',
+    },
+};
+
+export const parameters = {
+    viewport: {
+        viewports: {
+            ...customViewports,
+        },
+    },
+};

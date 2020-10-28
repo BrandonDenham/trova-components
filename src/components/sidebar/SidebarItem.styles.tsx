@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
+import { Theme } from '../Theme/Theme.types';
 
-export const sidebarItem = css`
+export const sidebarItem = (selected: boolean) => css`
     background-color: white;
     border-radius: 13px;
     font-family: 'Roboto-Bold';
@@ -11,11 +12,13 @@ export const sidebarItem = css`
         transition: 0.5s;
     }
     margin: 0.5rem 0rem;
+    ${selected === true && `background-color: #eff1f7;`}
 `;
-export const sidebarItemTitle = css`
+export const sidebarItemTitle = (theme: Theme) => css`
     font-size: 14px;
     line-height: 18px;
     margin: 0px;
+    color: ${theme.colors.dark};
 `;
 export const sidebarItemSubtitle = css`
     font-family: 'Roboto-Regular';
@@ -25,10 +28,13 @@ export const sidebarItemSubtitle = css`
     letter-spacing: 0.3px;
     padding-top: 0.2rem;
 `;
-export const sidebarItemStatusText = css`
+export const sidebarItemStatusText = (statusTextColor: string|undefined, theme: Theme) => css`
     font-family: 'Roboto-Regular';
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 0.3px;
     padding-top: 0.2rem;
+    ${statusTextColor
+        ? `color: ${statusTextColor}`
+        : `color: ${theme.colors.success}`}
 `;
