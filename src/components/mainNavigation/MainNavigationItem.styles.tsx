@@ -7,19 +7,19 @@ export const mainNavigationItem = css`
     justify-content: space-between;
 `;
 export const mainNavigationItemContent = (theme: Theme, selected: boolean) => css`
-    font-family: 'Roboto-Bold';
+    font-family: ${theme.fonts.robotoBold};
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     padding-left: 1rem;
-    @media (min-width: 835px) {
+    @media (min-width: ${theme.sizes.md + 1}px) {
         padding-right: 3rem;
         ${selected
             ? `color: ${theme.colors.dark}`
             : `color: ${theme.colors.lightGray}`}
     }
-    @media (max-width: 835px) {
+    @media (max-width: ${theme.sizes.md}px) {
         padding-bottom: 1rem;
         color: ${theme.colors.dark};
     }

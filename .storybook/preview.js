@@ -26,8 +26,8 @@ const customViewports = {
     tablet: {
         name: 'Tablet',
         styles: {
-            height: '1112px',
-            width: '834px',
+            height: '1024px',
+            width: '768px',
         },
         type: 'tablet',
     },

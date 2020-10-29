@@ -6,6 +6,14 @@ const theme = {
         dark: '#3C4858',
         lightGray: '#C5C8CD',
     },
+    fonts: {
+        robotoBold: 'Roboto-Bold',
+        robotoRegular: 'Roboto-Regular',
+    },
+    sizes: {
+        sm: 576,
+        md: 768,
+    },
 };
 
 export default theme;

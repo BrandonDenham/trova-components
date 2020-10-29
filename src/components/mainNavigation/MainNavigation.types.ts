@@ -1,16 +1,16 @@
-import { SyntheticEvent } from 'react';
+import { ReactNode, SyntheticEvent } from 'react';
 
 export default interface MainNavigationProps {
-    children: object;
+    children: ReactNode;
     showItems?: boolean;
-    onShowItems?: (arg0: boolean) => boolean;
-    onDismissItems?: (arg0: boolean) => boolean;
+    onShowItems?: () => void;
+    onDismissItems?: () => void;
     logoUrl: string;
     hasAlerts: boolean;
     visible?: boolean;
-    onClickAlerts?: (SyntheticEvent: SyntheticEvent|undefined) => void;
+    onClickAlerts?: (event: SyntheticEvent | undefined) => void;
     profileImageUrl: string;
-    onClickProfileImage?: (SyntheticEvent: SyntheticEvent|undefined) => void;
+    onClickProfileImage?: (event: SyntheticEvent | undefined) => void;
     secondaryItems?: object;
     anchor?: boolean;
 }

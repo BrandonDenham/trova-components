@@ -10,7 +10,7 @@ import SidebarMenuProps from './SidebarMenu.types';
 import {
     sidebarMenu,
     sidebarMenuDiv,
-    sidebarMenuDivH5,
+    sidebarMenuTitle,
     sidebarMenuDivImg,
 } from './SidebarMenu.styles';
 const imgArrow = require('../../shared/images/icons/small gray arrow.svg') as string;
@@ -37,7 +37,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
             css={sidebarMenu}
         >
             <div css={sidebarMenuDiv}>
-                <h5 css={sidebarMenuDivH5(theme)}>{title}</h5>
+                <h5 css={sidebarMenuTitle(theme)}>{title}</h5>
                 <img alt="Arrow" src={imgArrow} css={sidebarMenuDivImg} />
             </div>
             {openMenu ? children : null}

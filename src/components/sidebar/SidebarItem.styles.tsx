@@ -1,10 +1,10 @@
 import { css } from '@emotion/core';
 import { Theme } from '../Theme/Theme.types';
 
-export const sidebarItem = (selected: boolean) => css`
+export const sidebarItem = (theme: Theme, selected: boolean) => css`
     background-color: white;
     border-radius: 13px;
-    font-family: 'Roboto-Bold';
+    font-family: ${theme.fonts.robotoBold};
     padding: 0.5rem 1rem;
     cursor: pointer;
     &:hover {
@@ -20,16 +20,19 @@ export const sidebarItemTitle = (theme: Theme) => css`
     margin: 0px;
     color: ${theme.colors.dark};
 `;
-export const sidebarItemSubtitle = css`
-    font-family: 'Roboto-Regular';
+export const sidebarItemSubtitle = (theme: Theme) => css`
+    font-family: ${theme.fonts.robotoRegular};
     font-size: 12px;
     line-height: 14px;
     color: #626c79;
     letter-spacing: 0.3px;
     padding-top: 0.2rem;
 `;
-export const sidebarItemStatusText = (statusTextColor: string|undefined, theme: Theme) => css`
-    font-family: 'Roboto-Regular';
+export const sidebarItemStatusText = (
+    theme: Theme,
+    statusTextColor: string | undefined
+) => css`
+    font-family: ${theme.fonts.robotoRegular};
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 0.3px;

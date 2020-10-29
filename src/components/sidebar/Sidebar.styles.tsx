@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
-export const sidebar = css`
-    @media (min-width: 700px) {
+import { Theme } from '../Theme/Theme.types';
+export const sidebar = (theme: Theme) => css`
+    @media (min-width: ${theme.sizes.md + 1}px) {
         max-width: 274px;
     }
     padding: 0rem 1rem 0rem 1rem;

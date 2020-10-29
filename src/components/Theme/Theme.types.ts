@@ -6,4 +6,12 @@ export interface Theme {
         dark: string;
         lightGray: string;
     };
+    fonts: {
+        robotoBold: string;
+        robotoRegular: string;
+    };
+    sizes: {
+        sm: number;
+        md: number;
+    }
 }

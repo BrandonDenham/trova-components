@@ -20,9 +20,12 @@ const MainNavigationItem: React.FC<MainNavigationItemProps> = ({
     onClick,
 }) => {
     const theme = useTheme<Theme>();
-    const itemClicked = useCallback((event: SyntheticEvent) => {
-        onClick ? onClick(event, id || '') : event.stopPropagation();
-    }, [id]);
+    const itemClicked = useCallback(
+        (event: SyntheticEvent) => {
+            onClick ? onClick(event, id) : event.stopPropagation();
+        },
+        [id,onClick]
+    );
     return (
         <div
             data-testid="mainnavigationitem"
@@ -35,15 +38,15 @@ const MainNavigationItem: React.FC<MainNavigationItemProps> = ({
             >
                 {content}
             </p>
-            <div>
-                <Visible xs sm md>
+            <Visible xs sm md>
+                <div>
                     <img
                         alt="Arrow"
                         src={imgArrow}
                         css={mainNavigationItemArrow}
                     />
-                </Visible>
-            </div>
+                </div>
+            </Visible>
         </div>
     );
 };
