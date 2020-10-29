@@ -2,6 +2,7 @@ export interface Theme {
     colors: {
         success: string;
         danger: string;
+        muted: string;
         gray: string;
         dark: string;
         lightGray: string;
@@ -13,5 +14,5 @@ export interface Theme {
     sizes: {
         sm: number;
         md: number;
-    }
+    };
 }
