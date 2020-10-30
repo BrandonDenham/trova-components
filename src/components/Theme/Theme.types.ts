@@ -13,4 +13,12 @@ export interface Theme {
         secondaryHover: string;
         white: string;
     };
+    fonts: {
+        robotoBold: string;
+        robotoRegular: string;
+    };
+    sizes: {
+        sm: number;
+        md: number;
+    };
 }

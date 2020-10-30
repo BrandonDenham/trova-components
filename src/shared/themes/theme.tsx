@@ -13,6 +13,14 @@ const theme = {
         secondaryHover: '#F8CFCA',
         white: '#FFFFFF',
     },
+    fonts: {
+        robotoBold: 'Roboto-Bold',
+        robotoRegular: 'Roboto-Regular',
+    },
+    sizes: {
+        sm: 576,
+        md: 768,
+    },
 };
 
 export default theme;
