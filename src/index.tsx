@@ -1,4 +1,4 @@
 import Sidebar, {SidebarItem, SidebarMenu} from './components/sidebar';
+import MainNavigation, {MainNavigationItem} from './components/mainNavigation';
 
-export default Sidebar;
-export { SidebarItem, SidebarMenu };
+export { Sidebar, SidebarItem, SidebarMenu, MainNavigation, MainNavigationItem };

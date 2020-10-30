@@ -27,32 +27,18 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
         (event: SyntheticEvent) => {
             onClick ? onClick(event, id) : event.stopPropagation();
         },
-        [id]
+        [id,onClick]
     );
     return (
         <div
             data-testid="sidebar__item"
-            css={[
-                sidebarItem,
-                `${selected === true && `background-color: #eff1f7;`}`,
-            ]}
+            css={sidebarItem(theme, selected)}
             onClick={itemClicked}
         >
-            <p css={[sidebarItemTitle, `color: ${theme.colors.dark};`]}>
-                {title}
-            </p>
-            <p css={sidebarItemSubtitle}>{subtitle}</p>
+            <p css={sidebarItemTitle(theme)}>{title}</p>
+            <p css={sidebarItemSubtitle(theme)}>{subtitle}</p>
             {statusText && (
-                <p
-                    css={[
-                        sidebarItemStatusText,
-                        `${
-                            statusTextColor
-                                ? `color: ${statusTextColor}`
-                                : `color: ${theme.colors.success}`
-                        }`,
-                    ]}
-                >
+                <p css={sidebarItemStatusText(theme, statusTextColor)}>
                     {statusText}
                 </p>
             )}
