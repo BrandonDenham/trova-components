@@ -1,5 +1,5 @@
-import Button from './Button';
-import { ButtonType } from './ButtonType';
+import Button from './button';
+import { ButtonType } from './buttonType';
 
 export default Button;
 export { ButtonType };

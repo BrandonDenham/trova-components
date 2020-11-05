@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>0018DB17-AE0F-4FB9-B0D5-603C52669F7A</title>
+    <g id="Design-System" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Buttons" transform="translate(-1808.000000, -401.000000)">
+            <g id="button/cta/primary-copy-20" transform="translate(1763.000000, 395.000000)">
+                <g id="symbol/plus/black" transform="translate(45.000000, 6.000000)">
+                    <g id="Plus" fill="#3C4858" fill-rule="nonzero">
+                        <polygon id="Path" points="12 5 7 5 7 0 5 0 5 5 0 5 0 7 5 7 5 12 7 12 7 7 12 7"></polygon>
+                    </g>
+                    <g id="iconmonstr-plus-2-copy-4"></g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

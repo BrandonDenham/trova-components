@@ -1,6 +1,5 @@
 import { SyntheticEvent } from 'react';
-import Icon from '../icon/Icon';
-import { ButtonType } from './ButtonType';
+import { ButtonType } from './buttonType';
 
 export default interface ButtonProps {
     children: string;
@@ -8,6 +7,6 @@ export default interface ButtonProps {
     selected?: boolean;
     id?: string;
     onClick?: (event: SyntheticEvent, id: string|undefined) => void;
-    icon?: Icon;
-    subtext?: string|undefined;
+    icon?: React.ReactNode ;
+    subtext?: string;
 }

@@ -1,13 +1,16 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { SyntheticEvent } from 'react';
-import { useTheme } from 'emotion-theming';
 import React, { useCallback } from 'react';
 
-import ButtonProps from './Button.types';
-import { Theme } from '../Theme/Theme.types';
-import { button, buttonText , buttonSubtext} from './Button.styles';
-import { ButtonType } from './ButtonType';
+import ButtonProps from './button.types';
+import {
+    button,
+    buttonText,
+    buttonSubtext,
+    buttonChildren,
+} from './button.styles';
+import { ButtonType } from './buttonType';
 
 const Button: React.FC<ButtonProps> = ({
     children,
@@ -18,7 +21,6 @@ const Button: React.FC<ButtonProps> = ({
     icon,
     subtext,
 }) => {
-    const theme = useTheme<Theme>();
     const handleButtonClicked = useCallback(
         (event: SyntheticEvent) => {
             onClick ? onClick(event, id) : event.stopPropagation();
@@ -28,22 +30,18 @@ const Button: React.FC<ButtonProps> = ({
     return (
         <div
             data-testid="button"
-            css={button(theme, buttonType, selected, subtext)}
+            css={button(buttonType, selected, subtext, icon)}
             onClick={handleButtonClicked}
         >
-            <div
-                data-testid="button__text"
-                css={buttonText(theme, buttonType, subtext)}
-            >
-                {children}
+            <div data-testid="button__text" css={buttonText(subtext)}>
+                <div css={buttonChildren()}>{children}</div>
                 {icon}
             </div>
-            <div
-                data-testid="button__subtext"
-                css={buttonSubtext(theme, buttonType)}
-            >
-                {subtext}
-            </div>
+            {subtext && (
+                <div data-testid="button__subtext" css={buttonSubtext()}>
+                    {subtext}
+                </div>
+            )}
         </div>
     );
 };

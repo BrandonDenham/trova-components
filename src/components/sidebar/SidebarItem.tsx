@@ -5,7 +5,7 @@ import { useTheme } from 'emotion-theming';
 import React, { useCallback } from 'react';
 
 import SidebarItemProps from './SidebarItem.types';
-import { Theme } from '../Theme/Theme.types';
+import { Theme } from '../theme/theme.types';
 import {
     sidebarItem,
     sidebarItemTitle,
@@ -35,7 +35,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
             css={sidebarItem(theme, selected)}
             onClick={itemClicked}
         >
-            <p css={sidebarItemTitle(theme)}>{title}</p>
+            <p css={sidebarItemTitle()}>{title}</p>
             <p css={sidebarItemSubtitle(theme)}>{subtitle}</p>
             {statusText && (
                 <p css={sidebarItemStatusText(theme, statusTextColor)}>
