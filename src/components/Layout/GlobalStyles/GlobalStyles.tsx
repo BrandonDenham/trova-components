@@ -146,36 +146,6 @@ const GlobalStyles: React.FC = () => {
                     border-spacing: 0;
                 }
                 //RESET END
-                h1 {
-                    font-size: 34px;
-                    line-height: 34px;
-                    color: white;
-                    margin: 0px;
-                }
-
-                h2 {
-                    font-size: 32px;
-                    line-height: 32px;
-                    margin: 0px;
-                }
-
-                h3 {
-                    font-size: 22px;
-                    line-height: 22px;
-                    margin: 0px;
-                }
-
-                h4 {
-                    font-size: 18px;
-                    line-height: 18px;
-                    margin: 0px;
-                }
-
-                body {
-                    font-size: 16px;
-                    line-height: 21px;
-                }
-
                 h5 {
                     font-size: 14px;
                     line-height: 18px;
