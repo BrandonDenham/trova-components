@@ -11,4 +11,7 @@ export enum Colors {
     Secondary = '#F9E7E5',
     DarkSecondary = '#F8CFCA',
     White = '#FFFFFF',
+    NavButtonGray = '#CFDCF4',
+    NavButtonDarkGray = '#A9BCE7',
+    NavButtonLightGray = '#E2E9F7',
 }

@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import { ButtonType } from '.';
 import { Colors } from '../../shared/constants/colors';
+import { Theme } from '../theme/theme.types';
 
 export const button = (
     buttonType: ButtonType,
@@ -69,19 +70,19 @@ export const button = (
     selected &&
     `min-height: 42px;
     border-radius: 15px;
-    background-color: #CFDCF4;
+    background-color: ${Colors.NavButtonGray};
     color: ${Colors.Dark};
     &:hover {
-        background-color: #A9BCE7;
+        background-color: ${Colors.NavButtonDarkGray};
     }
      &:active{
-        background-color: #A9BCE7;
+        background-color: ${Colors.NavButtonDarkGray};
     }`}
     ${buttonType === ButtonType.Tab &&
     !selected &&
     `min-height: 42px;
     border-radius: 15px;
-    background-color: #E2E9F7;
+    background-color: ${Colors.NavButtonLightGray};
     color: ${Colors.Dark};`}
     ${buttonType === ButtonType.TabCallout &&
     `min-height: 42px;
@@ -96,22 +97,28 @@ export const button = (
     }`}
 `;
 
-export const buttonText = (subtext: string | undefined) => css`
+export const buttonText = (
+    theme: Theme,
+    buttonType: ButtonType,
+    subtext: string | undefined
+) => css`
     display: flex;
     justify-content: space-around;
-    font-family: 'Roboto-Bold';
-    font-size: 15px;
+    font-family: ${theme.fonts.robotoBold};
+    ${(buttonType === ButtonType.Tab || buttonType === ButtonType.TabCallout) &&
+    `font-family: ${theme.fonts.robotoMedium};`}
+    font-size: ${theme.fontSizes.buttonText};
     line-height: 18px;
     ${subtext &&
-    `font-size: 14px;
+    `font-size: ${theme.fontSizes.buttonTextWithSubtext};
     line-height: 16px;
     align-self:flex-start
     `}
 `;
 
-export const buttonSubtext = () => css`
-    font-family: 'Roboto-Regular';
-    font-size: 13px;
+export const buttonSubtext = (theme: Theme) => css`
+    font-family: ${theme.fonts.robotoRegular};
+    font-size: ${theme.fontSizes.buttonSubtext};
     line-height: 15px;
 `;
 
