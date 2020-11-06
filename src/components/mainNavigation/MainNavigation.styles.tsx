@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { Theme } from '../Theme/Theme.types';
+import { Theme } from '../theme/theme.types';
 
 export const mainNavigation = (theme: Theme) => css`
     @media (min-width: ${theme.sizes.md + 1}px) {
