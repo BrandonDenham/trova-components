@@ -1,5 +1,6 @@
 import { css } from '@emotion/core';
-import { Theme } from '../Theme/Theme.types';
+import { Theme } from '../theme/theme.types';
+import { Colors } from '../../shared/constants/colors';
 
 export const sidebarMenu = css`
     cursor: pointer;
@@ -14,7 +15,7 @@ export const sidebarMenuTitle = (theme: Theme) => css`
     line-height: 15px;
     font-family: ${theme.fonts.robotoBold};
     padding: 0rem 0rem 0.7rem 1rem;
-    color: ${theme.colors.gray};
+    color: ${Colors.Gray};
 `;
 export const sidebarMenuDivImg = css`
     padding: 0 1rem 0.7rem 0;

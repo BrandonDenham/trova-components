@@ -1,15 +1,13 @@
 export interface Theme {
-    colors: {
-        success: string;
-        danger: string;
-        muted: string;
-        gray: string;
-        dark: string;
-        lightGray: string;
-    };
     fonts: {
         robotoBold: string;
         robotoRegular: string;
+        robotoMedium: string;
+    };
+    fontSizes: {
+        buttonText: string;
+        buttonTextWithSubtext: string;
+        buttonSubtext: string;
     };
     sizes: {
         sm: number;

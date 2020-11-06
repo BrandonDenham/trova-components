@@ -4,7 +4,7 @@ import React, { useState, useCallback, SyntheticEvent } from 'react';
 import { Visible, Hidden } from 'react-grid-system';
 import { useTheme } from 'emotion-theming';
 import MainNavigationProps from './MainNavigation.types';
-import { Theme } from '../Theme/Theme.types';
+import { Theme } from '../theme/theme.types';
 import {
     mainNavigation,
     mainNavigationMainContainer,

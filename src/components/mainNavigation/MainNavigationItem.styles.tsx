@@ -1,5 +1,6 @@
 import { css } from '@emotion/core';
-import { Theme } from '../Theme/Theme.types';
+import { Theme } from '../theme/theme.types';
+import { Colors } from '../../shared/constants/colors';
 
 export const mainNavigationItem = css`
     cursor: pointer;
@@ -16,15 +17,15 @@ export const mainNavigationItemContent = (theme: Theme, selected: boolean) => cs
     @media (min-width: ${theme.sizes.md + 1}px) {
         padding-right: 3rem;
         ${selected
-            ? `color: ${theme.colors.dark}`
-            : `color: ${theme.colors.lightGray}`}
+            ? `color: ${Colors.Dark}`
+            : `color: ${Colors.LightGray}`}
     }
     @media (max-width: ${theme.sizes.md}px) {
         padding-bottom: 1rem;
-        color: ${theme.colors.dark};
+        color: ${Colors.Dark};
     }
     &:hover {
-        color: ${theme.colors.dark};
+        color: ${Colors.Dark};
     }
 `;
 export const mainNavigationItemArrow = css`

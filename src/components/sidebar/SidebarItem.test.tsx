@@ -6,6 +6,7 @@ import SidebarItemProps from './SidebarItem.types';
 import { ThemeProvider } from 'emotion-theming';
 import userEvent from '@testing-library/user-event';
 import theme from '../../shared/themes/theme';
+import { Colors } from '../../shared/constants/colors';
 
 expect.extend(matchers);
 
@@ -83,7 +84,7 @@ describe('Sidebar Item', () => {
     it('status text default color should be green', () => {
         const { getByText } = renderStatusTextDefaultColorComponent();
         const element = getByText('Status text');
-        expect(element).toHaveStyleRule('color', theme.colors.success);
+        expect(element).toHaveStyleRule('color', Colors.Success);
     });
 
     it('unselected background color should be white', () => {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Global, css } from '@emotion/core';
 import RobotoBold from '../../../shared/fonts/Roboto-Bold.ttf';
 import RobotoRegular from '../../../shared/fonts/Roboto-Regular.ttf';
+import RobotoMedium from '../../../shared/fonts/Roboto-Medium.ttf';
 const GlobalStyles: React.FC = () => {
     return (
         <Global
@@ -15,8 +16,13 @@ const GlobalStyles: React.FC = () => {
 
                 @font-face {
                     font-family: 'Roboto-Regular';
-                    src: url(${RobotoRegular})
-                        format('truetype');
+                    src: url(${RobotoRegular}) format('truetype');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+                @font-face {
+                    font-family: 'Roboto-Medium';
+                    src: url(${RobotoMedium}) format('truetype');
                     font-weight: normal;
                     font-style: normal;
                 }

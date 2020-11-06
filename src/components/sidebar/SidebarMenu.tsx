@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core';
 import { useState } from 'react';
 import { useTheme } from 'emotion-theming';
-import { Theme } from '../Theme/Theme.types';
+import { Theme } from '../theme/theme.types';
 import React, { useCallback } from 'react';
 
 import SidebarMenuProps from './SidebarMenu.types';

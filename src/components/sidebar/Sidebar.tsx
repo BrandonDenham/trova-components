@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core';
 import React from 'react';
 import { useTheme } from 'emotion-theming';
 
-import { Theme } from '../Theme/Theme.types';
+import { Theme } from '../theme/theme.types';
 import SidebarProps from './Sidebar.types';
 import { sidebar } from './Sidebar.styles';
 const Sidebar: React.FC<SidebarProps> = ({ children, visible = true }) => {
