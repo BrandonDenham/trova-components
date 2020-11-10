@@ -3,9 +3,9 @@ import { jsx } from '@emotion/core';
 import React from 'react';
 import { useTheme } from 'emotion-theming';
 
-import { Theme } from '../Theme/Theme.types';
+import { Theme } from '../theme/theme.types';
 import { pStyle } from './p.styles';
-import Typography from './typography.Types';
+import Typography from './typography.types';
 import { ParagraphSize } from './paragraphSize';
 
 const P: React.FC<Typography> = ({size = ParagraphSize.Medium, children, ...otherProps }) => {

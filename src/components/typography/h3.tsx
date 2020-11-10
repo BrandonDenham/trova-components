@@ -3,9 +3,9 @@ import { jsx } from '@emotion/core';
 import React from 'react';
 import { useTheme } from 'emotion-theming';
 
-import { Theme } from '../Theme/Theme.types';
+import { Theme } from '../theme/theme.types';
 import { h3Style } from './h3.styles';
-import Typography from './typography.Types';
+import Typography from './typography.types';
 
 const H3: React.FC<Typography> = ({ children, ...otherProps }) => {
     const theme = useTheme<Theme>();

@@ -1,9 +1,10 @@
 import { css } from '@emotion/core';
-import { Theme } from '../Theme/Theme.types';
+import { Colors } from '../../shared/constants/colors';
+import { Theme } from '../theme/theme.types';
 
 export const h3Style = (theme: Theme) => css`
-    font-size: 22px;
+    font-size: ${theme.fontSizes.h3};
     line-height: 22px;
     font-family: ${theme.fonts.robotoBold};
-    color: ${theme.colors.dark};
+    color: ${Colors.Dark};
 `;
