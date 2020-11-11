@@ -7,7 +7,7 @@ export const h1Style = (theme: Theme) => css`
     line-height: 34px;
     font-family: ${theme.fonts.robotoBold};
     color: ${Colors.White};
-    @media (max-width: ${theme.sizes.sm}px) {
+    @media (max-width: ${theme.breakpoints.sm}px) {
         font-size: ${theme.fontSizes.h1Mobile};
         line-height: 30px;
     }

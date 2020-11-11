@@ -2,7 +2,7 @@ import { css } from '@emotion/core';
 import { Theme } from '../theme/theme.types';
 
 export const mainNavigation = (theme: Theme) => css`
-    @media (min-width: ${theme.sizes.md + 1}px) {
+    @media (min-width: ${theme.breakpoints.md + 1}px) {
         padding: 1.5rem 3.5rem 3rem 2rem;
     }
     box-sizing: border-box;
@@ -11,7 +11,7 @@ export const mainNavigationMainContainer = (
     theme: Theme,
     anchor: boolean
 ) => css`
-    @media (max-width: ${theme.sizes.md}px) {
+    @media (max-width: ${theme.breakpoints.md}px) {
         padding: 1.5rem 0 3.5rem 0;
         ${anchor === true && `position: sticky; top: 0rem; background: white`}
     }
@@ -24,11 +24,11 @@ export const mainNavigationSmallContainer = css`
     overflow: auto;
 `;
 export const mainNavigationLogo = (theme: Theme) => css`
-    @media (min-width: ${theme.sizes.md + 1}px) {
+    @media (min-width: ${theme.breakpoints.md + 1}px) {
         padding-right: 7rem;
         width: 10rem;
     }
-    @media (max-width: ${theme.sizes.md}px) {
+    @media (max-width: ${theme.breakpoints.md}px) {
         width: 9rem;
         padding-left: 1rem;
     }
@@ -43,23 +43,23 @@ export const mainNavigationImagesContainer = css`
     align-items: center;
 `;
 export const mainNavigationBellImage = (theme: Theme) => css`
-    @media (min-width: ${theme.sizes.md + 1}px) {
+    @media (min-width: ${theme.breakpoints.md + 1}px) {
         width: 2rem;
         height: 2rem;
     }
-    @media (max-width: ${theme.sizes.md}px) {
+    @media (max-width: ${theme.breakpoints.md}px) {
         width: 1.5rem;
         height: 1.5rem;
     }
     cursor: pointer;
 `;
 export const mainNavigationProfilePictureImage = (theme: Theme) => css`
-    @media (min-width: ${theme.sizes.md + 1}px) {
+    @media (min-width: ${theme.breakpoints.md + 1}px) {
         padding-left: 1.5rem;
         width: 3.5rem;
         height: 3.5rem;
     }
-    @media (max-width: ${theme.sizes.md}px) {
+    @media (max-width: ${theme.breakpoints.md}px) {
         padding-left: 1rem;
         padding-right: 1.3rem;
         width: 2.5rem;

@@ -21,7 +21,7 @@ const theme = {
         pLarge: '18px',
         pLargeMobile: '16px',
     },
-    sizes: {
+    breakpoints: {
         sm: 576,
         md: 768,
     },

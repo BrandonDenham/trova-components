@@ -10,14 +10,14 @@ export const pStyle = (size: ParagraphSize, theme: Theme) => css`
     `
     font-size: ${theme.fontSizes.pSmall};
     line-height: 18px;
-    @media (max-width: ${theme.sizes.sm}px) {
+    @media (max-width: ${theme.breakpoints.sm}px) {
         font-size: ${theme.fontSizes.pSmallMobile};
     }`}
     ${size === ParagraphSize.Medium &&
     `
     font-size:  ${theme.fontSizes.pMedium};
     line-height: 21px;
-    @media (max-width: ${theme.sizes.sm}px) {
+    @media (max-width: ${theme.breakpoints.sm}px) {
         font-size: ${theme.fontSizes.pMediumMobile};
         line-height: 18px;
     }`}
@@ -25,7 +25,7 @@ export const pStyle = (size: ParagraphSize, theme: Theme) => css`
     `
     font-size: ${theme.fontSizes.pLarge};
     line-height: 22px;
-    @media (max-width: ${theme.sizes.sm}px) {
+    @media (max-width: ${theme.breakpoints.sm}px) {
         font-size: ${theme.fontSizes.pLargeMobile};
         line-height: 20px;
     }`}

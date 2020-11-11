@@ -21,7 +21,7 @@ export interface Theme {
         pLarge: string;
         pLargeMobile: string;
     };
-    sizes: {
+    breakpoints: {
         sm: number;
         md: number;
     };
