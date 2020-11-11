@@ -14,13 +14,13 @@ export const mainNavigationItemContent = (theme: Theme, selected: boolean) => cs
     letter-spacing: 0.8px;
     text-transform: uppercase;
     padding-left: 1rem;
-    @media (min-width: ${theme.sizes.md + 1}px) {
+    @media (min-width: ${theme.breakpoints.md + 1}px) {
         padding-right: 3rem;
         ${selected
             ? `color: ${Colors.Dark}`
             : `color: ${Colors.LightGray}`}
     }
-    @media (max-width: ${theme.sizes.md}px) {
+    @media (max-width: ${theme.breakpoints.md}px) {
         padding-bottom: 1rem;
         color: ${Colors.Dark};
     }
