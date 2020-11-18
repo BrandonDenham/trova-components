@@ -1,4 +1,5 @@
 export enum IconName {
     Plus,
-    Upload
+    Upload,
+    Search
 }

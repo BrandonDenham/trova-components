@@ -20,6 +20,12 @@ const theme = {
         pMediumMobile: '14px',
         pLarge: '18px',
         pLargeMobile: '16px',
+        input: '16px',
+        inputLabel: '14px',
+        inputDetail: '14px',
+        inputDisabled: '14px',
+        inputError: '14px',
+        tooltip: '13px',
     },
     breakpoints: {
         sm: 576,

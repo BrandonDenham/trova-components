@@ -20,6 +20,12 @@ export interface Theme {
         pMediumMobile: string;
         pLarge: string;
         pLargeMobile: string;
+        input: string;
+        inputLabel: string;
+        inputDetail: string;
+        inputDisabled: string;
+        inputError: string;
+        tooltip: string;
     };
     breakpoints: {
         sm: number;
