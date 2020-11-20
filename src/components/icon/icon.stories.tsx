@@ -22,3 +22,5 @@ export const PlusXl = () => <Icon name={IconName.Plus} size={IconSize.Xl} />;
 export const PlusRed = () => <Icon name={IconName.Plus} color={Colors.Primary} />;
 
 export const Upload = () => <Icon name={IconName.Upload} />;
+
+export const Search = () => <Icon name={IconName.Search} />;

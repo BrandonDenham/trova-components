@@ -20,9 +20,24 @@ export interface Theme {
         pMediumMobile: string;
         pLarge: string;
         pLargeMobile: string;
+        input: string;
+        inputLabel: string;
+        inputDetail: string;
+        inputDisabled: string;
+        inputError: string;
+        tooltip: string;
     };
     breakpoints: {
         sm: number;
         md: number;
+    };
+    columns: {
+        column: number;
+        gutter: number;
+        twoColumns: number;
+        threeColumns: number;
+        fourColumns: number;
+        fiveColumns: number;
+        sixColumns: number;
     };
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>EF9581D5-2DDF-40E7-9226-519C1552072E</title>
+    <g id="Host" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Host---Add-new-trip---step-three-add-custom-requests" transform="translate(-817.000000, -648.000000)">
+            <g id="symbol/icon/info" transform="translate(817.000000, 648.000000)">
+                <circle id="Oval" stroke="#626C79" stroke-width="1.5" cx="9.5" cy="9.5" r="8.75"></circle>
+                <path d="M10,7 C10.3004115,7 10.5421811,6.90635452 10.7253086,6.71906355 C10.9084362,6.53177258 11,6.2909699 11,5.99665552 C11,5.70680045 10.909465,5.46822742 10.7283951,5.28093645 C10.5473251,5.09364548 10.3045267,5 10,5 C9.69135802,5 9.44753086,5.09364548 9.26851852,5.28093645 C9.08950617,5.46822742 9,5.70680045 9,5.99665552 C9,6.2909699 9.09156379,6.53177258 9.27469136,6.71906355 C9.45781893,6.90635452 9.69958848,7 10,7 Z M11,14 L11,8 L9,8 L9,14 L11,14 Z" id="i" fill="#626C79" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
