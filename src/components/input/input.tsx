@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import React, { SyntheticEvent } from 'react';
+import React, { SyntheticEvent, useCallback } from 'react';
 import { useTheme } from 'emotion-theming';
 import { useState } from 'react';
 
@@ -44,6 +44,7 @@ const Input: React.FC<InputProps> = ({
         onChange ? onChange(event, name, value) : event.stopPropagation();
     };
     let textInput: HTMLInputElement;
+    const handleClick = useCallback(() => textInput.focus(),[]);
     return (
         <div css={mainContainer(theme, size)}>
             <div css={labelContainer()}>
@@ -64,10 +65,7 @@ const Input: React.FC<InputProps> = ({
             </div>
             {detail && <span css={detailSpan(theme)}>{detail}</span>}
             {icon && (
-                <div
-                    css={inputContainer(theme, error)}
-                    onClick={() => textInput.focus()}
-                >
+                <div css={inputContainer(theme, error)} onClick={handleClick}>
                     <input
                         data-testid="input"
                         type="text"
@@ -76,8 +74,8 @@ const Input: React.FC<InputProps> = ({
                         value={inputValue}
                         disabled={disabled}
                         css={inputWithIcon(theme)}
-                        ref={(input) => {
-                            textInput = input!;
+                        ref={(input: HTMLInputElement) => {
+                            textInput = input;
                         }}
                     />
                     {icon}

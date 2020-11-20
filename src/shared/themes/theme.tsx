@@ -31,6 +31,15 @@ const theme = {
         sm: 576,
         md: 768,
     },
+    columns: {
+        column: 64,
+        gutter: 29,
+        twoColumns: 64 * 2 + 29,
+        threeColumns: 64 * 3 + 29 * 2,
+        fourColumns: 64 * 4 + 29 * 3,
+        fiveColumns: 64 * 5 + 29 * 4,
+        sixColumns: 64 * 6 + 29 * 5,
+    },
 };
 
 export default theme;
