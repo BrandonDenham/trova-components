@@ -1,3 +1,3 @@
-import Input from './input';
+import Textarea from './textarea';
 
-export default Input;
+export default Textarea;
