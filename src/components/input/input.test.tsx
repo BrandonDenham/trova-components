@@ -94,19 +94,19 @@ describe('Input', () => {
             </ThemeProvider>
         );
 
-    it('small component should have width:158px', () => {
+    it('small component should have width:157px', () => {
         const { container } = renderSmallComponent();
-        expect(container.firstChild).toHaveStyleRule('width', '158px');
+        expect(container.firstChild).toHaveStyleRule('width', '157px');
     });
 
-    it('default component should have width:249px', () => {
+    it('default component should have width:250px', () => {
         const { container } = renderMediumComponent();
-        expect(container.firstChild).toHaveStyleRule('width', '249px');
+        expect(container.firstChild).toHaveStyleRule('width', '250px');
     });
 
-    it('large component should have width:309px', () => {
+    it('large component should have width:343px', () => {
         const { container } = renderLargeComponent();
-        expect(container.firstChild).toHaveStyleRule('width', '309px');
+        expect(container.firstChild).toHaveStyleRule('width', '343px');
     });
 
     it('extra large component should have width:436px', () => {

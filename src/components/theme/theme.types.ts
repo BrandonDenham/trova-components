@@ -26,6 +26,11 @@ export interface Theme {
         inputDisabled: string;
         inputError: string;
         tooltip: string;
+        textarea: string;
+        textareaLabel: string;
+        textareaDetail: string;
+        textareaDisabled: string;
+        textareaError: string;
     };
     breakpoints: {
         sm: number;

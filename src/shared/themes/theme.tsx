@@ -26,6 +26,11 @@ const theme = {
         inputDisabled: '14px',
         inputError: '14px',
         tooltip: '13px',
+        textarea: '16px',
+        textareaLabel: '14px',
+        textareaDetail: '14px',
+        textareaDisabled: '14px',
+        textareaError: '14px',
     },
     breakpoints: {
         sm: 576,
