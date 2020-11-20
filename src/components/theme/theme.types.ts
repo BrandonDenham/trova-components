@@ -31,4 +31,13 @@ export interface Theme {
         sm: number;
         md: number;
     };
+    columns: {
+        column: number;
+        gutter: number;
+        twoColumns: number;
+        threeColumns: number;
+        fourColumns: number;
+        fiveColumns: number;
+        sixColumns: number;
+    };
 }

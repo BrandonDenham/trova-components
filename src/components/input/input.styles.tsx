@@ -6,10 +6,10 @@ import { InputSize } from './inputSize';
 export const mainContainer = (theme: Theme, size: InputSize) => css`
     display: flex;
     flex-direction: column;
-    ${size === InputSize.Small && `width:158px;`}
-    ${size === InputSize.Medium && `width:249px;`}
-    ${size === InputSize.Large && `width:309px;`}
-    ${size === InputSize.ExtraLarge && `width:436px;`}
+    ${size === InputSize.Small && `width:${theme.columns.twoColumns}px;`}
+    ${size === InputSize.Medium && `width:${theme.columns.threeColumns}px;`}
+    ${size === InputSize.Large && `width:${theme.columns.fourColumns}px;`}
+    ${size === InputSize.ExtraLarge && `width:${theme.columns.fiveColumns}px;`}
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
     }
