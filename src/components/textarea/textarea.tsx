@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import React, { SyntheticEvent } from 'react';
+import React, { SyntheticEvent, useCallback } from 'react';
 import { useTheme } from 'emotion-theming';
-import { useState } from 'react';
 
 import { Theme } from '../theme/theme.types';
 import TextareaProps from './textarea.types';
@@ -34,12 +33,9 @@ const Textarea: React.FC<TextareaProps> = ({
     disabledText,
 }) => {
     const theme = useTheme<Theme>();
-    const [textareaValue, setTextareaValue] = useState(value);
-    const handleChange = (event: SyntheticEvent) => {
-        const target = event.target as HTMLTextAreaElement;
-        setTextareaValue(target.value);
+    const handleChange = useCallback((event: SyntheticEvent) => {
         onChange ? onChange(event, name, value) : event.stopPropagation();
-    };
+    }, [name, value, onChange]);
     return (
         <div css={mainContainer(theme)}>
             <div css={labelContainer()}>
@@ -64,7 +60,7 @@ const Textarea: React.FC<TextareaProps> = ({
                 css={textarea(theme, error, size)}
                 onChange={handleChange}
                 placeholder={placeholder}
-                value={textareaValue}
+                value={value}
                 disabled={disabled}
             />
             {disabled && disabledText && (

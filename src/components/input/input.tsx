@@ -2,7 +2,6 @@
 import { jsx } from '@emotion/core';
 import React, { SyntheticEvent, useCallback } from 'react';
 import { useTheme } from 'emotion-theming';
-import { useState } from 'react';
 
 import { Theme } from '../theme/theme.types';
 import InputProps from './input.types';
@@ -37,12 +36,12 @@ const Input: React.FC<InputProps> = ({
     disabledText,
 }) => {
     const theme = useTheme<Theme>();
-    const [inputValue, setInputValue] = useState(value);
-    const handleChange = (event: SyntheticEvent) => {
-        const target = event.target as HTMLInputElement;
-        setInputValue(target.value);
-        onChange ? onChange(event, name, value) : event.stopPropagation();
-    };
+    const handleChange = useCallback(
+        (event: SyntheticEvent) => {
+            onChange ? onChange(event, name, value) : event.stopPropagation();
+        },
+        [name, value, onChange]
+    );
     let textInput: HTMLInputElement;
     const handleClick = useCallback(() => textInput.focus(),[]);
     return (
@@ -71,7 +70,7 @@ const Input: React.FC<InputProps> = ({
                         type="text"
                         onChange={handleChange}
                         placeholder={placeholder}
-                        value={inputValue}
+                        value={value}
                         disabled={disabled}
                         css={inputWithIcon(theme)}
                         ref={(input: HTMLInputElement) => {
@@ -88,7 +87,7 @@ const Input: React.FC<InputProps> = ({
                     type="text"
                     onChange={handleChange}
                     placeholder={placeholder}
-                    value={inputValue}
+                    value={value}
                     disabled={disabled}
                 />
             )}
