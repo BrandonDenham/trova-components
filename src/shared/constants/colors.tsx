@@ -15,5 +15,6 @@ export enum Colors {
     NavButtonDarkGray = '#A9BCE7',
     NavButtonLightGray = '#E2E9F7',
     Active = '#4270D1',
-    DangerText = '#ED5547'
+    DangerText = '#ED5547',
+    MainContentGray = '#EFF1F7',
 }

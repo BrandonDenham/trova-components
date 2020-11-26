@@ -1,6 +1,5 @@
-import Sidebar from './Sidebar';
 import SidebarItem from './SidebarItem';
 import SidebarMenu from './SidebarMenu';
 
-export default Sidebar;
+export { default } from './Sidebar';
 export { SidebarItem, SidebarMenu };
