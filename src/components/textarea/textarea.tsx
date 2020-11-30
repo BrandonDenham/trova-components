@@ -4,9 +4,9 @@ import React, { SyntheticEvent, useCallback } from 'react';
 import { useTheme } from 'emotion-theming';
 
 import { Theme } from '../theme/theme.types';
-import InputProps from './input.types';
+import TextareaProps from './textarea.types';
 import {
-    input,
+    textarea,
     mainContainer,
     labelContainer,
     errorSpan,
@@ -15,13 +15,11 @@ import {
     infoImageContainer,
     detailSpan,
     disabledSpan,
-    inputContainer,
-    inputWithIcon,
     tooltip,
-} from './input.styles';
-import { InputSize } from './inputSize';
+} from './textarea.styles';
+import { TextareaSize } from './textareaSize';
 const imageInfo = require('../../shared/images/icons/info.svg') as string;
-const Input: React.FC<InputProps> = ({
+const Textarea: React.FC<TextareaProps> = ({
     onChange,
     value = '',
     label,
@@ -30,22 +28,16 @@ const Input: React.FC<InputProps> = ({
     error,
     detail,
     placeholder,
-    size = InputSize.Medium,
-    icon,
+    size = TextareaSize.Large,
     disabled = false,
     disabledText,
 }) => {
     const theme = useTheme<Theme>();
-    const handleChange = useCallback(
-        (event: SyntheticEvent) => {
-            onChange ? onChange(event, name, value) : event.stopPropagation();
-        },
-        [name, value, onChange]
-    );
-    let textInput: HTMLInputElement;
-    const handleClick = useCallback(() => textInput.focus(),[]);
+    const handleChange = useCallback((event: SyntheticEvent) => {
+        onChange ? onChange(event, name, value) : event.stopPropagation();
+    }, [name, value, onChange]);
     return (
-        <div css={mainContainer(theme, size)}>
+        <div css={mainContainer(theme)}>
             <div css={labelContainer()}>
                 {label && <span css={labelSpan(theme)}>{label}</span>}
                 {info && (
@@ -63,34 +55,14 @@ const Input: React.FC<InputProps> = ({
                 )}
             </div>
             {detail && <span css={detailSpan(theme)}>{detail}</span>}
-            {icon && (
-                <div css={inputContainer(theme, error)} onClick={handleClick}>
-                    <input
-                        data-testid="input"
-                        type="text"
-                        onChange={handleChange}
-                        placeholder={placeholder}
-                        value={value}
-                        disabled={disabled}
-                        css={inputWithIcon(theme)}
-                        ref={(input: HTMLInputElement) => {
-                            textInput = input;
-                        }}
-                    />
-                    {icon}
-                </div>
-            )}
-            {!icon && (
-                <input
-                    data-testid="input"
-                    css={input(theme, error)}
-                    type="text"
-                    onChange={handleChange}
-                    placeholder={placeholder}
-                    value={value}
-                    disabled={disabled}
-                />
-            )}
+            <textarea
+                data-testid="textarea"
+                css={textarea(theme, error, size)}
+                onChange={handleChange}
+                placeholder={placeholder}
+                value={value}
+                disabled={disabled}
+            />
             {disabled && disabledText && (
                 <span css={disabledSpan(theme)}>{disabledText}</span>
             )}
@@ -108,4 +80,4 @@ const Input: React.FC<InputProps> = ({
     );
 };
 
-export default Input;
+export default Textarea;
