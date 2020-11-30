@@ -61,10 +61,10 @@ export const button = (
     }`}
     ${buttonType === ButtonType.Tertiary &&
     !selected &&
-    `background-color: ${Colors.Primary};
+    `background-color: ${Colors.NavButtonGray};
     color: ${Colors.Dark};
     &:hover {
-        background-color: ${Colors.DarkPrimary};
+        background-color: ${Colors.NavButtonDarkGray};
     }`}
     ${buttonType === ButtonType.Tab &&
     selected &&
