@@ -16,11 +16,9 @@ import { mainContent } from './mainContent.styles';
 const MainContent: React.FC<mainContentProps> = ({ children }) => {
     const theme = useTheme<Theme>();
     return (
-        <React.Fragment>
-            <div data-testid="mainContent" css={mainContent(theme)}>
-                {children}
-            </div>
-        </React.Fragment>
+        <div data-testid="mainContent" css={mainContent(theme)}>
+            {children}
+        </div>
     );
 };
 
