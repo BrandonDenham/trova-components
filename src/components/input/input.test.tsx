@@ -5,7 +5,7 @@ import Input from './input';
 import InputProps from './input.types';
 import { ThemeProvider } from 'emotion-theming';
 import theme from '../../shared/themes/theme';
-import { InputSize } from './inputSize';
+import { ComponentWidth } from './componentWidth';
 
 expect.extend(matchers);
 
@@ -23,7 +23,7 @@ describe('Input', () => {
             placeholder: 'Placeholder',
             label: 'Form header',
             detail: 'Describe the trip in 2-3 sentences.',
-            size: InputSize.Small,
+            size: ComponentWidth.Small,
         };
         mediumProps = {
             name: 'test',
@@ -39,7 +39,7 @@ describe('Input', () => {
             placeholder: 'Placeholder',
             label: 'Form header',
             detail: 'Describe the trip in 2-3 sentences.',
-            size: InputSize.Large,
+            size: ComponentWidth.Large,
         };
         extraLargeProps = {
             name: 'test',
@@ -47,7 +47,7 @@ describe('Input', () => {
             placeholder: 'Placeholder',
             label: 'Form header',
             detail: 'Describe the trip in 2-3 sentences.',
-            size: InputSize.ExtraLarge,
+            size: ComponentWidth.ExtraLarge,
         };
         disabledProps = {
             name: 'test',

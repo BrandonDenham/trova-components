@@ -31,6 +31,7 @@ const theme = {
         textareaDetail: '14px',
         textareaDisabled: '14px',
         textareaError: '14px',
+        dropdownList: '16px',
     },
     breakpoints: {
         sm: 576,
