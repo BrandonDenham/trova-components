@@ -4,7 +4,7 @@ import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 
 export default {
-	input: ["src/index.ts", "src/TestComponent/TestComponent.tsx"],
+	input: ["src/index.tsx"],
 	output: [
 		{
 			dir: "build",
