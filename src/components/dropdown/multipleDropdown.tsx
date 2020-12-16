@@ -12,17 +12,8 @@ import { useTheme } from 'emotion-theming';
 import { Theme } from '../theme/theme.types';
 import {
     mainContainer,
-    labelContainer,
-    errorSpan,
-    labelSpan,
-    infoImage,
-    infoImageContainer,
-    disabledSpan,
     inputContainerMultipleDropdown,
     inputMultipleDropdown,
-    tooltip,
-    list,
-    listItem,
     iconContainer,
     buttonsContainer,
     button,
@@ -34,8 +25,10 @@ import Icon, { IconName, IconSize } from '../icon';
 import { Colors } from '../../shared/constants/colors';
 import MultipleDropdownProps from './multipleDropdown.types';
 import { useOutsideListener } from '../../shared/utils/helpers';
+import DropdownHeader from '../__private/dropdownHeader';
+import DropdownFooter from '../__private/dropdownFooter';
+import DropdownMenu from '../__private/dropdownMenu';
 const imageClose = require('../../shared/images/icons/close.svg') as string;
-const imageInfo = require('../../shared/images/icons/info.svg') as string;
 const imageSpinner = require('../../shared/images/icons/spinner.svg') as string;
 
 /**
@@ -119,7 +112,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
         setButtons(buttonElements);
     }, [value]);
 
-    const handleLiClick = useCallback(
+    const handleClick = useCallback(
         (event: SyntheticEvent) => {
             const currentValue = (event.target as HTMLLIElement).dataset.value!;
             if (value.includes(currentValue)) {
@@ -141,22 +134,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
 
     return (
         <div css={mainContainer(theme, size)} ref={containerRef}>
-            <div css={labelContainer()}>
-                {label && <span css={labelSpan(theme)}>{label}</span>}
-                {info && (
-                    <div css={infoImageContainer()} title={info}>
-                        <label>
-                            <img
-                                css={infoImage()}
-                                alt="Info."
-                                src={imageInfo}
-                            />
-                            <input type="checkbox"></input>
-                            <span css={tooltip(theme)}>{info}</span>
-                        </label>
-                    </div>
-                )}
-            </div>
+            <DropdownHeader label={label} info={info} />
             <div
                 css={inputContainerMultipleDropdown(
                     theme,
@@ -192,33 +170,17 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
                     </div>
                 )}
             </div>
-            {listVisible && !searching && (
-                <ul css={list(theme)}>
-                    {children.map((child) => (
-                        <li
-                            css={listItem()}
-                            onClick={handleLiClick}
-                            data-value={child.value as string}
-                            key={child.value}
-                        >
-                            {child.children}
-                        </li>
-                    ))}
-                </ul>
-            )}
-            {disabled && disabledText && (
-                <span css={disabledSpan(theme)}>{disabledText}</span>
-            )}
-            {error && typeof error === 'string' && (
-                <span css={errorSpan(theme)}>{error}</span>
-            )}
-            {error && Array.isArray(error) && (
-                <span css={errorSpan(theme)}>
-                    {error.reduce((a: string, b: string) => {
-                        return a.concat(', ').concat(b);
-                    })}
-                </span>
-            )}
+            <DropdownMenu
+                children={children}
+                searching={searching}
+                listVisible={listVisible}
+                handleClick={handleClick}
+            />
+            <DropdownFooter
+                disabled={disabled}
+                disabledText={disabledText}
+                error={error}
+            />
         </div>
     );
 };

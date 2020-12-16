@@ -6,17 +6,8 @@ import { useTheme } from 'emotion-theming';
 import { Theme } from '../theme/theme.types';
 import {
     mainContainer,
-    labelContainer,
-    errorSpan,
-    labelSpan,
-    infoImage,
-    infoImageContainer,
-    disabledSpan,
     inputContainer,
     input,
-    tooltip,
-    list,
-    listItem,
     iconContainer,
     loadingIcon,
 } from './dropdown.styles';
@@ -25,7 +16,9 @@ import Icon, { IconName, IconSize } from '../icon';
 import { Colors } from '../../shared/constants/colors';
 import DropdownProps from './dropdown.types';
 import { useOutsideListener } from '../../shared/utils/helpers';
-const imageInfo = require('../../shared/images/icons/info.svg') as string;
+import DropdownHeader from '../__private/dropdownHeader';
+import DropdownFooter from '../__private/dropdownFooter';
+import DropdownMenu from '../__private/dropdownMenu';
 const imageSpinner = require('../../shared/images/icons/spinner.svg') as string;
 
 /**
@@ -80,7 +73,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             setListVisible(!listVisible);
         }
     }, [listVisible]);
-    const handleLiClick = useCallback(
+    const handleClick = useCallback(
         (event: SyntheticEvent) => {
             setTextValue((event.target as HTMLLIElement).textContent!);
             value = children[(event.target as HTMLLIElement).value].value;
@@ -92,22 +85,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     useOutsideListener(containerRef, () => setListVisible(false));
     return (
         <div css={mainContainer(theme, size)} ref={containerRef}>
-            <div css={labelContainer()}>
-                {label && <span css={labelSpan(theme)}>{label}</span>}
-                {info && (
-                    <div css={infoImageContainer()} title={info}>
-                        <label>
-                            <img
-                                css={infoImage()}
-                                alt="Info."
-                                src={imageInfo}
-                            />
-                            <input type="checkbox"></input>
-                            <span css={tooltip(theme)}>{info}</span>
-                        </label>
-                    </div>
-                )}
-            </div>
+            <DropdownHeader label={label} info={info} />
             <div css={inputContainer(theme, error, listVisible)}>
                 <input
                     data-testid="input"
@@ -133,33 +111,17 @@ const Dropdown: React.FC<DropdownProps> = ({
                     </div>
                 )}
             </div>
-            {listVisible && !searching && (
-                <ul css={list(theme)}>
-                    {children.map((child) => (
-                        <li
-                            css={listItem()}
-                            onClick={handleLiClick}
-                            value={child.value as string}
-                            key={child.value}
-                        >
-                            {child.children}
-                        </li>
-                    ))}
-                </ul>
-            )}
-            {disabled && disabledText && (
-                <span css={disabledSpan(theme)}>{disabledText}</span>
-            )}
-            {error && typeof error === 'string' && (
-                <span css={errorSpan(theme)}>{error}</span>
-            )}
-            {error && Array.isArray(error) && (
-                <span css={errorSpan(theme)}>
-                    {error.reduce((a: string, b: string) => {
-                        return a.concat(', ').concat(b);
-                    })}
-                </span>
-            )}
+            <DropdownMenu
+                children={children}
+                searching={searching}
+                listVisible={listVisible}
+                handleClick={handleClick}
+            />
+            <DropdownFooter
+                disabled={disabled}
+                disabledText={disabledText}
+                error={error}
+            />
         </div>
     );
 };
