@@ -1,4 +1,4 @@
-export enum InputSize {
+export enum ComponentWidth {
     Small,
     Medium,
     Large,

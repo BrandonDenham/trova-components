@@ -3,7 +3,7 @@ import { Colors } from '../../shared/constants/colors';
 import Icon, { IconName } from '../icon';
 
 import Input from './input';
-import { InputSize } from './inputSize';
+import { ComponentWidth } from './componentWidth';
 
 export default {
     title: 'Input',
@@ -17,7 +17,7 @@ export const SmallInput = () => (
         placeholder="Placeholder"
         label="Form header"
         detail="Describe the trip in 2-3 sentences."
-        size={InputSize.Small}
+        size={ComponentWidth.Small}
     />
 );
 
@@ -38,7 +38,7 @@ export const LargeInput = () => (
         placeholder="Placeholder"
         label="Form header"
         detail="Describe the trip in 2-3 sentences."
-        size={InputSize.Large}
+        size={ComponentWidth.Large}
     />
 );
 
@@ -49,7 +49,7 @@ export const ExtraLargeInput = () => (
         placeholder="Placeholder"
         label="Form header"
         detail="Describe the trip in 2-3 sentences."
-        size={InputSize.ExtraLarge}
+        size={ComponentWidth.ExtraLarge}
     />
 );
 
@@ -73,7 +73,7 @@ export const Info = () => (
         label="Form header"
         detail="Describe the trip in 2-3 sentences."
         info="This is actually a really really long tooltip to be used as an example."
-        size={InputSize.Medium}
+        size={ComponentWidth.Medium}
     />
 );
 
@@ -84,7 +84,7 @@ export const FilledSearch = () => (
         placeholder="Placeholder"
         label="Form header"
         detail="Describe the trip in 2-3 sentences."
-        size={InputSize.Large}
+        size={ComponentWidth.Large}
         icon={<Icon name={IconName.Search} color={Colors.Primary} />}
     />
 );
@@ -116,7 +116,7 @@ export const FilledSearchErrors = () => (
         placeholder="Placeholder"
         label="Form header"
         detail="Describe the trip in 2-3 sentences."
-        size={InputSize.Large}
+        size={ComponentWidth.Large}
         icon={<Icon name={IconName.Search} color={Colors.Primary} />}
         error={['Input must be filled', 'Input must be numeric']}
     />
@@ -129,7 +129,7 @@ export const InfoFilledSearchErrors = () => (
         placeholder="Placeholder"
         label="Form header"
         detail="Describe the trip in 2-3 sentences."
-        size={InputSize.Large}
+        size={ComponentWidth.Large}
         icon={<Icon name={IconName.Search} color={Colors.Primary} />}
         error={['Input must be filled', 'Input must be numeric']}
         info="This is actually a really really long tooltip to be used as an example."

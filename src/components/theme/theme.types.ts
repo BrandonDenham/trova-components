@@ -31,6 +31,7 @@ export interface Theme {
         textareaDetail: string;
         textareaDisabled: string;
         textareaError: string;
+        dropdownList: string;
         toggleDetail: string;
         checkboxDetail: string;
     };

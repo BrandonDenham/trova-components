@@ -19,7 +19,7 @@ import {
     inputWithIcon,
     tooltip,
 } from './input.styles';
-import { InputSize } from './inputSize';
+import { ComponentWidth } from './componentWidth';
 const imageInfo = require('../../shared/images/icons/info.svg') as string;
 const Input: React.FC<InputProps> = ({
     onChange,
@@ -30,7 +30,7 @@ const Input: React.FC<InputProps> = ({
     error,
     detail,
     placeholder,
-    size = InputSize.Medium,
+    size = ComponentWidth.Medium,
     icon,
     disabled = false,
     disabledText,
@@ -72,7 +72,7 @@ const Input: React.FC<InputProps> = ({
                         placeholder={placeholder}
                         value={value}
                         disabled={disabled}
-                        css={inputWithIcon(theme)}
+                        css={inputWithIcon(theme, size)}
                         ref={(input: HTMLInputElement) => {
                             textInput = input;
                         }}
