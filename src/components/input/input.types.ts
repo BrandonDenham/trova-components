@@ -1,10 +1,10 @@
 import { FieldProps } from '../field/field.types';
-import { InputSize } from './inputSize';
+import { ComponentWidth } from './componentWidth';
 
 export default interface InputProps extends FieldProps<string> {
     detail?: string;
     placeholder?: string;
-    size?: InputSize;
+    size?: ComponentWidth;
     icon?: React.ReactNode;
     disabled?: boolean;
     disabledText?: string;

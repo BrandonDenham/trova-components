@@ -1,15 +1,15 @@
 import { css } from '@emotion/core';
 import { Colors } from '../../shared/constants/colors';
 import { Theme } from '../theme/theme.types';
-import { InputSize } from './inputSize';
+import { ComponentWidth } from './componentWidth';
 
-export const mainContainer = (theme: Theme, size: InputSize) => css`
+export const mainContainer = (theme: Theme, size: ComponentWidth) => css`
     display: flex;
     flex-direction: column;
-    ${size === InputSize.Small && `width:${theme.columns.twoColumns}px;`}
-    ${size === InputSize.Medium && `width:${theme.columns.threeColumns}px;`}
-    ${size === InputSize.Large && `width:${theme.columns.fourColumns}px;`}
-    ${size === InputSize.ExtraLarge && `width:${theme.columns.fiveColumns}px;`}
+    ${size === ComponentWidth.Small && `width:${theme.columns.twoColumns}px;`}
+    ${size === ComponentWidth.Medium && `width:${theme.columns.threeColumns}px;`}
+    ${size === ComponentWidth.Large && `width:${theme.columns.fourColumns}px;`}
+    ${size === ComponentWidth.ExtraLarge && `width:${theme.columns.fiveColumns}px;`}
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
     }
@@ -144,7 +144,7 @@ export const inputContainer = (
     }
 `;
 
-export const inputWithIcon = (theme: Theme) => css`
+export const inputWithIcon = (theme: Theme, size: ComponentWidth) => css`
     box-sizing: border-box;
     font-family: ${theme.fonts.robotoRegular};
     font-size: ${theme.fontSizes.input};
@@ -157,4 +157,6 @@ export const inputWithIcon = (theme: Theme) => css`
     :focus {
         border: transparent;
     }
+    ${size === ComponentWidth.Small && `width:99px;`}
+    ${size === ComponentWidth.Medium && `width:190px;`}
 `;
