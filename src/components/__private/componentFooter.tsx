@@ -4,18 +4,18 @@ import { useTheme } from 'emotion-theming';
 import React from 'react';
 
 import { Theme } from '../theme/theme.types';
-import { DropdownFooterProps } from './dropdownFooter.types';
-import { disabledSpan, errorSpan } from './dropdownFooter.styles';
+import { ComponentFooterProps } from './componentFooter.types';
+import { disabledSpan, errorSpan } from './componentFooter.styles';
 
 /**
- * Renders a <DropdownFooter /> component
+ * Renders a <ComponentFooter /> component
  * @param  props
  * @param  props.error - any errors
  * @param  props.disabled - defaults to false, if true there is no ability to click into the input
  * @param  props.disabledText - Text under the input that will be shown if disabled is true
  */
 
-const DropdownFooter: React.FC<DropdownFooterProps> = ({
+const ComponentFooter: React.FC<ComponentFooterProps> = ({
     disabled,
     disabledText,
     error,
@@ -40,4 +40,4 @@ const DropdownFooter: React.FC<DropdownFooterProps> = ({
     );
 };
 
-export default DropdownFooter;
+export default ComponentFooter;

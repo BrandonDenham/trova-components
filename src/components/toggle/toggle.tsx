@@ -8,11 +8,22 @@ import ToggleProps from './toggle.types';
 import {
     input,
     mainContainer,
-    errorSpan,
-    disabledSpan,
     detailSpan,
     slider,
 } from './toggle.styles';
+import ComponentFooter from '../__private/componentFooter';
+
+/**
+ * Renders a <Toggle /> component
+ * @param  props
+ * @param  props.value - The value of the dropdown as stored in the form
+ * @param  props.name - field Name, will correspond to the 2nd parameter in the onSearch
+ * @param  props.error - any errors
+ * @param  props.disabled - This isn't really shown but there should be an ability to disable out the label
+ * @param  props.disabledText - Text under the toggle that will be shown if disabled is true
+ * @param  props.detail - The text that goes to the right of the input when there is more information to be shown to the user.
+ */
+
 const Toggle: React.FC<ToggleProps> = ({
     onChange,
     value = false,
@@ -46,19 +57,11 @@ const Toggle: React.FC<ToggleProps> = ({
                 ></span>
             </div>
             {detail && <span css={detailSpan(theme)}>{detail}</span>}
-            {disabled && disabledText && (
-                <span css={disabledSpan(theme)}>{disabledText}</span>
-            )}
-            {error && typeof error === 'string' && (
-                <span css={errorSpan(theme)}>{error}</span>
-            )}
-            {error && Array.isArray(error) && (
-                <span css={errorSpan(theme)}>
-                    {error.reduce((a: string, b: string) => {
-                        return a.concat(', ').concat(b);
-                    })}
-                </span>
-            )}
+            <ComponentFooter
+                disabled={disabled}
+                disabledText={disabledText}
+                error={error}
+            />
         </React.Fragment>
     );
 };

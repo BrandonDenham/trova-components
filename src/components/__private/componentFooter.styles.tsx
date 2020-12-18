@@ -9,6 +9,7 @@ export const disabledSpan = (theme: Theme) => css`
     line-height: 16px;
     padding-top: 9px;
     color: ${Colors.Muted};
+    display: block;
 `;
 
 export const errorSpan = (theme: Theme) => css`
@@ -18,4 +19,5 @@ export const errorSpan = (theme: Theme) => css`
     line-height: 16px;
     padding-top: 9px;
     color: ${Colors.DangerText};
+    display: block;
 `;

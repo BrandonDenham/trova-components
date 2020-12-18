@@ -21,26 +21,6 @@ export const input = () =>
         }
     `;
 
-export const disabledSpan = (theme: Theme) => css`
-    box-sizing: border-box;
-    font-family: ${theme.fonts.robotoBold};
-    font-size: ${theme.fontSizes.inputDisabled};
-    line-height: 16px;
-    padding-top: 9px;
-    display: block;
-    color: ${Colors.Muted};
-`;
-
-export const errorSpan = (theme: Theme) => css`
-    box-sizing: border-box;
-    font-family: ${theme.fonts.robotoBold};
-    font-size: ${theme.fontSizes.inputError};
-    line-height: 16px;
-    padding-top: 9px;
-    display: block;
-    color: ${Colors.DangerText};
-`;
-
 export const detailSpan = (theme: Theme) => css`
     box-sizing: border-box;
     font-family: ${theme.fonts.robotoRegular};

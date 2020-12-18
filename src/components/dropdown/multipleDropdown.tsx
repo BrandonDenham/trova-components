@@ -26,7 +26,7 @@ import { Colors } from '../../shared/constants/colors';
 import MultipleDropdownProps from './multipleDropdown.types';
 import { useOutsideListener } from '../../shared/utils/helpers';
 import DropdownHeader from '../__private/dropdownHeader';
-import DropdownFooter from '../__private/dropdownFooter';
+import ComponentFooter from '../__private/componentFooter';
 import DropdownMenu from '../__private/dropdownMenu';
 const imageClose = require('../../shared/images/icons/close.svg') as string;
 const imageSpinner = require('../../shared/images/icons/spinner.svg') as string;
@@ -176,7 +176,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
                 listVisible={listVisible}
                 handleClick={handleClick}
             />
-            <DropdownFooter
+            <ComponentFooter
                 disabled={disabled}
                 disabledText={disabledText}
                 error={error}

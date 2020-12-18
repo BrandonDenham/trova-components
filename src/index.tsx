@@ -7,7 +7,9 @@ import Input from './components/input';
 import MainContent from './components/mainContent';
 import Textarea from './components/textarea';
 import Toggle from './components/toggle';
+import Checkbox from './components/checkbox';
 import {H1, H2, H3, H4, P, ParagraphSize} from './components/typography';
+import Dropdown, {MultipleDropdown} from './components/dropdown';
 export {
     Sidebar,
     SidebarItem,
@@ -24,11 +26,13 @@ export {
     MainContent,
     Textarea,
     Toggle,
+    Checkbox,
     H1,
     H2,
     H3,
     H4,
     P,
     ParagraphSize,
-    
+    Dropdown,
+    MultipleDropdown,
 };
