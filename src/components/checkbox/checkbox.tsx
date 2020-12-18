@@ -4,16 +4,17 @@ import React, { SyntheticEvent, useCallback } from 'react';
 import { useTheme } from 'emotion-theming';
 
 import { Theme } from '../theme/theme.types';
-import ToggleProps from './toggle.types';
+import CheckboxProps from './checkbox.types';
 import {
     input,
     mainContainer,
     errorSpan,
     disabledSpan,
     detailSpan,
-    slider,
-} from './toggle.styles';
-const Toggle: React.FC<ToggleProps> = ({
+    checkbox,
+} from './checkbox.styles';
+const imageCheckboxCross = require('../../shared/images/icons/checkboxCross.svg') as string;
+const Checkbox: React.FC<CheckboxProps> = ({
     onChange,
     value = false,
     name,
@@ -31,21 +32,24 @@ const Toggle: React.FC<ToggleProps> = ({
     );
     return (
         <React.Fragment>
-            <div css={mainContainer(error)}>
+            <div css={mainContainer()}>
                 <input
                     css={input()}
                     type="checkbox"
                     checked={value}
                     disabled={disabled}
                     onChange={handleToggle}
+                    data-testid="checkbox"
                 />
-                <span
-                    data-testid="toggle"
-                    css={slider(error)}
-                    onClick={handleToggle}
-                ></span>
+                <span css={checkbox(error)}>
+                    <img
+                        alt="Toggle"
+                        src={imageCheckboxCross}
+                        onClick={() => {}}
+                    />
+                </span>
+                {detail && <span css={detailSpan(theme)}>{detail}</span>}
             </div>
-            {detail && <span css={detailSpan(theme)}>{detail}</span>}
             {disabled && disabledText && (
                 <span css={disabledSpan(theme)}>{disabledText}</span>
             )}
@@ -63,4 +67,4 @@ const Toggle: React.FC<ToggleProps> = ({
     );
 };
 
-export default Toggle;
+export default Checkbox;

@@ -32,6 +32,7 @@ const theme = {
         textareaDisabled: '14px',
         textareaError: '14px',
         toggleDetail: '15px',
+        checkboxDetail: '15px',
     },
     breakpoints: {
         sm: 576,

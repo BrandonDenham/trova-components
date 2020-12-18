@@ -32,6 +32,7 @@ export interface Theme {
         textareaDisabled: string;
         textareaError: string;
         toggleDetail: string;
+        checkboxDetail: string;
     };
     breakpoints: {
         sm: number;

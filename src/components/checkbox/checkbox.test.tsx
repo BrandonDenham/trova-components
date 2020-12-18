@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { matchers } from 'jest-emotion';
-import Toggle from './toggle';
-import ToggleProps from './toggle.types';
+import Checkbox from './checkbox';
+import CheckboxProps from './checkbox.types';
 import { ThemeProvider } from 'emotion-theming';
 import userEvent from '@testing-library/user-event';
 
@@ -10,8 +10,8 @@ import theme from '../../shared/themes/theme';
 
 expect.extend(matchers);
 
-describe('Toggle', () => {
-    let activeProps: ToggleProps;
+describe('Checkbox', () => {
+    let activeProps: CheckboxProps;
 
     beforeEach(() => {
         activeProps = {
@@ -23,13 +23,13 @@ describe('Toggle', () => {
     const renderActiveComponent = () =>
         render(
             <ThemeProvider theme={theme}>
-                <Toggle {...activeProps} />
+                <Checkbox {...activeProps} />
             </ThemeProvider>
         );
 
-    it('onChange method should be triggered when toggle is clicked', () => {
+    it('onChange method should be triggered when checkbox is clicked', () => {
         const { getByTestId } = renderActiveComponent();
-        const element = getByTestId('toggle');
+        const element = getByTestId('checkbox');
         expect(activeProps.onChange).toHaveBeenCalledTimes(0);
         userEvent.click(element);
         expect(activeProps.onChange).toHaveBeenCalledTimes(1);

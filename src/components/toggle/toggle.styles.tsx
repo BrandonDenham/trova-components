@@ -79,7 +79,7 @@ export const slider = (error: string | string[] | undefined) => css`
     background-color: ${Colors.LightGray};
     -webkit-transition: 0.4s;
     transition: 0.4s;
-
+    
     input:checked + & {
         background: ${Colors.Success};
     }
@@ -92,5 +92,9 @@ export const slider = (error: string | string[] | undefined) => css`
         -webkit-transform: translateX(26px);
         -ms-transform: translateX(26px);
         transform: translateX(26px);
+    }
+
+    input:disabled + & {
+        cursor: default;
     }
 `;

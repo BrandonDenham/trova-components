@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Toggle from './toggle';
+import Checkbox from './checkbox';
 
 export default {
-    title: 'Toggle',
-    component: Toggle,
+    title: 'Checkbox',
+    component: Checkbox,
 };
 
-export const ActiveToggle = () => <Toggle name="test" value={true} />;
+export const ActiveCheckbox = () => <Checkbox name="test" value={true} />;
 
-export const ActiveDetailedToggle = () => (
-    <Toggle
+export const ActiveDetailedCheckbox = () => (
+    <Checkbox
         name="test"
         value={true}
         label="Form header"
@@ -18,12 +18,12 @@ export const ActiveDetailedToggle = () => (
     />
 );
 
-export const InactiveToggle = () => (
-    <Toggle name="test" label="Form header" detail="Confirm all bookings" />
+export const InactiveCheckbox = () => (
+    <Checkbox name="test" label="Form header" detail="Confirm all bookings" />
 );
 
-export const DisabledToggle = () => (
-    <Toggle
+export const DisabledCheckbox = () => (
+    <Checkbox
         name="test"
         label="Form header"
         detail="Confirm all bookings"
@@ -33,7 +33,7 @@ export const DisabledToggle = () => (
 );
 
 export const SingleError = () => (
-    <Toggle
+    <Checkbox
         name="test"
         error="Toggle should not be selected"
         label="Form header"
@@ -42,7 +42,7 @@ export const SingleError = () => (
 );
 
 export const MultipleErrors = () => (
-    <Toggle
+    <Checkbox
         name="test"
         error={['Toggle should be selected', 'Input must be numeric']}
         label="Form header"
