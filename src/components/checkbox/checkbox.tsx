@@ -56,7 +56,6 @@ const Checkbox: React.FC<CheckboxProps> = ({
                     <img
                         alt="Toggle"
                         src={imageCheckboxCross}
-                        onClick={() => {}}
                     />
                 </span>
                 {detail && <span css={detailSpan(theme)}>{detail}</span>}
