@@ -1,5 +1,6 @@
 import { css } from '@emotion/core';
-import { IconName, IconSize } from '.';
+import { IconName } from './iconName';
+import { IconSize } from './iconSize';
 
 const imagePlus = require('../../shared/images/icons/plus.svg') as string;
 const imageUpload = require('../../shared/images/icons/upload.svg') as string;

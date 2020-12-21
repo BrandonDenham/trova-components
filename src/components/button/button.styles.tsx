@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { ButtonType } from '.';
+import { ButtonType } from './buttonType';
 import { Colors } from '../../shared/constants/colors';
 import { Theme } from '../theme/theme.types';
 

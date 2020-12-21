@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 
-import { IconSize } from './';
+import { IconSize } from './iconSize';
 import IconProps from './icon.types';
 import { icon } from './icon.styles';
 import { Colors } from '../../shared/constants/colors';

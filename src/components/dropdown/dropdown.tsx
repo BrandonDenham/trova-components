@@ -17,7 +17,7 @@ import { Colors } from '../../shared/constants/colors';
 import DropdownProps from './dropdown.types';
 import { useOutsideListener } from '../../shared/utils/helpers';
 import DropdownHeader from '../__private/dropdownHeader';
-import DropdownFooter from '../__private/dropdownFooter';
+import ComponentFooter from '../__private/componentFooter';
 import DropdownMenu from '../__private/dropdownMenu';
 const imageSpinner = require('../../shared/images/icons/spinner.svg') as string;
 
@@ -117,7 +117,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 listVisible={listVisible}
                 handleClick={handleClick}
             />
-            <DropdownFooter
+            <ComponentFooter
                 disabled={disabled}
                 disabledText={disabledText}
                 error={error}
