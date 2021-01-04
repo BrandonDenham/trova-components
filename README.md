@@ -46,7 +46,7 @@ import TestComponent from 'react-component-library/build/TestComponent';
 #### Importing project
 1. To include this project, you need to add this to the package dependencies:
 ``` json
-"trova-components": "BrandonDenham/trova-components#master"
+"trova-components": "git://github.com/BrandonDenham/trova-components.git"
 ```
 2. Run npm install or yarn install (depending on the parent project tool you are using)
 3. On terminal, go the node_module/trova-components folder, and run `npm run build`
