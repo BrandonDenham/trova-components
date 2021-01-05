@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
+import url from '@rollup/plugin-url';
 
 export default {
     input: ['src/index.tsx'],
@@ -11,7 +12,6 @@ export default {
             dir: 'build',
             format: 'esm',
             sourcemap: true,
-            preserveModules: true,
         },
     ],
     plugins: [
@@ -22,7 +22,18 @@ export default {
             modules: true,
         }),
         commonjs({
-            include: 'node_modules/**',
+            include: ['node_modules/**', 'src/shared/themes/*'],
+        }),
+        url({
+            include: [
+                '**/*.ttf',
+                '**/*.svg',
+                '**/*.png',
+                '**/*.jp(e)?g',
+                '**/*.gif',
+                '**/*.webp',
+            ],
+            limit: Infinity,
         }),
     ],
 };

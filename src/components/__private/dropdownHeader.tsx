@@ -4,7 +4,7 @@ import { useTheme } from 'emotion-theming';
 
 import { Theme } from '../theme/theme.types';
 import { DropdownHeaderProps } from './dropdownHeader.types';
-const imageInfo = require('../../shared/images/icons/info.svg') as string;
+import imageInfo from '../../shared/images/icons/info.svg';
 import {
     labelContainer,
     labelSpan,

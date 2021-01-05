@@ -20,7 +20,7 @@ import {
     tooltip,
 } from './input.styles';
 import { ComponentWidth } from './componentWidth';
-const imageInfo = require('../../shared/images/icons/info.svg') as string;
+import imageInfo from '../../shared/images/icons/info.svg';
 const Input: React.FC<InputProps> = ({
     onChange,
     value = '',

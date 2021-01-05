@@ -2,7 +2,7 @@
     "name": "trova-components",
     "version": "1.0.0",
     "description": "A set of beautiful and colorful React components to build a modern and beautiful application.",
-    "main": "build/index.js",
+    "main": "src/index.js",
     "scripts": {
         "build": "rollup -c",
         "storybook": "start-storybook -p 6006",
@@ -31,6 +31,7 @@
         "@mdx-js/mdx": "^1.6.16",
         "@rollup/plugin-commonjs": "^15.1.0",
         "@rollup/plugin-node-resolve": "^9.0.0",
+        "@rollup/plugin-url": "^6.0.0",
         "@storybook/addon-essentials": "^6.1.1",
         "@storybook/react": "^6.1.1",
         "@testing-library/dom": "^7.26.3",

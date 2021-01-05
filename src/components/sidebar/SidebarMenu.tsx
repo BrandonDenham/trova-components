@@ -13,7 +13,7 @@ import {
     sidebarMenuTitle,
     sidebarMenuDivImg,
 } from './SidebarMenu.styles';
-const imgArrow = require('../../shared/images/icons/small gray arrow.svg') as string;
+import imgArrow from '../../shared/images/icons/small gray arrow.svg';
 
 const SidebarMenu: React.FC<SidebarMenuProps> = ({
     open = true,

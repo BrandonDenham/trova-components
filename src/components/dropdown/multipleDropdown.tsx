@@ -28,8 +28,8 @@ import { useOutsideListener } from '../../shared/utils/helpers';
 import DropdownHeader from '../__private/dropdownHeader';
 import ComponentFooter from '../__private/componentFooter';
 import DropdownMenu from '../__private/dropdownMenu';
-const imageClose = require('../../shared/images/icons/close.svg') as string;
-const imageSpinner = require('../../shared/images/icons/spinner.svg') as string;
+import imageClose from '../../shared/images/icons/close.svg';
+import imageSpinner from '../../shared/images/icons/spinner.svg';
 
 /**
  * Renders a <MultipleDropdown /> component
