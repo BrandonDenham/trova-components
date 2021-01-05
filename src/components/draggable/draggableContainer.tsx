@@ -1,9 +1,17 @@
-import React, { ReactNode } from 'react';
-import { DndProvider } from 'react-dnd-multi-backend';
-import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
+import React from 'react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend'
 
-function DraggableContainer(children: ReactNode) {
-    return <DndProvider options={HTML5toTouch}>{children}</DndProvider>;
+export interface ContainerProps {
+
 }
+
+const DraggableContainer: React.FC<ContainerProps> = ({children}) => {
+    return (
+        <DndProvider backend={HTML5Backend}>
+            {children}
+        </DndProvider>
+    );
+};
 
 export default DraggableContainer;
