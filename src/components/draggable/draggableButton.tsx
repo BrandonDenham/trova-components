@@ -1,40 +1,24 @@
 import React from 'react';
 import { useDrag, DragSourceMonitor } from 'react-dnd';
+import { draggableButton } from './draggableButton styles';
 
-import Button from '../button/button';
-import { ButtonType } from '../button/buttonType';
+import DraggableSourceProps from './draggableSource.types';
 
-const style: React.CSSProperties = {
-	backgroundColor: 'white',
-	padding: '0.5rem 1rem',
-	marginRight: '1.5rem',
-	marginBottom: '1.5rem',
-	cursor: 'move',
-	float: 'left',
-}
-export interface DraggableCardProps {
-	name: string,
-	children: string,
-}
+const DraggableButton: React.FC<DraggableSourceProps> = ({ dragTargetConfiguration, onCollect, children }) => {
+	
+	const specs = {
+		...dragTargetConfiguration, 
+		collect: (monitor: DragSourceMonitor) => ({
+			isDragging: monitor.isDragging(),
+		})};
 
-const DraggableButton: React.FC<DraggableCardProps> = ({ name, children }) => {
-	const item = { name, type: `string` };
-	const [{opacity}, drag] = useDrag({
-		item, 
-		end: (item: { name: string } | undefined, monitor: DragSourceMonitor) => {
-			const dropResult = monitor.getDropResult()
-			if (item && dropResult) {
-				alert(`You dropped ${item.name} into ${dropResult.name}!`)
-			}
-		}
-		,collect: (monitor: any) => ({
-			opacity: monitor.isDragging() ? 0.4 : 1,
-		})
-	});
+	const [collectedProps, drag] = useDrag(specs);
+	
 	return (
-			<div ref={drag} style={{ ...style, opacity }}>
-				<Button buttonType={ButtonType.Primary}>{children}</Button>
-			</div>);
+		<div ref={drag} css={draggableButton()}>
+			{children}
+		</div>
+	);
 }
 
 export default DraggableButton;

@@ -1,53 +1,49 @@
-import React, { useMemo } from 'react';
-import { useDrag, DragSourceMonitor } from 'react-dnd';
+import React from 'react';
+import { useDrag, DragSourceMonitor, useDrop } from 'react-dnd';
+import DraggableSourceProps from './draggableSource.types';
+import DraggableTargetProps from './draggableTarget.types';
+import { draggableTarget } from './draggableTarget.styles';
+import { draggableButton } from './draggableButton styles';
 
-import { Colors } from '../../shared/constants/colors';
-  export interface SourceBoxProps {
-	color?: string
-	onToggleForbidDrag?: () => void
-  }
+type DragAndDropProps = DraggableSourceProps & DraggableTargetProps;
 
-  const style: React.CSSProperties = {
-	border: '1px dashed gray',
-	padding: '0.5rem',
-	margin: '0.5rem',
-  }
-const DraggableCard: React.FC<SourceBoxProps> = ({ color, children }) => {
-	const [{ isDragging }, drag] = useDrag({
-	  item: { type: `${color}` },
-	  collect: (monitor: DragSourceMonitor) => ({
-		isDragging: monitor.isDragging(),
-	  }),
-	})
-  
+const DraggableCard: React.FC<DragAndDropProps> = ({ dragTargetConfiguration, dropTargetConfiguration, onCollect }) => {
 
-	const backgroundColor = useMemo(() => {
-	  switch (color) {
-		case Colors.Danger:
-		  return 'lightgoldenrodyellow'
-		case Colors.DarkGray:
-		  return 'lightblue'
-		default:
-		  return 'lightgoldenrodyellow'
-	  }
-	}, [color])
+	const dragSpecs = {
+		...dragTargetConfiguration,
+		collect: (monitor: DragSourceMonitor) => ({
+			isDragging: monitor.isDragging(),
+		  }),	
+	};
+
+	const dropSpecs = {
+		...dropTargetConfiguration,
+		collect: (monitor: { isOver: () => any; canDrop: () => any;}) => {
+			onCollect({
+			isOver: monitor.isOver(),
+			canDrop: monitor.canDrop(),    
+			})
+			return {
+				isOver: monitor.isOver(),
+				canDrop: monitor.canDrop(),
+				}
+			},
+	};
+	const [collectedDragProps, drag] = useDrag(dragSpecs);
+	const [collectedDropProps, drop] = useDrop(dropSpecs);
   
-	const containerStyle = useMemo(
-	  () => ({
-		...style,
-		backgroundColor,
-		opacity: isDragging ? 0.4 : 1,
-	  }),
-	  [isDragging, backgroundColor],
-	)
-  
-	return (
-		
-			<div ref={drag} style={containerStyle}>
-				drag me
-			</div>
-		
-	)
+	const {isDragging} = collectedDragProps;
+
+	const cursor = isDragging ? `move`: `pointer`;
+
+	return (				
+		<div ref={drag} css={draggableTarget(cursor)}>
+			  <div ref={drop} css={draggableButton()}>
+      			<p>Drop here</p>
+    		</div>
+			drag me
+		</div>	
+	);
 }
 
 export default DraggableCard;

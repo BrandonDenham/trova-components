@@ -1,14 +1,9 @@
 import { SyntheticEvent } from 'react';
+import { ItemTypes } from './ItemTypes';
 
 export default interface DraggableSourceProps {
-    dragTargetConfiguration: (
-        event: SyntheticEvent,
-        name: string,
-        value: string
-    ) => void;
-    onCollect: (
-        event: SyntheticEvent,
-        name: string,
-        value: string
-    ) => void;
+    dragTargetConfiguration: {
+        item: { type: string },
+    }
+    onCollect: (monitor: any) => void,
 }
