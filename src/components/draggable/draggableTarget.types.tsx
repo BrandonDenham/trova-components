@@ -1,5 +1,3 @@
-import { ItemTypes } from './ItemTypes';
-
 export default interface DraggableTargetProps {
     dropTargetConfiguration: {
         accept: string,
