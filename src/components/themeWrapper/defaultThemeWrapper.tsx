@@ -1,11 +1,19 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import React from 'react';
+import { CacheProvider } from '@emotion/core';
+import createCache from '@emotion/cache';
+import { ThemeProvider } from 'emotion-theming';
+import createExtraScopePlugin from 'stylis-plugin-extra-scope';
 
 import defaultTheme from '../../shared/themes/theme';
 import defaultThemeWrapperProps from './defaultThemeWrapper.types';
-import { ThemeProvider } from 'emotion-theming';
 import GlobalStyles from '../Layout/GlobalStyles/GlobalStyles';
+
+const STRONG_ID = 'trova-components-scope';
+const cache = createCache({
+    stylisPlugins: [createExtraScopePlugin(`#${STRONG_ID}`)],
+});
 
 /**
  * Renders a <DefaultThemeWrapper> component to wrap other elements of the library and provide
@@ -17,9 +25,12 @@ import GlobalStyles from '../Layout/GlobalStyles/GlobalStyles';
 const DefaultThemeWrapper: React.FC<defaultThemeWrapperProps> = ({
     children,
 }) => (
-    <React.Fragment>
-        <GlobalStyles />
-        <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
-    </React.Fragment>
+    <CacheProvider value={cache}>
+        <div id={STRONG_ID}>
+            <GlobalStyles />
+            <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
+        </div>
+    </CacheProvider>
 );
+
 export default DefaultThemeWrapper;

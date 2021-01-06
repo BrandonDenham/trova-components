@@ -21,7 +21,7 @@
         "noUnusedParameters": true,
         "forceConsistentCasingInFileNames": true,
     },
-    "include": ["src/**/*", "src/svgCustomType.d.ts"],
+    "include": ["src/**/*"],
     "exclude": [
         "node_modules",
         "build",
