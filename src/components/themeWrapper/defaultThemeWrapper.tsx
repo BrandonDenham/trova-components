@@ -5,6 +5,7 @@ import React from 'react';
 import defaultTheme from '../../shared/themes/theme';
 import defaultThemeWrapperProps from './defaultThemeWrapper.types';
 import { ThemeProvider } from 'emotion-theming';
+import GlobalStyles from '../Layout/GlobalStyles/GlobalStyles';
 
 /**
  * Renders a <DefaultThemeWrapper> component to wrap other elements of the library and provide
@@ -15,6 +16,10 @@ import { ThemeProvider } from 'emotion-theming';
 
 const DefaultThemeWrapper: React.FC<defaultThemeWrapperProps> = ({
     children,
-}) => <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>;
-
+}) => (
+    <React.Fragment>
+        <GlobalStyles />
+        <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
+    </React.Fragment>
+);
 export default DefaultThemeWrapper;
