@@ -1,6 +1,6 @@
 {
     "name": "trova-components",
-    "version": "1.1.0",
+    "version": "0.0.1",
     "description": "A set of beautiful and colorful React components to build a modern and beautiful application.",
     "main": "src/index.js",
     "scripts": {
