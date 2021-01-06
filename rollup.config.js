@@ -6,7 +6,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import url from '@rollup/plugin-url';
 
 export default {
-    input: ['src/index.tsx'],
+    input: 'src/index.tsx',
     output: [
         {
             dir: 'build',
@@ -22,7 +22,7 @@ export default {
             modules: true,
         }),
         commonjs({
-            include: ['node_modules/**', 'src/shared/themes/*'],
+            include: 'node_modules/**',
         }),
         url({
             include: [
