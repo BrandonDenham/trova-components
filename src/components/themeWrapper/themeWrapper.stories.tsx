@@ -1,18 +1,18 @@
 import React from 'react';
 
-import DefaultThemeWrapper from './defaultThemeWrapper';
+import ThemeWrapper from './themeWrapper';
 import { H1, H2, H4 } from '../typography';
 import Button, { ButtonType } from '../button';
 import Icon, { IconName } from '../icon';
 import { Colors } from '../../shared/constants/colors';
 import MainContent from '../mainContent/mainContent';
 export default {
-    title: 'Default Theme Wrapper',
-    component: DefaultThemeWrapper,
+    title: 'Theme Wrapper',
+    component: ThemeWrapper,
 };
 
-export const DefaultThemeWrapperExample = () => (
-    <DefaultThemeWrapper>
+export const ThemeWrapperExample = () => (
+    <ThemeWrapper>
         <MainContent>
             <H1>Costa Rica With Jessica Tate</H1>
             <br />
@@ -30,5 +30,5 @@ export const DefaultThemeWrapperExample = () => (
                 Add to itinerary
             </Button>
         </MainContent>
-    </DefaultThemeWrapper>
+    </ThemeWrapper>
 );

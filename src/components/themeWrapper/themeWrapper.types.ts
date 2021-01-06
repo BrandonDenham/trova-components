@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
 
-export default interface DefaultThemeWrapperProps {
+export default interface ThemeWrapperProps {
     children: ReactNode;
 }
