@@ -43,6 +43,17 @@ import TestComponent from 'react-component-library/build/TestComponent';
 
 `npm run docz:build` -> To generate the static documentation to deploy to the documentation pages
 
+#### Importing project
+1. To include this project, you need to add this to the package dependencies:
+``` json
+"trova-components": "git://github.com/BrandonDenham/trova-components.git"
+```
+2. Run npm install or yarn install (depending on the parent project tool you are using)
+3. On terminal, go the node_module/trova-components folder, and run `npm run build`
+4. Now you can start importing components to the proyect using this structure:
+   ``` javascript 
+   import componentName from '@trova/components/componentName' ```
+
 ### Miscellaneous
 
 `npm run test` -> Used for the CI/CD pipeline

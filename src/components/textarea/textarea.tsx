@@ -18,7 +18,7 @@ import {
     tooltip,
 } from './textarea.styles';
 import { TextareaSize } from './textareaSize';
-const imageInfo = require('../../shared/images/icons/info.svg') as string;
+import imageInfo from '../../shared/images/icons/info.svg';
 const Textarea: React.FC<TextareaProps> = ({
     onChange,
     value = '',

@@ -12,7 +12,7 @@ import {
     checkbox,
 } from './checkbox.styles';
 import ComponentFooter from '../__private/componentFooter';
-const imageCheckboxCross = require('../../shared/images/icons/checkboxCross.svg') as string;
+import imageCheckboxCross from '../../shared/images/icons/checkboxCross.svg';
 
 /**
  * Renders a <Checkbox /> component

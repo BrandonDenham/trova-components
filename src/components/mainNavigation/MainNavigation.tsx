@@ -18,11 +18,11 @@ import {
     mainNavigationHamburgerImage,
 } from './MainNavigation.styles';
 
-const imageBellAlert = require('../../shared/images/icons/active.svg') as string;
-const imageBell = require('../../shared/images/icons/inactive.svg') as string;
-const imageClose = require('../../shared/images/icons/close.svg') as string;
-const imageLogo = require('../../shared/images/trovatrip logo.svg') as string;
-const imageHamburger = require('../../shared/images/icons/hamburger.svg') as string;
+import imageBellAlert from '../../shared/images/icons/active.svg';
+import imageBell from '../../shared/images/icons/inactive.svg';
+import imageClose from '../../shared/images/icons/close.svg';
+import imageLogo from '../../shared/images/trovatrip logo.svg';
+import imageHamburger from '../../shared/images/icons/hamburger.svg';
 
 const MainNavigation: React.FC<MainNavigationProps> = ({
     children,

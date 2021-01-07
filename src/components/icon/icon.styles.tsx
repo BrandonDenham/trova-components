@@ -2,10 +2,10 @@ import { css } from '@emotion/core';
 import { IconName } from './iconName';
 import { IconSize } from './iconSize';
 
-const imagePlus = require('../../shared/images/icons/plus.svg') as string;
-const imageUpload = require('../../shared/images/icons/upload.svg') as string;
-const imageSearch = require('../../shared/images/icons/search.svg') as string;
-const imageDropdownArrow = require('../../shared/images/icons/dropdown_arrow.svg') as string;
+import imagePlus from '../../shared/images/icons/plus.svg';
+import imageUpload from '../../shared/images/icons/upload.svg';
+import imageSearch from '../../shared/images/icons/search.svg';
+import imageDropdownArrow from '../../shared/images/icons/dropdown_arrow.svg';
 export const icon = (name: IconName, size: IconSize, color: string) =>
     css`
         ${name === IconName.Plus && `mask: url(${imagePlus});`}

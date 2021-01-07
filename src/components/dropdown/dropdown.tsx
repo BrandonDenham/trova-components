@@ -19,7 +19,7 @@ import { useOutsideListener } from '../../shared/utils/helpers';
 import DropdownHeader from '../__private/dropdownHeader';
 import ComponentFooter from '../__private/componentFooter';
 import DropdownMenu from '../__private/dropdownMenu';
-const imageSpinner = require('../../shared/images/icons/spinner.svg') as string;
+import imageSpinner from '../../shared/images/icons/spinner.svg';
 
 /**
  * Renders a <Dropdown /> component

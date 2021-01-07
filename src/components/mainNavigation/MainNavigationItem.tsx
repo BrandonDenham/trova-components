@@ -11,7 +11,7 @@ import {
     mainNavigationItemArrow,
 } from './MainNavigationItem.styles';
 
-const imgArrow = require('../../shared/images/icons/right.svg') as string;
+import imgArrow from '../../shared/images/icons/right.svg';
 
 const MainNavigationItem: React.FC<MainNavigationItemProps> = ({
     content,
