@@ -2,7 +2,7 @@
     "name": "@trova/components",
     "version": "0.0.2",
     "description": "A set of beautiful and colorful React components to build a modern and beautiful application.",
-    "main": "src/index.js",
+    "main": "build/index.js",
     "scripts": {
         "build": "rollup -c",
         "storybook": "start-storybook -p 6006",
