@@ -16715,6 +16715,11 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
+stylis-plugin-extra-scope@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/stylis-plugin-extra-scope/-/stylis-plugin-extra-scope-0.2.1.tgz#9f6abfd49c587c29bbf47a16070c425da5d57417"
+  integrity sha512-sQ0PoUCp87EfQwH2sNnfXeUtHdz66Q6bxAgK+73EvNvyNlc+9JkTED6LZOZOaYKhPkHu4nw1ls4wD71VTWUQ2Q==
+
 sudo-prompt@^8.2.0:
   version "8.2.5"
   resolved "https://registry.yarnpkg.com/sudo-prompt/-/sudo-prompt-8.2.5.tgz#cc5ef3769a134bb94b24a631cc09628d4d53603e"
