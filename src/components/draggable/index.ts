@@ -1,6 +1,6 @@
-import DraggableContainer from './draggableContainer';
-import DraggableButton from './draggableButton';
-import DraggableTarget from './draggableTarget';
-import DraggableCard from './draggableCard';
+import DraggableContainer from './DraggableContainer';
+import DraggableButton from './DraggableButton';
+import DraggableTarget from './DraggableTarget';
+import DraggableCard from './DraggableCard';
 
 export { DraggableContainer, DraggableTarget, DraggableCard, DraggableButton };

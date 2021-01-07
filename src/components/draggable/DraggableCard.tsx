@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDrag, DragSourceMonitor, useDrop } from 'react-dnd';
-import DraggableSourceProps from './draggableSource.types';
-import DraggableTargetProps from './draggableTarget.types';
-import { draggableTarget } from './draggableTarget.styles';
-import { draggableButton } from './draggableButton styles';
+import DraggableSourceProps from './DraggableSource.types';
+import DraggableTargetProps from './DraggableTarget.types';
+import { draggableTarget } from './DraggableTarget.styles';
+import { draggableButton } from './DraggableButton styles';
 
 type DragAndDropProps = DraggableSourceProps & DraggableTargetProps;
 

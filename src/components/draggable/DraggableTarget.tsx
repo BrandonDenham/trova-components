@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
-import { draggableTarget } from './draggableTarget.styles';
-import DraggableTargetProps from './draggableTarget.types';
+import { draggableTarget } from './DraggableTarget.styles';
+import DraggableTargetProps from './DraggableTarget.types';
 
 const DraggableTarget: React.FC<DraggableTargetProps> = ({
     dropTargetConfiguration,

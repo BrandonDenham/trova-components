@@ -1,13 +1,12 @@
 import React from 'react';
 import { useDrag, DragSourceMonitor } from 'react-dnd';
-import { draggableButton } from './draggableButton styles';
+import { draggableButton } from './DraggableButton styles';
 import Button from '../button/button';
-import { ButtonType } from '../button/buttonType';
 import Icon from '../icon/icon';
 import { IconName } from '../icon/iconName';
 import { Colors } from '../../shared/constants/colors';
 
-import DraggableSourceProps from './draggableSource.types';
+import DraggableSourceProps from './DraggableSource.types';
 
 const DraggableButton: React.FC<DraggableSourceProps> = ({
     dragTargetConfiguration,
