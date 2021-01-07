@@ -15,9 +15,12 @@ const DraggableButton: React.FC<DraggableSourceProps> = ({
 }) => {
     const specs = {
         ...dragTargetConfiguration,
-        collect: (monitor: DragSourceMonitor) => ({
-            isDragging: monitor.isDragging(),
-        }),
+        collect: (monitor: DragSourceMonitor) => {
+            onCollect(monitor);
+            return {
+                isDragging: monitor.isDragging(),
+            };
+        },
     };
 
     const [collectedProps, drag] = useDrag(specs);
