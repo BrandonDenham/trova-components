@@ -106,8 +106,5 @@ dist
 # compiled ESM component library
 build/
 
-# docz static generated docs folder
-.docz/
-
 # webstorm config
 .idea/

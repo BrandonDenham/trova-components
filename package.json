@@ -12,9 +12,6 @@
         "prettier": "prettier --write src/**/*.{ts,tsx,css}",
         "prettier:check": "prettier --list-different src/**/*.{ts,tsx,css}",
         "tslint:check": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
-        "docz:dev": "docz dev",
-        "docz:build": "docz build",
-        "docz:serve": "docz build && docz serve",
         "prepublishOnly": "npm run build"
     },
     "repository": {
@@ -29,7 +26,6 @@
     "homepage": "https://brandondenham.github.io/trova-components/",
     "devDependencies": {
         "@babel/core": "7.12.10",
-        "@mdx-js/mdx": "^1.6.16",
         "@rollup/plugin-commonjs": "^15.1.0",
         "@rollup/plugin-node-resolve": "^9.0.0",
         "@rollup/plugin-url": "^6.0.0",
@@ -44,7 +40,6 @@
         "babel-loader": "^8.1.0",
         "babel-plugin-emotion": "^10.0.33",
         "babel-preset-react-app": "^9.1.2",
-        "docz": "^2.3.1",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^26.4.2",
         "jest-emotion": "^10.0.32",
