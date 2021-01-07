@@ -14,7 +14,8 @@
         "tslint:check": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
         "docz:dev": "docz dev",
         "docz:build": "docz build",
-        "docz:serve": "docz build && docz serve"
+        "docz:serve": "docz build && docz serve",
+        "prepublishOnly": "npm run build"
     },
     "repository": {
         "type": "git",
