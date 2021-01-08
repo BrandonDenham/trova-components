@@ -1,19 +1,18 @@
 import React from 'react';
-import { useDrop } from 'react-dnd';
+import { DropTargetMonitor, useDrop } from 'react-dnd';
 import { draggableTarget } from './DraggableTarget.styles';
 import DraggableTargetProps from './DraggableTarget.types';
+import P from '../typography/p';
 
 const DraggableTarget: React.FC<DraggableTargetProps> = ({
     dropTargetConfiguration,
     onCollect,
+    children,
 }) => {
     const specs = {
         ...dropTargetConfiguration,
-        collect: (monitor: { isOver: () => any; canDrop: () => any }) => {
-            onCollect({
-                isOver: monitor.isOver(),
-                canDrop: monitor.canDrop(),
-            });
+        collect: (monitor: DropTargetMonitor) => {
+            onCollect(monitor);
             return {
                 isOver: monitor.isOver(),
                 canDrop: monitor.canDrop(),
@@ -24,7 +23,7 @@ const DraggableTarget: React.FC<DraggableTargetProps> = ({
 
     return (
         <div ref={drop} css={draggableTarget}>
-            <p>Drop here.</p>
+            <P>{children}</P>
         </div>
     );
 };

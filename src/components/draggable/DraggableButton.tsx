@@ -7,11 +7,15 @@ import { IconName } from '../icon/iconName';
 import { Colors } from '../../shared/constants/colors';
 
 import DraggableSourceProps from './DraggableSource.types';
+import ButtonProps from '../button/button.types';
 
-const DraggableButton: React.FC<DraggableSourceProps> = ({
+type MergeProps = DraggableSourceProps & ButtonProps;
+
+const DraggableButton: React.FC<MergeProps> = ({
     dragTargetConfiguration,
     onCollect,
-    buttonText,
+    children,
+    ...buttonProps
 }) => {
     const specs = {
         ...dragTargetConfiguration,
@@ -26,9 +30,13 @@ const DraggableButton: React.FC<DraggableSourceProps> = ({
     const [collectedProps, drag] = useDrag(specs);
 
     return (
-        <div ref={drag} css={draggableButton()}>
-            <Button icon={<Icon name={IconName.Plus} color={Colors.White} />}>
-                {buttonText}
+        <div ref={drag}>
+            <Button
+                css={draggableButton()}
+                icon={<Icon name={IconName.Plus} color={Colors.White} />}
+                {...buttonProps}
+            >
+                {children}
             </Button>
         </div>
     );
