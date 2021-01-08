@@ -1,10 +1,12 @@
 import React from 'react';
-import { useDrag, DragSourceMonitor, useDrop } from 'react-dnd';
-import DraggableSourceProps from './DraggableSource.types';
-import DraggableTargetProps from './DraggableTarget.types';
-import Card from '../card/card';
+import DraggableSourceProps from '../draggable/DraggableSource.types';
+import DraggableTargetProps from '../draggable/DraggableTarget.types';
+import Card from './card';
 import { Colors } from '../../shared/constants/colors';
-import CardProps from '../card/card.types';
+import CardProps from './card.types';
+import { draggableTarget } from '../draggable/DraggableTarget.styles';
+import useDropSpecs from '../draggable/useDropSpecs';
+import useDragSpecs from '../draggable/useDragSpecs';
 
 type DragAndDropProps = DraggableSourceProps & DraggableTargetProps & CardProps;
 
@@ -28,28 +30,15 @@ const DraggableCard: React.FC<DragAndDropProps> = ({
     children,
     ...cardProps
 }) => {
-    const dragSpecs = {
-        ...dragTargetConfiguration,
-        collect: (monitor: DragSourceMonitor) => ({
-            isDragging: monitor.isDragging(),
-        }),
-    };
-    const [collectedDragProps, drag] = useDrag(dragSpecs);
+    const [collectedDragProps, drag] = useDragSpecs({
+        dragTargetConfiguration,
+        onCollect,
+    });
 
-    const dropSpecs = {
-        ...dropTargetConfiguration,
-        collect: (monitor: { isOver: () => any; canDrop: () => any }) => {
-            onCollect({
-                isOver: monitor.isOver(),
-                canDrop: monitor.canDrop(),
-            });
-            return {
-                isOver: monitor.isOver(),
-                canDrop: monitor.canDrop(),
-            };
-        },
-    };
-    const [collectedDropProps, drop] = useDrop(dropSpecs);
+    const [collectedDropProps, drop] = useDropSpecs({
+        dropTargetConfiguration,
+        onCollect,
+    });
 
     const { isDragging } = collectedDragProps;
     const cursor = isDragging ? `move` : `pointer`;
@@ -57,7 +46,7 @@ const DraggableCard: React.FC<DragAndDropProps> = ({
     const dragAndDrop = mergeRefs([drag, drop]);
 
     return (
-        <div ref={dragAndDrop}>
+        <div ref={dragAndDrop} css={draggableTarget}>
             <Card backgroundColor={Colors.LightGray} {...cardProps}>
                 {children}
             </Card>

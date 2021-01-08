@@ -4,6 +4,8 @@ import Button from './button';
 import { ButtonType } from './buttonType';
 import Icon, { IconName, IconSize } from '../icon/';
 import { Colors } from '../../shared/constants/colors';
+import DraggableContainer from '../draggable/DraggableContainer';
+import DraggableButton from './DraggableButton';
 
 export default {
     title: 'Button',
@@ -90,4 +92,16 @@ export const TabUnselected = () => (
 
 export const TabCallout = () => (
     <Button buttonType={ButtonType.TabCallout}>Text</Button>
+);
+
+export const DragButton = () => (
+    <DraggableContainer>
+        <DraggableButton
+            dragTargetConfiguration={{ item: { type: `string` } }}
+            onCollect={(item) => item}
+            buttonType={ButtonType.Secondary}
+        >
+            Transfer
+        </DraggableButton>
+    </DraggableContainer>
 );
