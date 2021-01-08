@@ -23,7 +23,7 @@ const DraggableTarget: React.FC<DraggableTargetProps> = ({
 
     return (
         <div ref={drop} css={draggableTarget}>
-            <P>{children}</P>
+            {children}
         </div>
     );
 };

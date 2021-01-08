@@ -18,7 +18,7 @@ export const Target = () => (
             dropTargetConfiguration={{ accept: `string`, drop: (item) => item }}
             onCollect={(item) => item}
         >
-            drop here
+            <P>drop here</P>
         </DraggableTarget>
     </DraggableContainer>
 );
