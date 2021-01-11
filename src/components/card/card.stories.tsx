@@ -36,7 +36,7 @@ export const DragCard = () => (
                 item: { type: `string` },
             }}
             onCollect={(item) => item}
-            backgroundColor={Colors.Gray}
+            backgroundColor={Colors.LightGray}
         >
             <React.Fragment>
                 <P>Drag me</P>

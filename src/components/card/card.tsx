@@ -15,13 +15,20 @@ import { Colors } from '../../shared/constants/colors';
  * @param  props.backgroundColor - The background color of the card. Defaults to White
  */
 
-const Card: React.FC<cardProps> = ({ children, backgroundColor = Colors.White }) => {
-    const theme = useTheme<Theme>();
-    return (
-        <div data-testid="card" css={card(theme, backgroundColor)}>
-            {children}
-        </div>
-    );
-};
+const Card = React.forwardRef<HTMLInputElement, cardProps>(
+    ({ children, backgroundColor = Colors.White, customCss }, ref) => {
+        const theme = useTheme<Theme>();
+        const cardStyles = card(theme, backgroundColor);
+        return (
+            <div
+                data-testid="card"
+                css={{ ...cardStyles, ...customCss }}
+                ref={ref}
+            >
+                {children}
+            </div>
+        );
+    }
+);
 
 export default Card;

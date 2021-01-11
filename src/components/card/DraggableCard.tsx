@@ -2,7 +2,6 @@ import React from 'react';
 import DraggableSourceProps from '../draggable/DraggableSource.types';
 import DraggableTargetProps from '../draggable/DraggableTarget.types';
 import Card from './card';
-import { Colors } from '../../shared/constants/colors';
 import CardProps from './card.types';
 import { draggableTarget } from '../draggable/DraggableTarget.styles';
 import useDropSpecs from '../draggable/useDropSpecs';
@@ -44,13 +43,12 @@ const DraggableCard: React.FC<DragAndDropProps> = ({
     const cursor = isDragging ? `move` : `pointer`;
 
     const dragAndDrop = mergeRefs([drag, drop]);
+    const draggableStyles = draggableTarget(cursor, cardProps.backgroundColor);
 
     return (
-        <div ref={dragAndDrop} css={draggableTarget}>
-            <Card backgroundColor={Colors.LightGray} {...cardProps}>
-                {children}
-            </Card>
-        </div>
+        <Card customCss={draggableStyles} ref={dragAndDrop} {...cardProps}>
+            {children}
+        </Card>
     );
 };
 
