@@ -29,12 +29,12 @@ const DraggableCard: React.FC<DragAndDropProps> = ({
     children,
     ...cardProps
 }) => {
-    const [collectedDragProps, drag] = useDragSpecs({
+    const [collectedDragProps, useDragRef] = useDragSpecs({
         dragTargetConfiguration,
         onCollect,
     });
 
-    const [collectedDropProps, drop] = useDropSpecs({
+    const [collectedDropProps, useDropRef] = useDropSpecs({
         dropTargetConfiguration,
         onCollect,
     });
@@ -42,7 +42,7 @@ const DraggableCard: React.FC<DragAndDropProps> = ({
     const { isDragging } = collectedDragProps;
     const cursor = isDragging ? `move` : `pointer`;
 
-    const dragAndDrop = mergeRefs([drag, drop]);
+    const dragAndDrop = mergeRefs([useDragRef, useDropRef]);
     const draggableStyles = draggableTarget(cursor, cardProps.backgroundColor);
 
     return (
