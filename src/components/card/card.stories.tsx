@@ -3,6 +3,9 @@ import React from 'react';
 import Card from './card';
 import { H3, H4, P, ParagraphSize } from '../typography';
 import { Colors } from '../../shared/constants/colors';
+import DraggableContainer from '../draggable/DraggableContainer';
+import DraggableCard from './DraggableCard';
+
 export default {
     title: 'Card',
     component: Card,
@@ -23,4 +26,21 @@ export const CardText = () => (
             </P>
         </React.Fragment>
     </Card>
+);
+
+export const DragCard = () => (
+    <DraggableContainer>
+        <DraggableCard
+            dropTargetConfiguration={{ accept: `string`, drop: (item) => item }}
+            dragTargetConfiguration={{
+                item: { type: `string` },
+            }}
+            onCollect={(item) => item}
+            backgroundColor={Colors.LightGray}
+        >
+            <React.Fragment>
+                <P>Drag me</P>
+            </React.Fragment>
+        </DraggableCard>
+    </DraggableContainer>
 );
