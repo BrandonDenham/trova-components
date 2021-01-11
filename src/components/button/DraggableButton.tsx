@@ -23,15 +23,14 @@ const DraggableButton: React.FC<MergeProps> = ({
     });
 
     return (
-        <div ref={drag}>
-            <Button
-                css={draggableButton()}
-                icon={<Icon name={IconName.Plus} color={Colors.White} />}
-                {...buttonProps}
-            >
-                {children}
-            </Button>
-        </div>
+        <Button
+            css={draggableButton()}
+            icon={<Icon name={IconName.Plus} color={Colors.White} />}
+            {...buttonProps}
+            ref={drag}
+        >
+            {children}
+        </Button>
     );
 };
 
