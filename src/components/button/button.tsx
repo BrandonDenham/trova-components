@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx } from '@emotion/react';
 import { SyntheticEvent } from 'react';
 import React, { useCallback } from 'react';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 
 import { Theme } from '../theme/theme.types';
 import ButtonProps from './button.types';

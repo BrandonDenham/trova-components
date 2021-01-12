@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { matchers } from 'jest-emotion';
+import { matchers } from '@emotion/jest';
 import Sidebar from './Sidebar';
 import SidebarItem from './SidebarItem';
 import SidebarMenu from './SidebarMenu';
 import SidebarProps from './Sidebar.types';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from '@emotion/react';
 import theme from '../../shared/themes/theme';
 
 expect.extend(matchers);

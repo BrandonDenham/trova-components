@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
 import { Theme } from '../theme/theme.types';
 export const mainContent = (theme: Theme) => css`

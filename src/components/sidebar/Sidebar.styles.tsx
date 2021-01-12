@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { Theme } from '../theme/theme.types';
 export const sidebar = (theme: Theme) => css`
     @media (min-width: ${theme.breakpoints.md + 1}px) {

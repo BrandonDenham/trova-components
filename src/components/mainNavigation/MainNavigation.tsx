@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx } from '@emotion/react';
 import React, { useState, useCallback, SyntheticEvent } from 'react';
 import { Visible, Hidden } from 'react-grid-system';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import MainNavigationProps from './MainNavigation.types';
 import { Theme } from '../theme/theme.types';
 import {

@@ -1,16 +1,11 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx } from '@emotion/react';
 import React, { SyntheticEvent, useCallback } from 'react';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 
 import { Theme } from '../theme/theme.types';
 import CheckboxProps from './checkbox.types';
-import {
-    input,
-    mainContainer,
-    detailSpan,
-    checkbox,
-} from './checkbox.styles';
+import { input, mainContainer, detailSpan, checkbox } from './checkbox.styles';
 import ComponentFooter from '../__private/componentFooter';
 import imageCheckboxCross from '../../shared/images/icons/checkboxCross.svg';
 
@@ -34,7 +29,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     disabledText = '',
     detail = '',
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     const handleToggle = useCallback(
         (event: SyntheticEvent) => {
             onChange ? onChange(event, name, value) : event.stopPropagation();
@@ -53,10 +48,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
                     data-testid="checkbox"
                 />
                 <span css={checkbox(error)}>
-                    <img
-                        alt="Toggle"
-                        src={imageCheckboxCross}
-                    />
+                    <img alt="Toggle" src={imageCheckboxCross} />
                 </span>
                 {detail && <span css={detailSpan(theme)}>{detail}</span>}
             </div>

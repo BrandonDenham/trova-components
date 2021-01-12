@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx } from '@emotion/react';
 import React from 'react';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 
 import { Theme } from '../theme/theme.types';
 import { h2Style } from './h2.styles';

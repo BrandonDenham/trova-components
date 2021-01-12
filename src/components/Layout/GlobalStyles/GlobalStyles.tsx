@@ -1,5 +1,5 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { Global, css } from '@emotion/react';
 import RobotoBold from '../../../shared/fonts/Roboto-Bold.ttf';
 import RobotoRegular from '../../../shared/fonts/Roboto-Regular.ttf';
 import RobotoMedium from '../../../shared/fonts/Roboto-Medium.ttf';

@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { IconName } from './iconName';
 import { IconSize } from './iconSize';
 

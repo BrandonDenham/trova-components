@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { matchers } from 'jest-emotion';
+import { matchers } from '@emotion/jest';
 import SidebarItem from './SidebarItem';
 import SidebarMenu from './SidebarMenu';
 import SidebarMenuProps from './SidebarMenu.types';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from '@emotion/react';
 import userEvent from '@testing-library/user-event';
 import theme from '../../shared/themes/theme';
 

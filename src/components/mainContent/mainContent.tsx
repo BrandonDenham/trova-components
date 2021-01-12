@@ -1,9 +1,11 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
-import React from 'react';
-import { useTheme } from 'emotion-theming';
+import { jsx } from '@emotion/react';
 
-import { Theme } from '../theme/theme.types';
+import React from 'react';
+import { useTheme } from '@emotion/react';
+
+import { Theme as EmotionTheme } from '../theme/theme.types';
+
 import mainContentProps from './mainContent.types';
 import { mainContent } from './mainContent.styles';
 
@@ -14,7 +16,8 @@ import { mainContent } from './mainContent.styles';
  */
 
 const MainContent: React.FC<mainContentProps> = ({ children }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
+
     return (
         <div data-testid="mainContent" css={mainContent(theme)}>
             {children}

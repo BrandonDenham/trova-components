@@ -1,0 +1,10 @@
+{
+    "parser": "babel-eslint",
+    "plugins": [
+        "@emotion"
+    ],
+    "rules": {
+        "@emotion/pkg-renaming": "error",
+        "@emotion/styled-import": "error"
+    }
+}
