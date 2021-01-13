@@ -18,7 +18,6 @@ const ComponentFooter: React.FC<ComponentFooterProps> = ({
     disabledText,
     error,
 }) => {
-    //const localTheme: Theme;
     const theme = useTheme();
     return (
         <React.Fragment>

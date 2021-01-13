@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Checkbox from './checkbox';
-import ThemeWrapper from '../themeWrapper/themeWrapper';
 
 export default {
     title: 'Checkbox',
@@ -11,14 +10,12 @@ export default {
 export const ActiveCheckbox = () => <Checkbox name="test" value={true} />;
 
 export const ActiveDetailedCheckbox = () => (
-    <ThemeWrapper>
-        <Checkbox
-            name="test"
-            value={true}
-            label="Form header"
-            detail="Confirm all bookings"
-        />
-    </ThemeWrapper>
+    <Checkbox
+        name="test"
+        value={true}
+        label="Form header"
+        detail="Confirm all bookings"
+    />
 );
 
 export const InactiveCheckbox = () => (
