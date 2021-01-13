@@ -1,11 +1,8 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
-import { SyntheticEvent } from 'react';
-import { useTheme } from '@emotion/react';
-import React, { useCallback } from 'react';
+import { jsx, useTheme } from '@emotion/react';
+import React, { useCallback, SyntheticEvent } from 'react';
 
 import SidebarItemProps from './SidebarItem.types';
-import { Theme } from '../theme/theme.types';
 import {
     sidebarItem,
     sidebarItemTitle,
@@ -22,12 +19,12 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     id,
     onClick,
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     const itemClicked = useCallback(
         (event: SyntheticEvent) => {
             onClick ? onClick(event, id) : event.stopPropagation();
         },
-        [id,onClick]
+        [id, onClick]
     );
     return (
         <div

@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
+import { jsx, useTheme } from '@emotion/react';
 import React, { SyntheticEvent, useCallback } from 'react';
-import { useTheme } from '@emotion/react';
 
-import { Theme } from '../theme/theme.types';
 import InputProps from './input.types';
 import {
     input,
@@ -35,7 +33,7 @@ const Input: React.FC<InputProps> = ({
     disabled = false,
     disabledText,
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     const handleChange = useCallback(
         (event: SyntheticEvent) => {
             onChange ? onChange(event, name, value) : event.stopPropagation();
@@ -43,7 +41,7 @@ const Input: React.FC<InputProps> = ({
         [name, value, onChange]
     );
     let textInput: HTMLInputElement;
-    const handleClick = useCallback(() => textInput.focus(),[]);
+    const handleClick = useCallback(() => textInput.focus(), []);
     return (
         <div css={mainContainer(theme, size)}>
             <div css={labelContainer()}>

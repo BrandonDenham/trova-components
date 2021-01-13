@@ -1,5 +1,4 @@
-import { css } from '@emotion/react';
-import { Theme } from '../theme/theme.types';
+import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
 
 export const sidebarItem = (theme: Theme, selected: boolean) => css`

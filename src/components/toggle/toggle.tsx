@@ -1,16 +1,9 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
+import { jsx, useTheme } from '@emotion/react';
 import React, { SyntheticEvent, useCallback } from 'react';
-import { useTheme } from '@emotion/react';
 
-import { Theme } from '../theme/theme.types';
 import ToggleProps from './toggle.types';
-import {
-    input,
-    mainContainer,
-    detailSpan,
-    slider,
-} from './toggle.styles';
+import { input, mainContainer, detailSpan, slider } from './toggle.styles';
 import ComponentFooter from '../__private/componentFooter';
 
 /**
@@ -33,7 +26,7 @@ const Toggle: React.FC<ToggleProps> = ({
     disabledText = '',
     detail = '',
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     const handleToggle = useCallback(
         (event: SyntheticEvent) => {
             onChange ? onChange(event, name, value) : event.stopPropagation();

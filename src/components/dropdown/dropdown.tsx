@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, useTheme } from '@emotion/react';
 import React, { SyntheticEvent, useCallback, useState, useRef } from 'react';
-import { useTheme } from 'emotion-theming';
 
-import { Theme } from '../theme/theme.types';
 import {
     mainContainer,
     inputContainer,
@@ -52,7 +50,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     onSearch,
     searching = false,
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     const [textValue, setTextValue] = useState(value);
     const handleChange = useCallback(
         (event: SyntheticEvent) => {

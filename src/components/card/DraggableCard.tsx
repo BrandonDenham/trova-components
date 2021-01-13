@@ -34,7 +34,7 @@ const DraggableCard: React.FC<DragAndDropProps> = ({
         onCollect,
     });
 
-    const [collectedDropProps, useDropRef] = useDropSpecs({
+    const [, useDropRef] = useDropSpecs({
         dropTargetConfiguration,
         onCollect,
     });

@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
-import { Theme } from '../theme/theme.types';
 
 export const mainContainer = (error: string | string[] | undefined) => css`
     position: relative;
@@ -59,7 +58,7 @@ export const slider = (error: string | string[] | undefined) => css`
     background-color: ${Colors.LightGray};
     -webkit-transition: 0.4s;
     transition: 0.4s;
-    
+
     input:checked + & {
         background: ${Colors.Success};
     }

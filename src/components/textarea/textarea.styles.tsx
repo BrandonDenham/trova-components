@@ -1,12 +1,12 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
-import { Theme } from '../theme/theme.types';
+
 import { TextareaSize } from './textareaSize';
 
 export const mainContainer = (theme: Theme) => css`
     display: flex;
     flex-direction: column;
-    width:${theme.columns.fiveColumns}px;
+    width: ${theme.columns.fiveColumns}px;
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
     }

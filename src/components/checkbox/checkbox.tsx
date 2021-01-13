@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
+import { jsx, useTheme } from '@emotion/react';
 import React, { SyntheticEvent, useCallback } from 'react';
-import { useTheme } from '@emotion/react';
 
-import { Theme } from '../theme/theme.types';
 import CheckboxProps from './checkbox.types';
 import { input, mainContainer, detailSpan, checkbox } from './checkbox.styles';
 import ComponentFooter from '../__private/componentFooter';

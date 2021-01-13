@@ -1,9 +1,6 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
-import { useState } from 'react';
-import { useTheme } from '@emotion/react';
-import { Theme } from '../theme/theme.types';
-import React, { useCallback } from 'react';
+import { jsx, useTheme } from '@emotion/react';
+import React, { useCallback, useState } from 'react';
 
 import SidebarMenuProps from './SidebarMenu.types';
 
@@ -21,7 +18,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
     title,
     children,
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     const [openMenu, setOpenMenu] = useState(open);
 
     const toggle = useCallback(() => {

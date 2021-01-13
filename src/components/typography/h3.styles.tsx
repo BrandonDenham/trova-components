@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
-import { Theme } from '../theme/theme.types';
 
 export const h3Style = (theme: Theme) => css`
     font-size: ${theme.fontSizes.h3};

@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
-import { Theme } from '../theme/theme.types';
 import { ParagraphSize } from './paragraphSize';
 
 export const pStyle = (size: ParagraphSize, theme: Theme) => css`

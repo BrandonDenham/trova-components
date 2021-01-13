@@ -1,10 +1,6 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
-import { SyntheticEvent } from 'react';
-import React, { useCallback } from 'react';
-import { useTheme } from '@emotion/react';
-
-import { Theme } from '../theme/theme.types';
+import { jsx, useTheme } from '@emotion/react';
+import React, { useCallback, SyntheticEvent } from 'react';
 import ButtonProps from './button.types';
 import {
     button,
@@ -27,8 +23,7 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
         },
         ref
     ) => {
-        //const  = props;
-        const theme = useTheme<Theme>();
+        const theme = useTheme();
         const handleButtonClicked = useCallback(
             (event: SyntheticEvent) => {
                 onClick ? onClick(event, id) : event.stopPropagation();

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, useTheme } from '@emotion/react';
 import React, {
     SyntheticEvent,
     useCallback,
@@ -7,9 +7,7 @@ import React, {
     useEffect,
     useRef,
 } from 'react';
-import { useTheme } from 'emotion-theming';
 
-import { Theme } from '../theme/theme.types';
 import {
     mainContainer,
     inputContainerMultipleDropdown,
@@ -62,7 +60,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
     onSearch,
     searching = false,
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     const [textValue, setTextValue] = useState('');
     const handleChange = useCallback(
         (event: SyntheticEvent) => {

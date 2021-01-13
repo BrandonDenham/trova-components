@@ -1,5 +1,4 @@
-import { css } from '@emotion/react';
-import { Theme } from '../theme/theme.types';
+import { css, Theme } from '@emotion/react';
 
 export const mainNavigation = (theme: Theme) => css`
     @media (min-width: ${theme.breakpoints.md + 1}px) {

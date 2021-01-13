@@ -1,5 +1,4 @@
 import React from 'react';
-import { draggableButton } from '../draggable/DraggableButton styles';
 import Button from '../button/button';
 import Icon from '../icon/icon';
 import { IconName } from '../icon/iconName';
@@ -17,14 +16,13 @@ const DraggableButton: React.FC<MergeProps> = ({
     children,
     ...buttonProps
 }) => {
-    const [collectedProps, drag] = useDragSpecs({
+    const [, drag] = useDragSpecs({
         dragTargetConfiguration,
         onCollect,
     });
 
     return (
         <Button
-            css={draggableButton()}
             icon={<Icon name={IconName.Plus} color={Colors.White} />}
             {...buttonProps}
             ref={drag}

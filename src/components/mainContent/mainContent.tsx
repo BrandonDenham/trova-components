@@ -1,10 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
+import { jsx, useTheme } from '@emotion/react';
 
 import React from 'react';
-import { useTheme } from '@emotion/react';
-
-import { Theme as EmotionTheme } from '../theme/theme.types';
 
 import mainContentProps from './mainContent.types';
 import { mainContent } from './mainContent.styles';
