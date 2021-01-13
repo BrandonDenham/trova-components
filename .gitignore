@@ -103,9 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-# docz static generated docs folder
-.docz/
-
 # compiled ESM component library
 build/
 
