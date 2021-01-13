@@ -17,7 +17,7 @@ const DraggableButton: React.FC<MergeProps> = ({
     children,
     ...buttonProps
 }) => {
-    const [collectedProps, drag] = useDragSpecs({
+    const [, drag] = useDragSpecs({
         dragTargetConfiguration,
         onCollect,
     });
