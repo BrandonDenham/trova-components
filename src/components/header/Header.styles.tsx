@@ -11,6 +11,7 @@ export const header = (theme: Theme, backgroundImage: any) => css`
         url(${backgroundImage});
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
     @media (max-width: ${theme.breakpoints.sm}px) {
         padding-left: 1.5rem;
         padding-top: 1.3rem;
