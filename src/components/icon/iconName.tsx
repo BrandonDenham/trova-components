@@ -2,5 +2,6 @@ export enum IconName {
     Plus,
     Upload,
     Search,
-    DropdownArrow
+    DropdownArrow,
+    Location,
 }

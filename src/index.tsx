@@ -13,6 +13,7 @@ import Checkbox from './components/checkbox';
 import { H1, H2, H3, H4, P, ParagraphSize } from './components/typography';
 import Dropdown, { MultipleDropdown } from './components/dropdown';
 import ThemeWrapper from './components/themeWrapper';
+import Header from './components/header/Header';
 
 export {
     Sidebar,
@@ -40,4 +41,5 @@ export {
     Dropdown,
     MultipleDropdown,
     ThemeWrapper,
+    Header,
 };

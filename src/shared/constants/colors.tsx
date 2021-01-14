@@ -17,4 +17,5 @@ export enum Colors {
     Active = '#4270D1',
     DangerText = '#ED5547',
     PrimaryContentBackground = '#EFF1F7',
+    Black = '#000000',
 }

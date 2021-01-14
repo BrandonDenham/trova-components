@@ -7,7 +7,10 @@ export const mainNavigationItem = css`
     display: flex;
     justify-content: space-between;
 `;
-export const mainNavigationItemContent = (theme: Theme, selected: boolean) => css`
+export const mainNavigationItemContent = (
+    theme: Theme,
+    selected: boolean
+) => css`
     font-family: ${theme.fonts.robotoBold};
     font-size: 16px;
     line-height: 19px;
@@ -16,9 +19,7 @@ export const mainNavigationItemContent = (theme: Theme, selected: boolean) => cs
     padding-left: 1rem;
     @media (min-width: ${theme.breakpoints.md + 1}px) {
         padding-right: 3rem;
-        ${selected
-            ? `color: ${Colors.Dark}`
-            : `color: ${Colors.LightGray}`}
+        ${selected ? `color: ${Colors.Dark}` : `color: ${Colors.LightGray}`}
     }
     @media (max-width: ${theme.breakpoints.md}px) {
         padding-bottom: 1rem;
