@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { matchers } from 'jest-emotion';
+import { matchers } from '@emotion/jest';
 import Card from './card';
 import CardProps from './card.types';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from '@emotion/react';
 import theme from '../../shared/themes/theme';
 import { H1 } from '../typography';
 

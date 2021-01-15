@@ -1,4 +1,4 @@
-import { SerializedStyles } from '@emotion/core';
+import { SerializedStyles } from '@emotion/react';
 import { ReactNode } from 'react';
 import { Colors } from '../../shared/constants/colors';
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { matchers } from 'jest-emotion';
+import { matchers } from '@emotion/jest';
 import Dropdown from './dropdown';
 import DropdownProps from './dropdown.types';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from '@emotion/react';
 import theme from '../../shared/themes/theme';
 import Option from './option.types';
 import MultipleDropdown from './multipleDropdown';

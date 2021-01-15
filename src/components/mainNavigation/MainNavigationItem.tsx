@@ -1,10 +1,8 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, useTheme } from '@emotion/react';
 import { SyntheticEvent, useCallback } from 'react';
-import { useTheme } from 'emotion-theming';
 import { Visible } from 'react-grid-system';
 import MainNavigationItemProps from './MainNavigationItem.types';
-import { Theme } from '../theme/theme.types';
 import {
     mainNavigationItem,
     mainNavigationItemContent,
@@ -19,12 +17,12 @@ const MainNavigationItem: React.FC<MainNavigationItemProps> = ({
     id,
     onClick,
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     const itemClicked = useCallback(
         (event: SyntheticEvent) => {
             onClick ? onClick(event, id) : event.stopPropagation();
         },
-        [id,onClick]
+        [id, onClick]
     );
     return (
         <div

@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { matchers } from 'jest-emotion';
+import { matchers } from '@emotion/jest';
 import H1 from './h1';
 import H2 from './h2';
 import H3 from './h3';
 import H4 from './h4';
 import P from './p';
 import Typography from './typography.types';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from '@emotion/react';
 import theme from '../../shared/themes/theme';
 import { Colors } from '../../shared/constants/colors';
 import { ParagraphSize } from './paragraphSize';

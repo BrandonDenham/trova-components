@@ -1,10 +1,8 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, useTheme } from '@emotion/react';
 import React, { useState, useCallback, SyntheticEvent } from 'react';
 import { Visible, Hidden } from 'react-grid-system';
-import { useTheme } from 'emotion-theming';
 import MainNavigationProps from './MainNavigation.types';
-import { Theme } from '../theme/theme.types';
 import {
     mainNavigation,
     mainNavigationMainContainer,
@@ -37,7 +35,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     secondaryItems,
     anchor = false,
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     const [itemsShown, setItemsShown] = useState(showItems);
     const handleShowItems = useCallback(() => {
         setItemsShown(true);
