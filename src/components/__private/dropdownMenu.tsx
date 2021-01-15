@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, useTheme } from '@emotion/react';
 import React from 'react';
-import { useTheme } from 'emotion-theming';
 
-import { Theme } from '../theme/theme.types';
 import { DropdownMenuProps } from './dropdownMenu.types';
 import { list, listItem } from './dropdownMenu.styles';
 
@@ -22,7 +20,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
     listVisible,
     handleClick,
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     return (
         <React.Fragment>
             {listVisible && !searching && (

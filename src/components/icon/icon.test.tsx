@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { matchers } from 'jest-emotion';
+import { matchers } from '@emotion/jest';
 import Icon from './icon';
 import IconProps from './icon.types';
 import { IconName } from './iconName';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from '@emotion/react';
 import theme from '../../shared/themes/theme';
 import { Colors } from '../../shared/constants/colors';
 

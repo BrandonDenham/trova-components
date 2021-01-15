@@ -1,5 +1,6 @@
+import { ThemeProvider } from '@emotion/react';
 import React from 'react';
-import { ThemeProvider } from 'emotion-theming';
+
 import theme from '../../src/shared/themes/theme';
 
 const EmotionThemeProvider = (storyFn) => (

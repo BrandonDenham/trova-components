@@ -1,15 +1,16 @@
-import { css } from '@emotion/core';
+import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
-import { Theme } from '../theme/theme.types';
 import { ComponentWidth } from './componentWidth';
 
 export const mainContainer = (theme: Theme, size: ComponentWidth) => css`
     display: flex;
     flex-direction: column;
     ${size === ComponentWidth.Small && `width:${theme.columns.twoColumns}px;`}
-    ${size === ComponentWidth.Medium && `width:${theme.columns.threeColumns}px;`}
+    ${size === ComponentWidth.Medium &&
+    `width:${theme.columns.threeColumns}px;`}
     ${size === ComponentWidth.Large && `width:${theme.columns.fourColumns}px;`}
-    ${size === ComponentWidth.ExtraLarge && `width:${theme.columns.fiveColumns}px;`}
+    ${size === ComponentWidth.ExtraLarge &&
+    `width:${theme.columns.fiveColumns}px;`}
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
     }

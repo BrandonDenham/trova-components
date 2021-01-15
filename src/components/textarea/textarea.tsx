@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, useTheme } from '@emotion/react';
 import React, { SyntheticEvent, useCallback } from 'react';
-import { useTheme } from 'emotion-theming';
 
-import { Theme } from '../theme/theme.types';
 import TextareaProps from './textarea.types';
 import {
     textarea,
@@ -32,10 +30,13 @@ const Textarea: React.FC<TextareaProps> = ({
     disabled = false,
     disabledText,
 }) => {
-    const theme = useTheme<Theme>();
-    const handleChange = useCallback((event: SyntheticEvent) => {
-        onChange ? onChange(event, name, value) : event.stopPropagation();
-    }, [name, value, onChange]);
+    const theme = useTheme();
+    const handleChange = useCallback(
+        (event: SyntheticEvent) => {
+            onChange ? onChange(event, name, value) : event.stopPropagation();
+        },
+        [name, value, onChange]
+    );
     return (
         <div css={mainContainer(theme)}>
             <div css={labelContainer()}>

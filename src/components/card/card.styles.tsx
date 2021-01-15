@@ -1,6 +1,6 @@
-import { css } from '@emotion/core';
+import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
-import { Theme } from '../theme/theme.types';
+
 export const card = (theme: Theme, backgroundColor: Colors) => css`
     display: flex;
     flex-direction: column;

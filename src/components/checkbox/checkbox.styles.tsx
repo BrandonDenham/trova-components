@@ -1,6 +1,5 @@
-import { css } from '@emotion/core';
+import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
-import { Theme } from '../theme/theme.types';
 
 export const mainContainer = () => css`
     display: grid;

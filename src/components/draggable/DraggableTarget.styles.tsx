@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
 
 export const draggableTarget = (

@@ -1,8 +1,6 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
+import { jsx, useTheme } from '@emotion/react';
 
-import { Theme } from '../theme/theme.types';
 import { DropdownHeaderProps } from './dropdownHeader.types';
 import imageInfo from '../../shared/images/icons/info.svg';
 import {
@@ -21,7 +19,7 @@ import {
  */
 
 const DropdownHeader: React.FC<DropdownHeaderProps> = ({ label, info }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     return (
         <div css={labelContainer()}>
             {label && <span css={labelSpan(theme)}>{label}</span>}

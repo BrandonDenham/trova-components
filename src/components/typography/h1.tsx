@@ -1,14 +1,12 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, useTheme } from '@emotion/react';
 import React from 'react';
-import { useTheme } from 'emotion-theming';
 
-import { Theme } from '../theme/theme.types';
 import { h1Style } from './h1.styles';
 import Typography from './typography.types';
 
 const H1: React.FC<Typography> = ({ children, ...otherProps }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     return (
         <h1 data-testid="h1" css={h1Style(theme)} {...otherProps}>
             {children}

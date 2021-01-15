@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { matchers } from 'jest-emotion';
+import { matchers } from '@emotion/jest';
 import ThemeWrapper from './themeWrapper';
 import ThemeWrapperProps from './themeWrapper.types';
 import { H1 } from '../typography';

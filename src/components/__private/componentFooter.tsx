@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
+import { jsx, useTheme } from '@emotion/react';
 import React from 'react';
 
-import { Theme } from '../theme/theme.types';
 import { ComponentFooterProps } from './componentFooter.types';
 import { disabledSpan, errorSpan } from './componentFooter.styles';
 
@@ -20,7 +18,7 @@ const ComponentFooter: React.FC<ComponentFooterProps> = ({
     disabledText,
     error,
 }) => {
-    const theme = useTheme<Theme>();
+    const theme = useTheme();
     return (
         <React.Fragment>
             {disabled && disabledText && (
