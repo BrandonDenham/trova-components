@@ -16,7 +16,7 @@ export const HeaderImage = () => (
     <Header
         backgroundImage={imgBackground}
         title="Title of trip with Person McPerson"
-        subTitle="Mon DD—DD, YYYY"
+        subtitle="Mon DD—DD, YYYY"
         icon={<Icon name={IconName.Location} color={Colors.Primary} />}
         iconDescription="Quito - Santa Cruz - Isabela"
     ></Header>

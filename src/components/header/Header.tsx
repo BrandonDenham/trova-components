@@ -12,13 +12,13 @@ import {
 } from './Header.styles';
 
 const Header = React.forwardRef<HTMLInputElement, HeaderProps>(
-    ({ title, subTitle, iconDescription, backgroundImage, icon }) => {
+    ({ title, subtitle, iconDescription, backgroundImage, icon }) => {
         const theme = useTheme();
         return (
             <div css={header(theme, backgroundImage)}>
                 <p css={headerTitle(theme)}>{title}</p>
                 <div css={headerDetails(theme)}>
-                    <span css={headerDates(theme)}>{subTitle}</span>
+                    <span css={headerDates(theme)}>{subtitle}</span>
                     {iconDescription && (
                         <span css={headerLocation(theme)}>
                             {icon && icon}

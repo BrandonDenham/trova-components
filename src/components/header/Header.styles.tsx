@@ -1,6 +1,6 @@
-import { css } from '@emotion/core';
+import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
-import { Theme } from '../theme/theme.types';
+
 export const header = (theme: Theme, backgroundImage: any) => css`
     border-radius: 11px;
     background-color: ${Colors.Black};

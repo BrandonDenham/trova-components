@@ -6,6 +6,7 @@ import CardProps from './card.types';
 import { ThemeProvider } from '@emotion/react';
 import theme from '../../shared/themes/theme';
 import { H1 } from '../typography';
+import { Colors } from '../../shared/constants/colors';
 
 expect.extend(matchers);
 
@@ -14,6 +15,7 @@ describe('Card', () => {
 
     beforeEach(() => {
         props = {
+            backgroundColor: Colors.White,
             children: (
                 <React.Fragment>
                     <H1>Costa Rica With Jessica Tate</H1>

@@ -9,8 +9,8 @@ module.exports = {
     testMatch: ['**/*.test.(ts|tsx)'],
     moduleNameMapper: {
         // Mocks out all these file formats when tests are run
-        "\\.(png|svg|pdf|jpg|jpeg|ttf)$": "<rootDir>/mocks/fileMock.js",
+        '\\.(png|svg|pdf|jpg|jpeg|ttf)$': '<rootDir>/mocks/fileMock.js',
         '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     },
-    snapshotSerializers: ['jest-emotion'],
+    snapshotSerializers: ['@emotion/jest'],
 };
