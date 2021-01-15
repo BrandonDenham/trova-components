@@ -1,6 +1,9 @@
 import React from 'react';
+import Icon from '../icon';
 
 import Header from './Header';
+import { IconName } from '.';
+import { Colors } from '../../shared/constants/colors';
 const imgBackground = require('../../shared/images/rails.png') as string;
 
 export default {
@@ -12,7 +15,8 @@ export const HeaderImage = () => (
     <Header
         backgroundImage={imgBackground}
         title="Title of trip with Person McPerson"
-        dates="Mon DD—DD, YYYY"
-        location="Quito - Santa Cruz - Isabela"
+        subTitle="Mon DD—DD, YYYY"
+        icon={<Icon name={IconName.Location} color={Colors.Primary} />}
+        iconDescription="Quito - Santa Cruz - Isabela"
     ></Header>
 );

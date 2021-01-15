@@ -1,6 +1,7 @@
 export default interface HeaderProps {
     title: string;
-    dates: string;
-    location?: string;
+    subTitle: string;
+    iconDescription?: string;
     backgroundImage: any;
+    icon?: React.ReactNode;
 }

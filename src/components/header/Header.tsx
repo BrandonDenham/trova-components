@@ -17,19 +17,16 @@ import { Colors } from '../../shared/constants/colors';
 import { IconName } from '../icon/';
 
 const Header = React.forwardRef<HTMLInputElement, HeaderProps>(
-    ({ title, dates, location, backgroundImage }) => {
+    ({ title, subTitle, iconDescription, backgroundImage, icon }) => {
         const theme = useTheme<Theme>();
         return (
             <div css={header(theme, backgroundImage)}>
                 <p css={headerTitle(theme)}>{title}</p>
                 <div css={headerDetails(theme)}>
-                    <span css={headerDates(theme)}>{dates}</span>
+                    <span css={headerDates(theme)}>{subTitle}</span>
                     {location && (
                         <span css={headerLocation(theme)}>
-                            <Icon
-                                name={IconName.Location}
-                                color={Colors.Primary}
-                            />
+                            {icon}
                             {location}
                         </span>
                     )}

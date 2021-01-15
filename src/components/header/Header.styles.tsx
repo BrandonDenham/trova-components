@@ -21,25 +21,29 @@ export const header = (theme: Theme, backgroundImage: any) => css`
 `;
 
 export const headerTitle = (theme: Theme) => css`
-    font-size: 34px;
+    font-size: ${theme.fontSizes.h1};
     line-height: 40px;
     padding-top: 3.8rem;
     padding-left: 2.31rem;
     padding-bottom: 0.7rem;
     @media (max-width: ${theme.breakpoints.sm}px) {
+        font-size: ${theme.fontSizes.h1Mobile};
         padding-left: 0rem;
         padding-top: 0rem;
     }
 `;
 
-export const headerDetails = () => css`
+export const headerDetails = (theme: Theme) => css`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-end;
-    font-size: 14px;
+    font-size: ${theme.fontSizes.pSmall};
     line-height: 16px;
     letter-spacing: 0.3px;
+    @media (max-width: ${theme.breakpoints.sm}px) {
+        font-size: ${theme.fontSizes.pSmallMobile};
+    }
 `;
 
 export const headerDates = (theme: Theme) => css`
