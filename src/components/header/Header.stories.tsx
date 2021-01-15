@@ -2,7 +2,8 @@ import React from 'react';
 import Icon from '../icon';
 
 import Header from './Header';
-import { IconName } from '.';
+import { IconName } from '../icon/';
+
 import { Colors } from '../../shared/constants/colors';
 const imgBackground = require('../../shared/images/rails.png') as string;
 
