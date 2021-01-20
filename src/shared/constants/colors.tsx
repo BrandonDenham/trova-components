@@ -6,6 +6,7 @@ export enum Colors {
     Gray = '#8B929C',
     DarkGray = '#626C79',
     LightGray = '#C5C8CD',
+    Silver = '#DCE3F2',
     Primary = '#DC5F4F',
     DarkPrimary = '#F65C4E',
     Secondary = '#F9E7E5',
@@ -18,4 +19,8 @@ export enum Colors {
     DangerText = '#ED5547',
     PrimaryContentBackground = '#EFF1F7',
     Black = '#000000',
+    MediumSpringGreen = '#22BEB0',
+    LightBlue = '#26C6DA',
+    Purple = '#AC51B5',
+    LightOrange = '#F2A364',
 }
