@@ -18,4 +18,6 @@ export enum Colors {
     DangerText = '#ED5547',
     PrimaryContentBackground = '#EFF1F7',
     Black = '#000000',
+    TableDarkGray = '#3B4759',
+    TableLightGray = '#F6F7F8',
 }

@@ -34,6 +34,7 @@ const theme = {
         dropdownList: '16px',
         toggleDetail: '15px',
         checkboxDetail: '15px',
+        tableText: '14px',
     },
     breakpoints: {
         sm: 576,
