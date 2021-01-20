@@ -1,11 +1,11 @@
 import React from 'react';
-import Button from '../button/button';
+import Button from './button';
 import Icon from '../icon/icon';
 import { IconName } from '../icon/iconName';
 import { Colors } from '../../shared/constants/colors';
 
-import DraggableSourceProps from '../draggable//DraggableSource.types';
-import ButtonProps from '../button/button.types';
+import DraggableSourceProps from '../draggable/draggableSource.types';
+import ButtonProps from './button.types';
 import useDragSpecs from '../draggable/useDragSpecs';
 
 type MergeProps = DraggableSourceProps & ButtonProps;

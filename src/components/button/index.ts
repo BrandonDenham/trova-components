@@ -1,5 +1,5 @@
 import { ButtonType } from './buttonType';
-import DraggableButton from './DraggableButton';
+import DraggableButton from './draggableButton';
 
 export { default } from './button';
 export { ButtonType, DraggableButton };

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { DropTargetMonitor, useDrop } from 'react-dnd';
-import DraggableTargetProps from './DraggableTarget.types';
+import DraggableTargetProps from './draggableTarget.types';
 
 const useDropSpecs = (targetProps: DraggableTargetProps) => {
     const { dropTargetConfiguration, onCollect } = targetProps;

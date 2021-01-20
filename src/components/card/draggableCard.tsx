@@ -1,9 +1,9 @@
 import React from 'react';
-import DraggableSourceProps from '../draggable/DraggableSource.types';
-import DraggableTargetProps from '../draggable/DraggableTarget.types';
+import DraggableSourceProps from '../draggable/draggableSource.types';
+import DraggableTargetProps from '../draggable/draggableTarget.types';
 import Card from './card';
 import CardProps from './card.types';
-import { draggableTarget } from '../draggable/DraggableTarget.styles';
+import { draggableTarget } from '../draggable/draggableTarget.styles';
 import useDropSpecs from '../draggable/useDropSpecs';
 import useDragSpecs from '../draggable/useDragSpecs';
 

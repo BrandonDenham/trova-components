@@ -1,6 +1,6 @@
 import React from 'react';
-import DraggableContainer from './DraggableContainer';
-import DraggableTarget from './DraggableTarget';
+import DraggableContainer from './draggableContainer';
+import DraggableTarget from './draggableTarget';
 import P from '../typography/p';
 
 export default {
