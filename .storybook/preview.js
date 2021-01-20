@@ -7,12 +7,11 @@ import EmotionThemeProvider from './decorators/ThemeProvider';
 addDecorator((story) => (
     <>
         <GlobalStyles />
-            {story()}
+        {story()}
     </>
 ));
 
 addDecorator(EmotionThemeProvider);
-
 
 const customViewports = {
     mobile: {
@@ -39,4 +38,5 @@ export const parameters = {
             ...customViewports,
         },
     },
+    layout: 'fullscreen',
 };

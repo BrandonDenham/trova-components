@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { DragSourceMonitor, useDrag } from 'react-dnd';
-import DraggableSourceProps from './DraggableSource.types';
+import DraggableSourceProps from './draggableSource.types';
 
 const useDragSpecs = (sourceProps: DraggableSourceProps) => {
     const { dragTargetConfiguration, onCollect } = sourceProps;
