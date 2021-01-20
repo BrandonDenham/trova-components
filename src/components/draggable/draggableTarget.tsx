@@ -1,6 +1,8 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
 import React from 'react';
-import { draggableTarget } from './DraggableTarget.styles';
-import DraggableTargetProps from './DraggableTarget.types';
+import { draggableTarget } from './draggableTarget.styles';
+import DraggableTargetProps from './draggableTarget.types';
 import useDropSpecs from './useDropSpecs';
 
 const DraggableTarget: React.FC<DraggableTargetProps> = ({
@@ -8,14 +10,14 @@ const DraggableTarget: React.FC<DraggableTargetProps> = ({
     onCollect,
     children,
 }) => {
-    const [collectProps, drop] = useDropSpecs({
+    const [, drop] = useDropSpecs({
         dropTargetConfiguration,
         onCollect,
     });
 
     return (
-        <div ref={drop} css={draggableTarget}>
-            {children}
+        <div css={draggableTarget()} ref={drop}>
+            <div>{children}</div>
         </div>
     );
 };

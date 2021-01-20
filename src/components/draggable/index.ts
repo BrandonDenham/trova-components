@@ -1,4 +1,4 @@
-import DraggableTarget from './DraggableTarget';
+import DraggableTarget from './draggableTarget';
 
-export { default } from './DraggableContainer';
+export { default } from './draggableContainer';
 export { DraggableTarget };

@@ -4,8 +4,8 @@ import Button from './button';
 import { ButtonType } from './buttonType';
 import Icon, { IconName, IconSize } from '../icon/';
 import { Colors } from '../../shared/constants/colors';
-import DraggableContainer from '../draggable/DraggableContainer';
-import DraggableButton from './DraggableButton';
+import DraggableContainer from '../draggable/draggableContainer';
+import DraggableButton from './draggableButton';
 
 export default {
     title: 'Button',

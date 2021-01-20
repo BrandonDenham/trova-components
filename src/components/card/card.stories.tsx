@@ -3,8 +3,8 @@ import React from 'react';
 import Card from './card';
 import { H3, H4, P, ParagraphSize } from '../typography';
 import { Colors } from '../../shared/constants/colors';
-import DraggableContainer from '../draggable/DraggableContainer';
-import DraggableCard from './DraggableCard';
+import DraggableContainer from '../draggable/draggableContainer';
+import DraggableCard from './draggableCard';
 
 export default {
     title: 'Card',
