@@ -18,6 +18,7 @@ export const header = (theme: Theme, backgroundImage: any) => css`
     }
     font-family: ${theme.fonts.robotoBold};
     color: ${Colors.White};
+    text-align: left;
 `;
 
 export const headerTitle = (theme: Theme) => css`
