@@ -1,6 +1,7 @@
 import { SyntheticEvent } from 'react';
 import { DragElementWrapper, DragSourceOptions } from 'react-dnd';
 import { ButtonType } from './buttonType';
+import { Colors } from '../../shared/constants/colors';
 
 export default interface ButtonProps {
     children: string;
@@ -11,4 +12,5 @@ export default interface ButtonProps {
     icon?: React.ReactNode;
     subtext?: string;
     ref?: DragElementWrapper<DragSourceOptions>;
+    background?: Colors;
 }

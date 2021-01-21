@@ -20,6 +20,7 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
             onClick,
             icon,
             subtext,
+            background,
         },
         ref
     ) => {
@@ -33,7 +34,7 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
         return (
             <div
                 data-testid="button"
-                css={button(buttonType, selected, subtext, icon)}
+                css={button(buttonType, selected, subtext, icon, background)}
                 onClick={handleButtonClicked}
                 ref={ref}
             >

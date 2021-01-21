@@ -6,7 +6,8 @@ export const button = (
     buttonType: ButtonType,
     selected: boolean,
     subtext: string | undefined,
-    icon: React.ReactNode
+    icon: React.ReactNode,
+    background?: Colors
 ) => css`
     cursor: pointer;
     border-radius: 14px;
@@ -22,13 +23,15 @@ export const button = (
     min-width: 157px;
     `}
     ${buttonType === ButtonType.Primary &&
-    `background-color: ${Colors.Primary};
+    `background-color: ${background ? background : Colors.Primary};
     color: ${Colors.White};
     &:hover {
-        background-color: ${Colors.DarkPrimary};
+        background-color: ${background ? background : Colors.DarkPrimary};
+        opacity: ${background ? 0.5 : 1};
     }
      &:active{
-        background-color: ${Colors.DarkPrimary};
+        background-color: ${background ? background : Colors.DarkPrimary};
+        opacity: ${background ? 0.5 : 1};
     }`}
     ${buttonType === ButtonType.Secondary &&
     `background-color: ${Colors.Secondary};
