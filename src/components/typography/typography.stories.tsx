@@ -22,7 +22,7 @@ export const typography = () => (
         <br />
         <H4>H4: Yoga bungalow</H4>
         <br />
-        <P size={ParagraphSize.Small}>
+        <P size={ParagraphSize.Small} color={Colors.Purple}>
             Paragraph - small: Explore the land and sea that inspired some of
             Darwin's greatest theories of evolution and the animals that paved
             the way! This 9 day adventure across the islands of the Galapagos
