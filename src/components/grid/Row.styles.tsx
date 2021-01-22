@@ -7,7 +7,10 @@ export const row = (theme: Theme) =>
         background: ${Colors.White};
         th{
             font-weight: bold;
-            color: ${Colors.TableDarkGray}
+            color: ${Colors.TableDarkGray};
+        }
+        td {
+            color: ${Colors.TableDarkGray};
         }
         tbody &:nth-of-type(odd) {
              background: ${Colors.TableLightGray};
