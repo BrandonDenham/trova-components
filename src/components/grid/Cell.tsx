@@ -3,8 +3,8 @@ import { jsx } from '@emotion/react';
 import React from 'react';
 import MaterialTableCell from '@material-ui/core/TableCell';
 
-import CellProps from './cell.types';
-import { cell } from './cell.styles';
+import CellProps from './Cell.types';
+import { cell } from './Cell.styles';
 /**
  * Renders a <Cell /> component
  * @param  props

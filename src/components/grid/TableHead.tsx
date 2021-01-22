@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 import React from 'react';
 import MaterialTableHead from '@material-ui/core/TableHead';
 
-import TableHeadProps from './tableHead.types';
+import TableHeadProps from './TableHead.types';
 
 /**
  * Renders a <TableHead /> component

@@ -2,10 +2,10 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from '@emotion/react';
 
-import Cell from './cell';
-import Row from './row';
-import Table from './table';
-import TableHead from './tableHead';
+import Cell from './Cell';
+import Row from './Row';
+import Table from './Table';
+import TableHead from './TableHead';
 import theme from '../../shared/themes/theme';
 
 describe('Grid', () => {

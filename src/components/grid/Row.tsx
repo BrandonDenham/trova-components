@@ -4,10 +4,10 @@ import React from 'react';
 import MaterialTableRow from '@material-ui/core/TableRow';
 
 
-import RowProps from './row.types';
+import RowProps from './Row.types';
 import {
     row
-} from './row.styles';
+} from './Row.styles';
 
 /**
  * Renders a <Row /> component

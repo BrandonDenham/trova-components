@@ -4,8 +4,8 @@ import React from 'react';
 import MaterialTableContainer from '@material-ui/core/TableContainer';
 import MaterialTable from '@material-ui/core/Table';
 
-import TableProps from './table.types';
-import { table } from './table.styles';
+import TableProps from './Table.types';
+import { table } from './Table.styles';
 
 /**
  * Renders a <Table /> component

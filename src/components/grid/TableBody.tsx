@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 import React from 'react';
 import MaterialTableBody from '@material-ui/core/TableBody';
 
-import TableBodyProps from './tableBody.types';
+import TableBodyProps from './TableBody.types';
 
 /**
  * Renders a <TableBody /> component
