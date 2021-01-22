@@ -1,10 +1,13 @@
 import { css, Theme } from '@emotion/react';
 
+import { Colors } from '../../shared/constants/colors';
+
 export const mainNavigation = (theme: Theme) => css`
     @media (min-width: ${theme.breakpoints.md + 1}px) {
         padding: 1.5rem 3.5rem 3rem 2rem;
     }
     box-sizing: border-box;
+    background-color: ${Colors.White};
 `;
 export const mainNavigationMainContainer = (
     theme: Theme,
