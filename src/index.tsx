@@ -19,6 +19,7 @@ import DraggableCard from './components/card/draggableCard';
 import DraggableTarget from './components/draggable/draggableTarget';
 import { Colors } from './shared/constants/colors';
 import { ComponentWidth } from './components/input/componentWidth';
+import { Cell, Row, Table, TableBody, TableHead } from './components/grid/';
 
 export {
     Sidebar,
@@ -53,4 +54,9 @@ export {
     DraggableTarget,
     Colors,
     ComponentWidth,
+    Cell,
+    Row,
+    Table,
+    TableBody,
+    TableHead,
 };
