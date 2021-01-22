@@ -37,6 +37,7 @@ declare module '@emotion/react' {
             dropdownList: string;
             toggleDetail: string;
             checkboxDetail: string;
+            tableText: string;
         };
         breakpoints: {
             sm: number;
