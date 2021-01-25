@@ -11,4 +11,5 @@ export interface FieldProps<DataType> {
     name: string;
     info?: string;
     error?: string | string[];
+    className?: string;
 }

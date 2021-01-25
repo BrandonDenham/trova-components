@@ -11,11 +11,12 @@ import { table } from './Table.styles';
  * Renders a <Table /> component
  * @param  props
  * @param  props.children - The table head contents.
+ * @param  props.className - For usage as an emotion styled component.
  */
 
-const Table: React.FC<TableProps> = ({ children }) => {
+const Table: React.FC<TableProps> = ({ children, className }) => {
     return (
-        <MaterialTableContainer css={table()}>
+        <MaterialTableContainer css={table()} className={className}>
             <MaterialTable>{children}</MaterialTable>
         </MaterialTableContainer>
     );

@@ -13,4 +13,5 @@ export default interface ButtonProps {
     subtext?: string;
     ref?: DragElementWrapper<DragSourceOptions>;
     background?: Colors;
+    className?: string;
 }

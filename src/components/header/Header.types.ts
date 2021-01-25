@@ -4,4 +4,5 @@ export default interface HeaderProps {
     iconDescription?: string;
     backgroundImage: any;
     icon?: React.ReactNode;
+    className?: string;
 }

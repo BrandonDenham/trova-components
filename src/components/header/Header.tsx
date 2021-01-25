@@ -12,10 +12,10 @@ import {
 } from './Header.styles';
 
 const Header = React.forwardRef<HTMLInputElement, HeaderProps>(
-    ({ title, subtitle, iconDescription, backgroundImage, icon }) => {
+    ({ title, subtitle, iconDescription, backgroundImage, icon, className }) => {
         const theme = useTheme();
         return (
-            <div css={header(theme, backgroundImage)}>
+            <div css={header(theme, backgroundImage)} className={className}>
                 <p css={headerTitle(theme)}>{title}</p>
                 <div css={headerDetails(theme)}>
                     <span css={headerDates(theme)}>{subtitle}</span>

@@ -7,4 +7,5 @@ export default interface CardProps {
     backgroundColor: Colors;
     customCss?: SerializedStyles;
     ref?: React.RefCallback<any>;
+    className?: string;
 }

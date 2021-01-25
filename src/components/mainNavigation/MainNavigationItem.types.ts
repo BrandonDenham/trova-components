@@ -4,5 +4,6 @@ export default interface MainNavigationItemProps {
     content: string;
     selected?: boolean;
     id?: string;
-    onClick?: (event: SyntheticEvent, id: string|undefined) => void;
+    onClick?: (event: SyntheticEvent, id: string | undefined) => void;
+    className?: string;
 }

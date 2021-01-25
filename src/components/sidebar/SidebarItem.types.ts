@@ -7,5 +7,6 @@ export default interface SidebarItemProps {
     statusTextColor?: string;
     selected?: boolean;
     id?: string;
-    onClick?: (SyntheticEvent: SyntheticEvent, id: string|undefined) => void;
+    onClick?: (SyntheticEvent: SyntheticEvent, id: string | undefined) => void;
+    className?: string;
 }

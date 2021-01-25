@@ -34,6 +34,7 @@ import imageSpinner from '../../shared/images/icons/spinner.svg';
  * @param  props.children - The options that are possible, that provide the list of what's available in the dropdown.
  * @param  props.onSearch - A function that takes the value of the event fieldName, and value of the search input if the user starts typing.
  * @param  props.searching - This will be a prop to declare if something is being searched, if true, a loading indicator should be shown in the menu
+ * @param  props.className - For usage as an emotion styled component.
  */
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -49,6 +50,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     children,
     onSearch,
     searching = false,
+    className,
 }) => {
     const theme = useTheme();
     const [textValue, setTextValue] = useState(value);
@@ -82,7 +84,11 @@ const Dropdown: React.FC<DropdownProps> = ({
     const containerRef = useRef(null);
     useOutsideListener(containerRef, () => setListVisible(false));
     return (
-        <div css={mainContainer(theme, size)} ref={containerRef}>
+        <div
+            css={mainContainer(theme, size)}
+            ref={containerRef}
+            className={className}
+        >
             <DropdownHeader label={label} info={info} />
             <div css={inputContainer(theme, error, listVisible)}>
                 <input

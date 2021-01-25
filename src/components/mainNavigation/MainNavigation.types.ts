@@ -13,4 +13,5 @@ export default interface MainNavigationProps {
     onClickProfileImage?: (event: SyntheticEvent | undefined) => void;
     secondaryItems?: object;
     anchor?: boolean;
+    className?: string;
 }
