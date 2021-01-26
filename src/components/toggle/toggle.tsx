@@ -15,6 +15,7 @@ import ComponentFooter from '../__private/componentFooter';
  * @param  props.disabled - This isn't really shown but there should be an ability to disable out the label
  * @param  props.disabledText - Text under the toggle that will be shown if disabled is true
  * @param  props.detail - The text that goes to the right of the input when there is more information to be shown to the user.
+ * @param  props.className - For usage as an emotion styled component.
  */
 
 const Toggle: React.FC<ToggleProps> = ({
@@ -25,6 +26,7 @@ const Toggle: React.FC<ToggleProps> = ({
     disabled = false,
     disabledText = '',
     detail = '',
+    className,
 }) => {
     const theme = useTheme();
     const handleToggle = useCallback(
@@ -35,7 +37,7 @@ const Toggle: React.FC<ToggleProps> = ({
     );
     return (
         <React.Fragment>
-            <div css={mainContainer(error)}>
+            <div css={mainContainer(error)} className={className}>
                 <input
                     css={input()}
                     type="checkbox"

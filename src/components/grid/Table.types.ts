@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export default interface MainContentProps {
+export default interface TableProps {
     children: ReactNode;
     className?: string;
 }

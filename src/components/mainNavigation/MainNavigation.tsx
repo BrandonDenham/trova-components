@@ -34,6 +34,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     onClickProfileImage,
     secondaryItems,
     anchor = false,
+    className,
 }) => {
     const theme = useTheme();
     const [itemsShown, setItemsShown] = useState(showItems);
@@ -58,7 +59,11 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
             : event.stopPropagation();
     }, []);
     return (
-        <nav data-testid="mainnavigation" css={mainNavigation(theme)}>
+        <nav
+            data-testid="mainnavigation"
+            css={mainNavigation(theme)}
+            className={className}
+        >
             <div css={mainNavigationMainContainer(theme, anchor)}>
                 <div css={mainNavigationSmallContainer}>
                     <div>

@@ -5,10 +5,15 @@ import React from 'react';
 import { h3Style } from './h3.styles';
 import Typography from './typography.types';
 
-const H3: React.FC<Typography> = ({ children, ...otherProps }) => {
+const H3: React.FC<Typography> = ({ children, className, ...otherProps }) => {
     const theme = useTheme();
     return (
-        <h3 data-testid="h3" css={h3Style(theme)} {...otherProps}>
+        <h3
+            data-testid="h3"
+            css={h3Style(theme)}
+            className={className}
+            {...otherProps}
+        >
             {children}
         </h3>
     );

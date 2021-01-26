@@ -3,4 +3,5 @@ export default interface SidebarMenuProps {
     onToggle?: (arg0: boolean) => boolean;
     title: string;
     children: object;
+    className?: string;
 }

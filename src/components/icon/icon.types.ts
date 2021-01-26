@@ -5,4 +5,5 @@ export default interface IconProps {
     name: IconName;
     size?: IconSize;
     color?: string;
+    className?: string;
 }

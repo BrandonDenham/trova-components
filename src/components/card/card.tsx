@@ -11,10 +11,11 @@ import { Colors } from '../../shared/constants/colors';
  * @param  props
  * @param  props.children - The elements to include inside the card
  * @param  props.backgroundColor - The background color of the card. Defaults to White
+ * @param  props.className - For usage as an emotion styled component.
  */
 
 const Card = React.forwardRef<HTMLInputElement, cardProps>(
-    ({ children, backgroundColor = Colors.White, customCss }, ref) => {
+    ({ children, backgroundColor = Colors.White, customCss, className }, ref) => {
         const theme = useTheme();
         const cardStyles = card(theme, backgroundColor);
         return (
@@ -22,6 +23,7 @@ const Card = React.forwardRef<HTMLInputElement, cardProps>(
                 data-testid="card"
                 css={{ ...cardStyles, ...customCss }}
                 ref={ref}
+                className={className}
             >
                 {children}
             </div>

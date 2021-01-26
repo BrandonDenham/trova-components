@@ -20,6 +20,7 @@ import DraggableTarget from './components/draggable/draggableTarget';
 import { Colors } from './shared/constants/colors';
 import { ComponentWidth } from './components/input/componentWidth';
 import { TextareaSize } from './components/textarea/textareaSize';
+import { Cell, Row, Table, TableBody, TableHead } from './components/grid/';
 
 export {
     Sidebar,
@@ -55,4 +56,9 @@ export {
     Colors,
     ComponentWidth,
     TextareaSize,
+    Cell,
+    Row,
+    Table,
+    TableBody,
+    TableHead,
 };

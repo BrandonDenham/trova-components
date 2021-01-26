@@ -19,7 +19,7 @@ import { ThemeWrapper, MainContent } from '@trova/components';
 ```
 
 The library is using and internal theming feature. That's why we provide the <ThemeWrapper> component where the default theme of the library is used along with the default global styles. 
-The following code is an example of the use:
+The following code is an example of the usage:
 
 ```jsx
 <ThemeWrapper>
@@ -44,16 +44,16 @@ The following code is an example of the use:
 
 ### Basic
 
-`npm run build` -> Rollup bundling process
+`yarn build` -> Rollup bundling process
 
-`npm run storybook` -> Storybook will load up your components at http://localhost:6006
+`yarn storybook` -> Storybook will load up your components at http://localhost:6006
 
-`npm run test:watch` -> To run your tests locally (they will re-run whenever a file is changed)
+`yarn test:watch` -> To run your tests locally (they will re-run whenever a file is changed)
 
 ### Documentation
 
-`npm run storybook:export` -> Export Storybook as static files
+`yarn storybook:export` -> Export Storybook as static files
 
 ### Miscellaneous
 
-`npm run test` -> Used for the CI/CD pipeline
+`yarn test` -> Used for the CI/CD pipeline

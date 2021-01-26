@@ -16,6 +16,7 @@ import imageCheckboxCross from '../../shared/images/icons/checkboxCross.svg';
  * @param  props.disabled - This isn't really shown but there should be an ability to disable out the label
  * @param  props.disabledText - Text under the checkbox that will be shown if disabled is true
  * @param  props.detail - The text that goes to the right of the input when there is more information to be shown to the user.
+ * @param  props.className - For usage as an emotion styled component.
  */
 
 const Checkbox: React.FC<CheckboxProps> = ({
@@ -26,6 +27,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     disabled = false,
     disabledText = '',
     detail = '',
+    className,
 }) => {
     const theme = useTheme();
     const handleToggle = useCallback(
@@ -36,7 +38,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     );
     return (
         <React.Fragment>
-            <div css={mainContainer()}>
+            <div css={mainContainer()} className={className}>
                 <input
                     css={input()}
                     type="checkbox"

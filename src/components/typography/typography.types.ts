@@ -5,4 +5,5 @@ export default interface Typography {
     children: string;
     // 'Indexer'
     [x: string]: any;
+    className?: string;
 }
