@@ -5,7 +5,7 @@ import MaterialTableContainer from '@material-ui/core/TableContainer';
 import MaterialTable from '@material-ui/core/Table';
 
 import TableProps from './Table.types';
-import { table } from './Table.styles';
+import { tableContainer, table } from './Table.styles';
 
 /**
  * Renders a <Table /> component
@@ -16,8 +16,8 @@ import { table } from './Table.styles';
 
 const Table: React.FC<TableProps> = ({ children, className }) => {
     return (
-        <MaterialTableContainer css={table()} className={className}>
-            <MaterialTable>{children}</MaterialTable>
+        <MaterialTableContainer css={tableContainer()} className={className}>
+            <MaterialTable css={table()}>{children}</MaterialTable>
         </MaterialTableContainer>
     );
 };
