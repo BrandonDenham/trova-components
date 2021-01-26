@@ -12,6 +12,6 @@ export default interface ButtonProps {
     icon?: React.ReactNode;
     subtext?: string;
     ref?: DragElementWrapper<DragSourceOptions>;
-    background?: Colors;
+    backgroundColor?: Colors;
     className?: string;
 }

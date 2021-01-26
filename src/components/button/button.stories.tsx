@@ -13,7 +13,7 @@ export default {
 };
 
 export const Primary = () => (
-    <Button buttonType={ButtonType.Primary} background={Colors.Purple}>
+    <Button buttonType={ButtonType.Primary} backgroundColor={Colors.Purple}>
         Text
     </Button>
 );

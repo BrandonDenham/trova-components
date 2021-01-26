@@ -10,7 +10,7 @@ import GlobalStyles from '../Layout/GlobalStyles/GlobalStyles';
 
 const STRONG_ID = 'trova-components-scope';
 const cache = createCache({
-    key: 'my-prefix-key',
+    key: STRONG_ID,
     stylisPlugins: [createExtraScopePlugin(`#${STRONG_ID}`)],
 });
 
@@ -22,12 +22,14 @@ const cache = createCache({
  */
 
 const ThemeWrapper: React.FC<themeWrapperProps> = ({ children }) => (
-    <CacheProvider value={cache}>
-        <div id={STRONG_ID}>
-            <GlobalStyles />
-            <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
-        </div>
-    </CacheProvider>
+    <React.Fragment>
+        <GlobalStyles />
+        <CacheProvider value={cache}>
+            <div id={STRONG_ID}>
+                <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
+            </div>
+        </CacheProvider>
+    </React.Fragment>
 );
 
 export default ThemeWrapper;
