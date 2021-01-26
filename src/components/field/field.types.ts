@@ -1,6 +1,8 @@
 import { SyntheticEvent } from 'react';
 
-export interface FieldProps<DataType> {
+import { SimpleComponent } from '../../shared/interfaces/SimpleComponent.types';
+
+export interface FieldProps<DataType>  extends SimpleComponent{
     onChange?(
         event: SyntheticEvent,
         name: string,
@@ -11,5 +13,4 @@ export interface FieldProps<DataType> {
     name: string;
     info?: string;
     error?: string | string[];
-    className?: string;
 }

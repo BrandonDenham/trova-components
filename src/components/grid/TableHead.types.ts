@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
+import { SimpleComponent } from '../../shared/interfaces/SimpleComponent.types';
 
-export default interface TableHeadProps {
+export default interface TableHeadProps extends SimpleComponent{
     children: ReactNode;
-    className?: string;
 }

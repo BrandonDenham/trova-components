@@ -7,5 +7,4 @@ export default interface TextAreaProps extends FieldProps<string> {
     size?: TextareaSize;
     disabled?: boolean;
     disabledText?: string;
-    className?: string;
 }
