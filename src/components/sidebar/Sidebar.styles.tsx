@@ -4,9 +4,10 @@ import { Colors } from '../../shared/constants/colors';
 
 export const sidebar = (theme: Theme) => css`
     @media (min-width: ${theme.breakpoints.md + 1}px) {
-        max-width: 274px;
+        width: 274px;
+        min-width: 274px;
     }
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 0rem 2rem;
     box-sizing: border-box;
     background-color: ${Colors.White};
 `;
