@@ -13,7 +13,9 @@ export default {
 };
 
 export const Primary = () => (
-    <Button buttonType={ButtonType.Primary}>Text</Button>
+    <Button buttonType={ButtonType.Primary} backgroundColor={Colors.Purple}>
+        Text
+    </Button>
 );
 
 export const PrimaryAdd = () => (

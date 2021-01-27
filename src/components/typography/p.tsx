@@ -5,15 +5,23 @@ import React from 'react';
 import { pStyle } from './p.styles';
 import Typography from './typography.types';
 import { ParagraphSize } from './paragraphSize';
+import { Colors } from '../../shared/constants/colors';
 
 const P: React.FC<Typography> = ({
     size = ParagraphSize.Medium,
+    color = Colors.Dark,
     children,
+    className,
     ...otherProps
 }) => {
     const theme = useTheme();
     return (
-        <p data-testid="p" css={pStyle(size, theme)} {...otherProps}>
+        <p
+            data-testid="p"
+            css={pStyle(size, theme, color)}
+            className={className}
+            {...otherProps}
+        >
             {children}
         </p>
     );

@@ -29,6 +29,7 @@ const Textarea: React.FC<TextareaProps> = ({
     size = TextareaSize.Large,
     disabled = false,
     disabledText,
+    className,
 }) => {
     const theme = useTheme();
     const handleChange = useCallback(
@@ -38,7 +39,7 @@ const Textarea: React.FC<TextareaProps> = ({
         [name, value, onChange]
     );
     return (
-        <div css={mainContainer(theme)}>
+        <div css={mainContainer(theme)} className={className}>
             <div css={labelContainer()}>
                 {label && <span css={labelSpan(theme)}>{label}</span>}
                 {info && (

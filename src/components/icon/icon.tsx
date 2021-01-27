@@ -10,8 +10,15 @@ const Icon: React.FC<IconProps> = ({
     name,
     size = IconSize.Md,
     color = Colors.Dark,
+    className,
 }) => {
-    return <svg data-testid="icon" css={icon(name, size, color)}></svg>;
+    return (
+        <svg
+            data-testid="icon"
+            css={icon(name, size, color)}
+            className={className}
+        ></svg>
+    );
 };
 
 export default Icon;

@@ -9,10 +9,15 @@ import { cell } from './Cell.styles';
  * Renders a <Cell /> component
  * @param  props
  * @param  props.children - The cell contents.
+ * @param  props.className - For usage as an emotion styled component.
  */
 
-const Cell: React.FC<CellProps> = ({ children }) => {
-    return <MaterialTableCell css={cell()}>{children}</MaterialTableCell>;
+const Cell: React.FC<CellProps> = ({ children, className }) => {
+    return (
+        <MaterialTableCell css={cell()} className={className}>
+            {children}
+        </MaterialTableCell>
+    );
 };
 
 export default Cell;

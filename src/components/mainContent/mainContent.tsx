@@ -12,11 +12,15 @@ import { mainContent } from './mainContent.styles';
  * @param  props.children - The elements to include inside the main content
  */
 
-const MainContent: React.FC<mainContentProps> = ({ children }) => {
+const MainContent: React.FC<mainContentProps> = ({ children, className }) => {
     const theme = useTheme();
 
     return (
-        <div data-testid="mainContent" css={mainContent(theme)}>
+        <div
+            data-testid="mainContent"
+            css={mainContent(theme)}
+            className={className}
+        >
             {children}
         </div>
     );

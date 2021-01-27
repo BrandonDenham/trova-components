@@ -32,6 +32,7 @@ const Input: React.FC<InputProps> = ({
     icon,
     disabled = false,
     disabledText,
+    className,
 }) => {
     const theme = useTheme();
     const handleChange = useCallback(
@@ -43,7 +44,7 @@ const Input: React.FC<InputProps> = ({
     let textInput: HTMLInputElement;
     const handleClick = useCallback(() => textInput.focus(), []);
     return (
-        <div css={mainContainer(theme, size)}>
+        <div css={mainContainer(theme, size)} className={className}>
             <div css={labelContainer()}>
                 {label && <span css={labelSpan(theme)}>{label}</span>}
                 {info && (

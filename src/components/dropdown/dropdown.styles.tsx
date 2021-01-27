@@ -35,15 +35,13 @@ export const inputContainer = (
     font-size: ${theme.fontSizes.input};
     line-height: 19px;
     color: ${Colors.Dark};
+    background-color: ${Colors.White};
     ${!error &&
     `padding-left: 20px;
     :focus-within {
         border: 1px solid ${Colors.Active};
     }`}
     ${error && error.length && `border-color: ${Colors.Danger};`}
-    :disabled {
-        background-color: ${Colors.White};
-    }
 `;
 
 export const input = (theme: Theme, size: ComponentWidth) => css`

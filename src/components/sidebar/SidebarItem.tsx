@@ -18,6 +18,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     selected = false,
     id,
     onClick,
+    className,
 }) => {
     const theme = useTheme();
     const itemClicked = useCallback(
@@ -31,6 +32,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
             data-testid="sidebar__item"
             css={sidebarItem(theme, selected)}
             onClick={itemClicked}
+            className={className}
         >
             <p css={sidebarItemTitle()}>{title}</p>
             <p css={sidebarItemSubtitle(theme)}>{subtitle}</p>

@@ -16,6 +16,7 @@ const MainNavigationItem: React.FC<MainNavigationItemProps> = ({
     selected = false,
     id,
     onClick,
+    className,
 }) => {
     const theme = useTheme();
     const itemClicked = useCallback(
@@ -29,6 +30,7 @@ const MainNavigationItem: React.FC<MainNavigationItemProps> = ({
             data-testid="mainnavigationitem"
             css={mainNavigationItem}
             onClick={itemClicked}
+            className={className}
         >
             <p
                 data-testid="mainnavigationitem__content"

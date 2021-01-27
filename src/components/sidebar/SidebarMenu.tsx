@@ -17,6 +17,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
     onToggle,
     title,
     children,
+    className,
 }) => {
     const theme = useTheme();
     const [openMenu, setOpenMenu] = useState(open);
@@ -32,6 +33,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
             data-testid="sidebar__menu"
             onClick={() => toggle()}
             css={sidebarMenu}
+            className={className}
         >
             <div css={sidebarMenuDiv}>
                 <h5 css={sidebarMenuTitle(theme)}>{title}</h5>

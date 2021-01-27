@@ -1,6 +1,7 @@
 import { ReactNode, SyntheticEvent } from 'react';
+import { SimpleComponent } from '../../shared/interfaces/SimpleComponent.types';
 
-export default interface MainNavigationProps {
+export default interface MainNavigationProps extends SimpleComponent {
     children: ReactNode;
     showItems?: boolean;
     onShowItems?: () => void;
