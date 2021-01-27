@@ -99,6 +99,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                     value={textValue}
                     disabled={disabled}
                     css={input(theme, size)}
+                    name={name}
                 />
                 {searching ? (
                     <img alt="Close" src={imageSpinner} css={loadingIcon()} />

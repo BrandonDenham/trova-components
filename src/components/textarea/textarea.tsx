@@ -64,6 +64,7 @@ const Textarea: React.FC<TextareaProps> = ({
                 placeholder={placeholder}
                 value={value}
                 disabled={disabled}
+                name={name}
             />
             {disabled && disabledText && (
                 <span css={disabledSpan(theme)}>{disabledText}</span>
