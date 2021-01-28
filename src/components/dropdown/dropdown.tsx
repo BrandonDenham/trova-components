@@ -51,10 +51,11 @@ const Dropdown: React.FC<DropdownProps> = ({
     onSearch,
     searching = false,
     className,
+    onChange,
 }) => {
     const theme = useTheme();
-    const [textValue, setTextValue] = useState(value);
-    const handleChange = useCallback(
+
+    const handleSearch = useCallback(
         (event: SyntheticEvent) => {
             onSearch
                 ? onSearch(
@@ -63,9 +64,8 @@ const Dropdown: React.FC<DropdownProps> = ({
                       (event.target as HTMLInputElement).value
                   )
                 : event.stopPropagation();
-            setTextValue((event.target as HTMLInputElement).value);
         },
-        [name, textValue, onSearch]
+        [name, onSearch]
     );
     const [listVisible, setListVisible] = useState(false);
     const handleIconClick = useCallback(() => {
@@ -75,14 +75,16 @@ const Dropdown: React.FC<DropdownProps> = ({
     }, [listVisible]);
     const handleClick = useCallback(
         (event: SyntheticEvent) => {
-            setTextValue((event.target as HTMLLIElement).textContent!);
-            value = children[(event.target as HTMLLIElement).value].value;
+            value = (event.target as HTMLLIElement).textContent!;
             setListVisible(false);
+            onChange ? onChange(event, name, value) : event.stopPropagation();
         },
-        [textValue]
+        [value]
     );
+
     const containerRef = useRef(null);
     useOutsideListener(containerRef, () => setListVisible(false));
+
     return (
         <div
             css={mainContainer(theme, size)}
@@ -94,9 +96,9 @@ const Dropdown: React.FC<DropdownProps> = ({
                 <input
                     data-testid="input"
                     type="text"
-                    onChange={handleChange}
+                    onChange={handleSearch}
                     placeholder={placeholder}
-                    value={textValue}
+                    value={value}
                     disabled={disabled}
                     css={input(theme, size)}
                     name={name}
