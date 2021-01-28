@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, useTheme } from '@emotion/react';
-import React from 'react';
+import React, { SyntheticEvent, useCallback } from 'react';
 
 import {
     mainContainer,
@@ -9,35 +9,67 @@ import {
     innerContainer,
     changeButton,
     errorSpan,
+    input,
 } from './Number.styles';
 import imageSubstract from '../../shared/images/icons/substract.svg';
 import imageAdd from '../../shared/images/icons/add.svg';
-import NumberProps from './Number.types';
+import { FieldProps } from '../field/field.types';
 
-const Number: React.FC<NumberProps> = ({
+/**
+ * Renders a <Number /> component
+ * @param  props
+ * @param  props.value - The value of the component
+ * @param  props.name - field Name, will correspond to the 2nd parameter in the onChange
+ * @param  props.error - any errors
+ * @param  props.label - The label of the component
+ * @param  props.className - For usage as an emotion styled component.
+ */
+
+const Number: React.FC<FieldProps<number>> = ({
     value = 0,
     label,
     error,
     className,
-    handleSubstract,
-    handleAdd,
+    name,
+    onChange,
 }) => {
     const theme = useTheme();
+    function handleChange(value: number) {
+        useCallback(
+            (event: SyntheticEvent) => {
+                onChange
+                    ? onChange(event, name, value)
+                    : event.stopPropagation();
+            },
+            [name, value, onChange]
+        );
+    }
     return (
         <div css={mainContainer(theme)} className={className}>
             <div css={labelContainer()}>
                 {label && <span css={labelSpan(theme)}>{label}</span>}
             </div>
-            <div css={innerContainer(theme, error)}>
+            <div css={innerContainer(error)}>
                 <div
                     css={changeButton()}
-                    onClick={handleSubstract}
+                    onClick={() => handleChange(value - 1)}
                     data-testid="substract"
                 >
                     <img alt="Substract" src={imageSubstract} />
                 </div>
-                {value}
-                <div css={changeButton()} onClick={handleAdd} data-testid="add">
+                <input
+                    data-testid="input"
+                    type="text"
+                    value={value}
+                    css={input(theme)}
+                    onChange={(e) => handleChange(e.target.valueAsNumber)}
+                    name={name}
+                />
+                <div
+                    css={changeButton()}
+                    onClick={() => handleChange(value + 1)}
+                    data-testid="add"
+                >
                     <img alt="Add" src={imageAdd} />
                 </div>
             </div>

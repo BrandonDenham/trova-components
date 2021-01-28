@@ -23,10 +23,7 @@ export const labelSpan = (theme: Theme) => css`
     color: ${Colors.DarkGray};
 `;
 
-export const innerContainer = (
-    theme: Theme,
-    error: string | string[] | undefined
-) => css`
+export const innerContainer = (error: string | string[] | undefined) => css`
     box-sizing: border-box;
     border-radius: 10px;
     border: 1px solid ${Colors.LightGray};
@@ -37,11 +34,6 @@ export const innerContainer = (
     align-items: center;
     justify-content: space-between;
     padding: 0 0.8rem;
-    font-family: ${theme.fonts.robotoBold};
-    font-size: ${theme.fontSizes.number};
-    line-height: 19px;
-    color: ${Colors.Dark};
-    background-color: ${Colors.White};
     svg {
         margin-right: 20px;
     }
@@ -58,4 +50,20 @@ export const errorSpan = (theme: Theme) => css`
     line-height: 16px;
     padding-top: 9px;
     color: ${Colors.DangerText};
+`;
+
+export const input = (theme: Theme) => css`
+    box-sizing: border-box;
+    font-family: ${theme.fonts.robotoBold};
+    font-size: ${theme.fontSizes.number};
+    line-height: 19px;
+    color: ${Colors.Dark};
+    border: transparent;
+    background-color: ${Colors.White};
+    width: 0;
+    flex-grow: 1;
+    text-align: center;
+    :focus {
+        border: transparent;
+    }
 `;
