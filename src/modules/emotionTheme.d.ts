@@ -40,6 +40,7 @@ declare module '@emotion/react' {
             toggleDetail: string;
             checkboxDetail: string;
             tableText: string;
+            number: string;
         };
         breakpoints: {
             sm: number;
