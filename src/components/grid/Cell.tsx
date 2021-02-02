@@ -10,11 +10,12 @@ import { cell } from './Cell.styles';
  * @param  props
  * @param  props.children - The cell contents.
  * @param  props.className - For usage as an emotion styled component.
+ * @param props.minWidth - Minimum width for the cell's contents
  */
 
-const Cell: React.FC<CellProps> = ({ children, className }) => {
+const Cell: React.FC<CellProps> = ({ children, className, minWidth }) => {
     return (
-        <MaterialTableCell css={cell()} className={className}>
+        <MaterialTableCell css={cell(minWidth)} className={className}>
             {children}
         </MaterialTableCell>
     );

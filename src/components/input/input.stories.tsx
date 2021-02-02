@@ -10,6 +10,15 @@ export default {
     component: Input,
 };
 
+export const ExtraSmallInput = () => (
+    <Input
+        name="test"
+        value="Text"
+        placeholder="Placeholder"
+        size={ComponentWidth.ExtraSmall}
+    />
+);
+
 export const SmallInput = () => (
     <Input
         name="test"

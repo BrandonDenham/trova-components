@@ -28,7 +28,7 @@ import imageSpinner from '../../shared/images/icons/spinner.svg';
  * @param  props.info - this be the next for an onClick/hover icon.  If null icon doesnt show
  * @param  props.error - any errors
  * @param  props.placeholder - This is the standard placeholder text for an empty dropdown
- * @param  props.size - The sizes are: Small - 2 col, Medium - 3 col (default), Large - 4 col, ExtraLarge - 5 col
+ * @param  props.size - The sizes are: ExtraSmall: for usage in tables, Small - 2 col, Medium - 3 col (default), Large - 4 col, ExtraLarge - 5 col
  * @param  props.disabled - defaults to false, if true there is no ability to click into the input
  * @param  props.disabledText - Text under the input that will be shown if disabled is true
  * @param  props.children - The options that are possible, that provide the list of what's available in the dropdown.
@@ -91,8 +91,8 @@ const Dropdown: React.FC<DropdownProps> = ({
             ref={containerRef}
             className={className}
         >
-            <DropdownHeader label={label} info={info} />
-            <div css={inputContainer(theme, error, listVisible)}>
+            {label && <DropdownHeader label={label} info={info} />}
+            <div css={inputContainer(theme, error, listVisible, size)}>
                 <input
                     data-testid="input"
                     type="text"
@@ -108,7 +108,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 ) : (
                     <div
                         onClick={handleIconClick}
-                        css={iconContainer(disabled)}
+                        css={iconContainer(disabled, size)}
                     >
                         <Icon
                             name={IconName.DropdownArrow}
@@ -123,6 +123,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 searching={searching}
                 listVisible={listVisible}
                 handleClick={handleClick}
+                size={size}
             />
             <ComponentFooter
                 disabled={disabled}

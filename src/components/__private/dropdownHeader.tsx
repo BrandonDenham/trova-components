@@ -22,7 +22,7 @@ const DropdownHeader: React.FC<DropdownHeaderProps> = ({ label, info }) => {
     const theme = useTheme();
     return (
         <div css={labelContainer()}>
-            {label && <span css={labelSpan(theme)}>{label}</span>}
+            <span css={labelSpan(theme)}>{label}</span>
             {info && (
                 <div css={infoImageContainer()} title={info}>
                     <label>

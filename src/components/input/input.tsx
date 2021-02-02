@@ -45,8 +45,8 @@ const Input: React.FC<InputProps> = ({
     const handleClick = useCallback(() => textInput.focus(), []);
     return (
         <div css={mainContainer(theme, size)} className={className}>
-            <div css={labelContainer()}>
-                {label && <span css={labelSpan(theme)}>{label}</span>}
+            {label && <div css={labelContainer()}>
+                <span css={labelSpan(theme)}>{label}</span>
                 {info && (
                     <div css={infoImageContainer()} title={info}>
                         <label>
@@ -60,7 +60,7 @@ const Input: React.FC<InputProps> = ({
                         </label>
                     </div>
                 )}
-            </div>
+            </div>}
             {detail && <span css={detailSpan(theme)}>{detail}</span>}
             {icon && (
                 <div css={inputContainer(theme, error)} onClick={handleClick}>
@@ -83,7 +83,7 @@ const Input: React.FC<InputProps> = ({
             {!icon && (
                 <input
                     data-testid="input"
-                    css={input(theme, error)}
+                    css={input(theme, error, size)}
                     type="text"
                     onChange={handleChange}
                     placeholder={placeholder}

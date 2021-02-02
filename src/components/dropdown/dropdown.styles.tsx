@@ -5,6 +5,7 @@ import { ComponentWidth } from '../input';
 export const mainContainer = (theme: Theme, size: ComponentWidth) => css`
     display: flex;
     flex-direction: column;
+    ${size === ComponentWidth.ExtraSmall && `width:89px; position:relative;`}
     ${size === ComponentWidth.Small && `width:${theme.columns.twoColumns}px;`}
     ${size === ComponentWidth.Medium &&
     `width:${theme.columns.threeColumns}px;`}
@@ -19,14 +20,16 @@ export const mainContainer = (theme: Theme, size: ComponentWidth) => css`
 export const inputContainer = (
     theme: Theme,
     error: string | string[] | undefined,
-    listVisible: boolean
+    listVisible: boolean,
+    size: ComponentWidth
 ) => css`
     box-sizing: border-box;
     border-radius: 10px;
     ${listVisible && `border-radius: 10px 10px 0px 0px;`}
     border: 1px solid ${Colors.LightGray};
-    min-height: 50px;
-    margin-top: 10px;
+    ${size !== ComponentWidth.ExtraSmall &&
+    `min-height: 50px;
+    margin-top: 10px;`}
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,6 +44,8 @@ export const inputContainer = (
     :focus-within {
         border: 1px solid ${Colors.Active};
     }`}
+    ${size === ComponentWidth.ExtraSmall &&
+    `border-radius: 5px;padding: 5px 9px; font-size: ${theme.fontSizes.extraSmallDropdown};height: 31px;margin-top: 0px;line-height: 16px;`}
     ${error && error.length && `border-color: ${Colors.Danger};`}
 `;
 
@@ -59,6 +64,7 @@ export const input = (theme: Theme, size: ComponentWidth) => css`
     }
     ${size === ComponentWidth.Small && `width:99px;`}
     ${size === ComponentWidth.Medium && `width:190px;`}
+    ${size === ComponentWidth.ExtraSmall && `width:50px;`}
 `;
 
 export const inputContainerMultipleDropdown = (
@@ -141,9 +147,10 @@ export const closeButton = () => css`
     margin-left: 2px;
 `;
 
-export const iconContainer = (disabled: boolean) => css`
+export const iconContainer = (disabled: boolean, size: ComponentWidth) => css`
     ${disabled === false && `cursor: pointer;`}
     margin: 17px 20px 0 0;
+    ${size === ComponentWidth.ExtraSmall && `margin: 2px 0 0 0;`}
     flex: none;
     align-self: start;
 `;
