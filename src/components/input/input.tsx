@@ -75,6 +75,7 @@ const Input: React.FC<InputProps> = ({
                         ref={(input: HTMLInputElement) => {
                             textInput = input;
                         }}
+                        name={name}
                     />
                     {icon}
                 </div>
@@ -88,6 +89,7 @@ const Input: React.FC<InputProps> = ({
                     placeholder={placeholder}
                     value={value}
                     disabled={disabled}
+                    name={name}
                 />
             )}
             {disabled && disabledText && (

@@ -46,6 +46,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
                     disabled={disabled}
                     onChange={handleToggle}
                     data-testid="checkbox"
+                    name={name}
                 />
                 <span css={checkbox(error)}>
                     <img alt="Toggle" src={imageCheckboxCross} />

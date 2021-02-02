@@ -44,6 +44,7 @@ const Toggle: React.FC<ToggleProps> = ({
                     checked={value}
                     disabled={disabled}
                     onChange={handleToggle}
+                    name={name}
                 />
                 <span
                     data-testid="toggle"

@@ -43,14 +43,13 @@ describe('Dropdown', () => {
         };
         multipleDropdownProps = {
             name: 'test',
-            value: ['value1','value2'],
+            value: ['value1', 'value2'],
             placeholder: 'Placeholder',
             label: 'Form header',
             onSearch: jest.fn(),
             children: children,
         };
     });
-
 
     const renderMediumComponent = () =>
         render(
