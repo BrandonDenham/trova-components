@@ -21,6 +21,7 @@ import { Colors } from './shared/constants/colors';
 import { ComponentWidth } from './components/input/componentWidth';
 import { TextareaSize } from './components/textarea/textareaSize';
 import { Cell, Row, Table, TableBody, TableHead } from './components/grid/';
+import Number from './components/number';
 
 export {
     Sidebar,
@@ -61,4 +62,5 @@ export {
     Table,
     TableBody,
     TableHead,
+    Number,
 };

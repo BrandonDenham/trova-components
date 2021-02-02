@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1A3A7ACD-E4CC-404E-ACFD-6E37D3612DA6</title>
+    <g id="Design-System" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fields" transform="translate(-317.000000, -1241.000000)">
+            <g id="ux/field/2col/active-copy-2" transform="translate(194.000000, 1200.000000)">
+                <g id="iconmonstr-minus-2-copy-2" transform="translate(13.000000, 41.000000)">
+                    <g id="ux/plus" transform="translate(110.000000, 0.000000)">
+                        <g id="Plus">
+                            <rect id="Rectangle-Copy" fill="#EFF1F7" x="0" y="0" width="23" height="23" rx="7"></rect>
+                            <polygon id="Path" fill="#3C4858" fill-rule="nonzero" points="18 11 13 11 13 6 11 6 11 11 6 11 6 13 11 13 11 18 13 18 13 13 18 13"></polygon>
+                        </g>
+                        <g id="iconmonstr-plus-2-copy-4" transform="translate(6.000000, 6.000000)"></g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
