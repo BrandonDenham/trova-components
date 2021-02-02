@@ -28,6 +28,8 @@ declare module '@emotion/react' {
             inputDetail: string;
             inputDisabled: string;
             inputError: string;
+            extraSmallInput: string;
+            extraSmallDropdown: string;
             tooltip: string;
             textarea: string;
             textareaLabel: string;

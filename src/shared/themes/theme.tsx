@@ -25,6 +25,8 @@ const theme = {
         inputDetail: '14px',
         inputDisabled: '14px',
         inputError: '14px',
+        extraSmallInput: '14px',
+        extraSmallDropdown: '14px',
         tooltip: '13px',
         textarea: '16px',
         textareaLabel: '14px',

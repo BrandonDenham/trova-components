@@ -1,7 +1,9 @@
 import { css, Theme } from '@emotion/react';
+
+import { ComponentWidth } from '../input/';
 import { Colors } from '../../shared/constants/colors';
 
-export const list = (theme: Theme) =>
+export const list = (theme: Theme, size: ComponentWidth) =>
     css`
         background-color: ${Colors.White};
         border: 1px solid ${Colors.LightGray};
@@ -13,6 +15,7 @@ export const list = (theme: Theme) =>
         padding: 1.2rem 0 1.2rem 1.2rem;
         max-height: 10rem;
         overflow: scroll;
+        ${size === ComponentWidth.ExtraSmall && `position: absolute;`}
     `;
 
 export const listItem = () =>

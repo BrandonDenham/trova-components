@@ -5,6 +5,7 @@ import { ComponentWidth } from './componentWidth';
 export const mainContainer = (theme: Theme, size: ComponentWidth) => css`
     display: flex;
     flex-direction: column;
+    ${size === ComponentWidth.ExtraSmall && `min-width: 64px; max-width:100px;`}
     ${size === ComponentWidth.Small && `width:${theme.columns.twoColumns}px;`}
     ${size === ComponentWidth.Medium &&
     `width:${theme.columns.threeColumns}px;`}
@@ -16,7 +17,11 @@ export const mainContainer = (theme: Theme, size: ComponentWidth) => css`
     }
 `;
 
-export const input = (theme: Theme, error: string | string[] | undefined) =>
+export const input = (
+    theme: Theme,
+    error: string | string[] | undefined,
+    size: ComponentWidth
+) =>
     css`
         box-sizing: border-box;
         border-radius: 10px;
@@ -27,6 +32,8 @@ export const input = (theme: Theme, error: string | string[] | undefined) =>
         font-family: ${theme.fonts.robotoRegular};
         font-size: ${theme.fontSizes.input};
         line-height: 19px;
+        ${size === ComponentWidth.ExtraSmall &&
+        `border-radius: 5px;padding: 5px 9px; width: 100%;font-size: ${theme.fontSizes.extraSmallInput};min-height: 31px;margin-top: 0px;line-height: 16px;`}
         color: ${Colors.Dark};
         ${!error &&
         `:focus {
