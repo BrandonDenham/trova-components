@@ -12,9 +12,10 @@ export const mainContainer = () => css`
 
 export const input = () => css`
     opacity: 0;
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     cursor: pointer;
+    z-index: 100;
     :disabled {
         cursor: default;
     }
