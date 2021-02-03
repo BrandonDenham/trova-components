@@ -164,7 +164,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
                 ) : (
                     <div
                         onClick={handleIconClick}
-                        css={iconContainer(disabled)}
+                        css={iconContainer(disabled, size)}
                     >
                         <Icon
                             name={IconName.DropdownArrow}
