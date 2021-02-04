@@ -34,16 +34,12 @@ const Number: React.FC<FieldProps<number>> = ({
     onChange,
 }) => {
     const theme = useTheme();
-    function handleChange(value: number) {
-        useCallback(
-            (event: SyntheticEvent) => {
-                onChange
-                    ? onChange(event, name, value)
-                    : event.stopPropagation();
-            },
-            [name, value, onChange]
-        );
-    }
+    const handleChange = useCallback(
+        (event: SyntheticEvent, value: number) => {
+            onChange ? onChange(event, name, value) : event.stopPropagation();
+        },
+        [name, value, onChange]
+    );
     return (
         <div css={mainContainer(theme)} className={className}>
             <div css={labelContainer()}>
@@ -52,7 +48,7 @@ const Number: React.FC<FieldProps<number>> = ({
             <div css={innerContainer(error)}>
                 <div
                     css={changeButton()}
-                    onClick={() => handleChange(value - 1)}
+                    onClick={(e) => handleChange(e, value - 1)}
                     data-testid="substract"
                 >
                     <img alt="Substract" src={imageSubstract} />
@@ -62,12 +58,12 @@ const Number: React.FC<FieldProps<number>> = ({
                     type="text"
                     value={value}
                     css={input(theme)}
-                    onChange={(e) => handleChange(e.target.valueAsNumber)}
+                    onChange={(e) => handleChange(e, parseInt(e.target.value))}
                     name={name}
                 />
                 <div
                     css={changeButton()}
-                    onClick={() => handleChange(value + 1)}
+                    onClick={(e) => handleChange(e, value + 1)}
                     data-testid="add"
                 >
                     <img alt="Add" src={imageAdd} />

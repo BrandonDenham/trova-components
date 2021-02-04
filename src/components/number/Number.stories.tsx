@@ -12,8 +12,6 @@ export const NumberExample = () => (
         name="test"
         value={5}
         label="Form header"
-        handleAdd={() => {}}
-        handleSubstract={() => {}}
     />
 );
 
@@ -22,8 +20,6 @@ export const Error = () => (
         name="test"
         value={5}
         label="Form header"
-        handleAdd={() => {}}
-        handleSubstract={() => {}}
         error="Invalid value."
     />
 );
