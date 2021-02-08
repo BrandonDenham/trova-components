@@ -3,7 +3,6 @@ import { Colors } from '../../shared/constants/colors';
 
 export const mainContent = (theme: Theme) => css`
     flex-grow: 1;
-    overflow-x: auto;
     padding: 2rem 2rem 5rem 2rem;
     border-radius: 35px 0 0 0;
     background-color: ${Colors.PrimaryContentBackground};

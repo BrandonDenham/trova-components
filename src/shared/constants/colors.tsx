@@ -25,4 +25,7 @@ export enum Colors {
     LightBlue = '#26C6DA',
     Purple = '#AC51B5',
     LightOrange = '#F2A364',
+    ParagraphDarkGray = '#203049',
+    CardDashedBorderGray = '#C3CFEC',
+    CardDashedBorderLightGray = '#C2CEEB',
 }
