@@ -9,6 +9,7 @@ const DraggableTarget: React.FC<DraggableTargetProps> = ({
     dropTargetConfiguration,
     onCollect,
     children,
+    className,
 }) => {
     const [, drop] = useDropSpecs({
         dropTargetConfiguration,
@@ -16,8 +17,8 @@ const DraggableTarget: React.FC<DraggableTargetProps> = ({
     });
 
     return (
-        <div css={draggableTarget()} ref={drop}>
-            <div>{children}</div>
+        <div css={draggableTarget()} ref={drop} className={className}>
+            {children}
         </div>
     );
 };
