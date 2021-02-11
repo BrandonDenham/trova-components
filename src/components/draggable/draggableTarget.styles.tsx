@@ -3,7 +3,7 @@ import { Colors } from '../../shared/constants/colors';
 
 export const draggableTarget = (
     cursor: string = `pointer`,
-    backgroundColor: Colors = Colors.LightGray
+    backgroundColor: Colors = Colors.PrimaryContentBackground
 ) => css`
     display: flex;
     flex-direction: column;
@@ -12,6 +12,5 @@ export const draggableTarget = (
     cursor: ${cursor};
     background-color: ${backgroundColor};
     margin: 0.5rem 0rem;
-    align-text: left;
     padding: 1rem;
 `;
