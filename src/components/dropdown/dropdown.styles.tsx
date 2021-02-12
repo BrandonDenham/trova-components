@@ -5,7 +5,8 @@ import { ComponentWidth } from '../input';
 export const mainContainer = (theme: Theme, size: ComponentWidth) => css`
     display: flex;
     flex-direction: column;
-    ${size === ComponentWidth.ExtraSmall && `width:89px; position:relative;`}
+    position: relative;
+    ${size === ComponentWidth.ExtraSmall && `width:89px;`}
     ${size === ComponentWidth.Small && `width:${theme.columns.twoColumns}px;`}
     ${size === ComponentWidth.Medium &&
     `width:${theme.columns.threeColumns}px;`}
@@ -45,7 +46,11 @@ export const inputContainer = (
         border: 1px solid ${Colors.Active};
     }`}
     ${size === ComponentWidth.ExtraSmall &&
-    `border-radius: 5px;padding: 5px 9px; font-size: ${theme.fontSizes.extraSmallDropdown};height: 31px;margin-top: 0px;line-height: 16px;`}
+    `border-radius: 5px;padding: 5px 9px; font-size: ${
+        theme.fontSizes.extraSmallDropdown
+    };height: 31px;margin-top: 0px;line-height: 16px;${
+        listVisible && `border-radius: 10px 10px 0px 0px;`
+    }`}
     ${error && error.length && `border-color: ${Colors.Danger};`}
 `;
 
