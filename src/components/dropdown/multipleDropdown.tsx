@@ -61,10 +61,11 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
     onSearch,
     searching = false,
     className,
+    onChange,
 }) => {
     const theme = useTheme();
     const [textValue, setTextValue] = useState('');
-    const handleChange = useCallback(
+    const handleSearch = useCallback(
         (event: SyntheticEvent) => {
             onSearch
                 ? onSearch(
@@ -121,6 +122,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
                 value.push(currentValue);
             }
             updateButtons();
+            onChange ? onChange(event, name, value) : event.stopPropagation();
         },
         [value]
     );
@@ -152,7 +154,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
                     <input
                         data-testid="input"
                         type="text"
-                        onChange={handleChange}
+                        onChange={handleSearch}
                         value={textValue}
                         disabled={disabled}
                         placeholder={placeholder}
