@@ -32,7 +32,7 @@ const children: Option[] = [
 export const SmallDropdown = () => (
     <Dropdown
         name="test"
-        value="value1"
+        value="asd"
         placeholder="Placeholder"
         label="Form header"
         size={ComponentWidth.Small}
