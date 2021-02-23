@@ -28,7 +28,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
         <React.Fragment>
             {listVisible && !searching && (
                 <ul css={list(theme, size)}>
-                    {children.map((child) => (
+                    {children.map(child => (
                         <li
                             css={listItem()}
                             onClick={handleClick}

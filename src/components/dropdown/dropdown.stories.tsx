@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 
 import Dropdown from './dropdown';
@@ -32,7 +32,7 @@ const children: Option[] = [
 export const SmallDropdown = () => (
     <Dropdown
         name="test"
-        value="Text"
+        value="value1"
         placeholder="Placeholder"
         label="Form header"
         size={ComponentWidth.Small}
@@ -44,7 +44,7 @@ export const SmallDropdown = () => (
 export const MediumDropdown = () => (
     <Dropdown
         name="test"
-        value="Text"
+        value="value1"
         placeholder="Placeholder"
         label="Form header"
         children={children}
@@ -52,22 +52,29 @@ export const MediumDropdown = () => (
     />
 );
 
-export const LargeDropdown = () => (
-    <Dropdown
-        name="test"
-        value="Text"
-        placeholder="Placeholder"
-        label="Form header"
-        size={ComponentWidth.Large}
-        children={children}
-        onSearch={action('search')}
-    />
-);
+export const LargeDropdown = () => {
+    const [stateValue, setStateValue] = useState('value1');
+    return (
+        <Dropdown
+            name="test"
+            value={stateValue}
+            placeholder="Placeholder"
+            label="Form header"
+            size={ComponentWidth.Large}
+            children={children}
+            onSearch={action('search')}
+            onChange={(e, name, eventValue) => {
+                setStateValue(eventValue);
+                return e;
+            }}
+        />
+    );
+};
 
 export const ExtraLargeDropdown = () => (
     <Dropdown
         name="test"
-        value="Text"
+        value="value1"
         placeholder="Placeholder"
         label="Form header"
         size={ComponentWidth.ExtraLarge}
@@ -79,7 +86,7 @@ export const ExtraLargeDropdown = () => (
 export const SearchingDropdown = () => (
     <Dropdown
         name="test"
-        value="Text"
+        value="value1"
         placeholder="Placeholder"
         label="Form header"
         children={children}
@@ -91,6 +98,7 @@ export const SearchingDropdown = () => (
 export const EmptyDropdown = () => (
     <Dropdown
         name="test"
+        value="value1"
         placeholder="Placeholder"
         label="Form header"
         children={children}
@@ -101,7 +109,7 @@ export const EmptyDropdown = () => (
 export const DisabledDropdown = () => (
     <Dropdown
         name="test"
-        value="Text"
+        value="value1"
         placeholder="Placeholder"
         label="Form header"
         disabled={true}
@@ -114,7 +122,7 @@ export const DisabledDropdown = () => (
 export const Info = () => (
     <Dropdown
         name="test"
-        value="Sunrise Highrise"
+        value="value1"
         placeholder="Placeholder"
         label="Form header"
         info="This is actually a really really long tooltip to be used as an example."
@@ -127,7 +135,7 @@ export const Info = () => (
 export const SingleError = () => (
     <Dropdown
         name="test"
-        value="Text"
+        value="value1"
         error="Input must be filled"
         placeholder="Placeholder"
         label="Form header"
@@ -139,7 +147,7 @@ export const SingleError = () => (
 export const MultipleErrors = () => (
     <Dropdown
         name="test"
-        value="Text"
+        value="value1"
         error={['Input must be filled', 'Input must be numeric']}
         placeholder="Placeholder"
         label="Form header"
@@ -151,7 +159,7 @@ export const MultipleErrors = () => (
 export const FilledSearchErrors = () => (
     <Dropdown
         name="test"
-        value="Sunrise Highrise"
+        value="value1"
         placeholder="Placeholder"
         label="Form header"
         size={ComponentWidth.Large}
@@ -164,7 +172,7 @@ export const FilledSearchErrors = () => (
 export const InfoFilledSearchErrors = () => (
     <Dropdown
         name="test"
-        value="Sunrise Highrise"
+        value="value1"
         placeholder="Placeholder"
         label="Form header"
         size={ComponentWidth.Large}

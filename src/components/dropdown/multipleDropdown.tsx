@@ -86,18 +86,17 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
     }, [listVisible]);
 
     const removeElement = (elementValue: string) => {
-        value = value.filter((item) => item !== elementValue);
+        value = value.filter(item => item !== elementValue);
         updateButtons();
     };
 
     const [buttons, setButtons] = useState<(JSX.Element | Element)[]>([]);
 
     const updateButtons = useCallback(() => {
-        let buttonElements: (JSX.Element | Element)[] = [];
-        value.forEach((currentValue) => {
-            const text = children.filter(
-                (item) => item.value === currentValue
-            )[0].children;
+        const buttonElements: (JSX.Element | Element)[] = [];
+        value.forEach(currentValue => {
+            const text = children.filter(item => item.value === currentValue)[0]
+                .children;
             buttonElements.push(
                 <div key={currentValue} css={button()} data-testid="button">
                     <div>{text}</div>
@@ -117,7 +116,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
         (event: SyntheticEvent) => {
             const currentValue = (event.target as HTMLLIElement).dataset.value!;
             if (value.includes(currentValue)) {
-                value = value.filter((item) => item !== currentValue);
+                value = value.filter(item => item !== currentValue);
             } else {
                 value.push(currentValue);
             }

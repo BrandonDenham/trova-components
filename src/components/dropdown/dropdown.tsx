@@ -75,7 +75,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     }, [listVisible]);
     const handleClick = useCallback(
         (event: SyntheticEvent) => {
-            value = (event.target as HTMLLIElement).textContent!;
+            value = (event.target as HTMLLIElement).dataset.value!;
             setListVisible(false);
             onChange ? onChange(event, name, value) : event.stopPropagation();
         },
@@ -85,6 +85,8 @@ const Dropdown: React.FC<DropdownProps> = ({
     const containerRef = useRef(null);
     useOutsideListener(containerRef, () => setListVisible(false));
 
+    const selectedValue =
+        children && children.find(child => child.value === value)!.children;
     return (
         <div
             css={mainContainer(theme, size)}
@@ -98,7 +100,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                     type="text"
                     onChange={handleSearch}
                     placeholder={placeholder}
-                    value={value}
+                    value={selectedValue}
                     disabled={disabled}
                     css={input(theme, size)}
                     name={name}
