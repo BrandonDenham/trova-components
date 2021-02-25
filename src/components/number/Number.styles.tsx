@@ -26,6 +26,7 @@ export const labelSpan = (theme: Theme) => css`
 export const innerContainer = (error: string | string[] | undefined) => css`
     box-sizing: border-box;
     border-radius: 10px;
+    background: ${Colors.White};
     border: 1px solid ${Colors.LightGray};
     ${error && error.length && `border-color: ${Colors.Danger};`}
     min-height: 50px;
@@ -41,6 +42,7 @@ export const innerContainer = (error: string | string[] | undefined) => css`
 
 export const changeButton = () => css`
     cursor: pointer;
+    height: 23px;
 `;
 
 export const errorSpan = (theme: Theme) => css`
