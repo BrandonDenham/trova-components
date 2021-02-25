@@ -14,6 +14,7 @@ export const list = (theme: Theme, size: ComponentWidth) =>
         color: ${Colors.Dark};
         padding: 1.2rem 0 1.2rem 1.2rem;
         max-height: 10rem;
+        overflow: auto;
         ${size === ComponentWidth.ExtraSmall &&
         `top: 47px; position: absolute;`}
     `;
