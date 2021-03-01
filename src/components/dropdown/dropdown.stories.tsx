@@ -47,6 +47,7 @@ export const MediumDropdown = () => (
         value="value1"
         placeholder="Placeholder"
         label="Form header"
+        size={ComponentWidth.Medium}
         children={children}
         onSearch={action('search')}
     />
@@ -78,6 +79,17 @@ export const ExtraLargeDropdown = () => (
         placeholder="Placeholder"
         label="Form header"
         size={ComponentWidth.ExtraLarge}
+        children={children}
+        onSearch={action('search')}
+    />
+);
+
+export const FlexibleDropdown = () => (
+    <Dropdown
+        name="test"
+        value="value1"
+        placeholder="Placeholder"
+        label="Form header"
         children={children}
         onSearch={action('search')}
     />
@@ -204,6 +216,7 @@ export const MediumMultipleDropdown = () => (
         label="Form header"
         children={children}
         onSearch={action('search')}
+        size={ComponentWidth.Medium}
         placeholder="Placeholder"
     />
 );
@@ -228,6 +241,17 @@ export const ExtralargeMultipleDropdown = () => (
         children={children}
         onSearch={action('search')}
         size={ComponentWidth.ExtraLarge}
+        placeholder="Placeholder"
+    />
+);
+
+export const FlexibleMultipleDropdown = () => (
+    <MultipleDropdown
+        name="test"
+        value={value}
+        label="Form header"
+        children={children}
+        onSearch={action('search')}
         placeholder="Placeholder"
     />
 );

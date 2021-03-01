@@ -4,4 +4,5 @@ export enum ComponentWidth {
     Medium,
     Large,
     ExtraLarge,
+    Flexible,
 }

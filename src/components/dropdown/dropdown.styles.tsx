@@ -52,6 +52,7 @@ export const inputContainer = (
         listVisible && `border-radius: 10px 10px 0px 0px;`
     }`}
     ${error && error.length && `border-color: ${Colors.Danger};`}
+    ${size === ComponentWidth.Flexible && `padding-left: calc(14px + 1%);`}
 `;
 
 export const input = (theme: Theme, size: ComponentWidth) => css`
@@ -70,6 +71,7 @@ export const input = (theme: Theme, size: ComponentWidth) => css`
     ${size === ComponentWidth.Small && `width:99px;`}
     ${size === ComponentWidth.Medium && `width:190px;`}
     ${size === ComponentWidth.ExtraSmall && `width:50px;`}
+    ${size === ComponentWidth.Flexible && `width:80%;`}
 `;
 
 export const inputContainerMultipleDropdown = (
@@ -92,6 +94,7 @@ export const inputContainerMultipleDropdown = (
     font-size: ${theme.fontSizes.input};
     line-height: 19px;
     color: ${Colors.Dark};
+    background: ${Colors.White};
     ${!error &&
     `padding-left: 20px;
     :focus-within {
@@ -103,6 +106,7 @@ export const inputContainerMultipleDropdown = (
     }
     ${size === ComponentWidth.Small && `width:159px;`}
     ${size === ComponentWidth.Medium && `width:249px;`}
+    ${size === ComponentWidth.Flexible && `padding-left: calc(14px + 1%);`}
 `;
 
 export const inputMultipleDropdown = (theme: Theme) => css`
@@ -154,10 +158,9 @@ export const closeButton = () => css`
 
 export const iconContainer = (disabled: boolean, size: ComponentWidth) => css`
     ${disabled === false && `cursor: pointer;`}
-    margin: 17px 20px 0 0;
+    margin: 5px 20px 0 0;
     ${size === ComponentWidth.ExtraSmall && `margin: 2px 0 0 0;`}
-    flex: none;
-    align-self: start;
+    ${size === ComponentWidth.Flexible && `margin: 5px calc(18px + 2%) 0 0;`}
 `;
 
 export const loadingIcon = () => css`
