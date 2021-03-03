@@ -22,15 +22,14 @@ export const inputContainer = (
     theme: Theme,
     error: string | string[] | undefined,
     listVisible: boolean,
-    size: ComponentWidth
+    size: ComponentWidth,
+    disabled: boolean
 ) => css`
     box-sizing: border-box;
     border-radius: 10px;
     ${listVisible && `border-radius: 10px 10px 0px 0px;`}
     border: 1px solid ${Colors.LightGray};
-    ${size !== ComponentWidth.ExtraSmall &&
-    `min-height: 50px;
-    margin-top: 10px;`}
+    ${size !== ComponentWidth.ExtraSmall && `min-height: 50px;`}
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,6 +39,7 @@ export const inputContainer = (
     line-height: 19px;
     color: ${Colors.Dark};
     background-color: ${Colors.White};
+    ${disabled === false && `cursor: pointer;`}
     ${!error &&
     `padding-left: 20px;
     :focus-within {
@@ -49,7 +49,7 @@ export const inputContainer = (
     `border-radius: 5px;padding: 5px 9px; font-size: ${
         theme.fontSizes.extraSmallDropdown
     };height: 31px;margin-top: 0px;line-height: 16px;${
-        listVisible && `border-radius: 10px 10px 0px 0px;`
+        listVisible && `border-radius: 5px 5px 0px 0px;`
     }`}
     ${error && error.length && `border-color: ${Colors.Danger};`}
 `;
@@ -81,9 +81,8 @@ export const inputContainerMultipleDropdown = (
     box-sizing: border-box;
     border-radius: 10px;
     ${listVisible && `border-radius: 10px 10px 0px 0px;`}
+    ${size !== ComponentWidth.ExtraSmall && `min-height: 50px;`}
     border: 1px solid ${Colors.LightGray};
-    min-height: 50px;
-    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -92,6 +91,7 @@ export const inputContainerMultipleDropdown = (
     font-size: ${theme.fontSizes.input};
     line-height: 19px;
     color: ${Colors.Dark};
+    background: ${Colors.White};
     ${!error &&
     `padding-left: 20px;
     :focus-within {
@@ -101,6 +101,10 @@ export const inputContainerMultipleDropdown = (
     :disabled {
         background-color: ${Colors.White};
     }
+    ${size === ComponentWidth.ExtraSmall &&
+    `height:31px; border-radius: 5px;${
+        listVisible && `border-radius: 5px 5px 0px 0px;`
+    } font-size: ${theme.fontSizes.extraSmallDropdown};`}
     ${size === ComponentWidth.Small && `width:159px;`}
     ${size === ComponentWidth.Medium && `width:249px;`}
 `;
@@ -112,6 +116,7 @@ export const inputMultipleDropdown = (theme: Theme) => css`
     line-height: 19px;
     color: ${Colors.Dark};
     border: transparent;
+    float: right;
     :disabled {
         background-color: ${Colors.White};
     }
@@ -122,15 +127,16 @@ export const inputMultipleDropdown = (theme: Theme) => css`
     min-width: 95px;
     flex: 1;
     display: block;
-    padding-bottom: 5px;
+    padding: 0 0 5px 5px;
 `;
 
 export const buttonsContainer = (size: ComponentWidth) =>
     css`
-        display: flex;
-        flex: 1 0 auto;
-        flex-wrap: wrap;
         padding-top: 5px;
+        height: 22px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         ${size === ComponentWidth.Small && `max-width:95px;`}
         ${size === ComponentWidth.Medium && `max-width:190px;`}
         ${size === ComponentWidth.Large && `max-width:285px;`}
@@ -152,10 +158,17 @@ export const closeButton = () => css`
     margin-left: 2px;
 `;
 
-export const iconContainer = (disabled: boolean, size: ComponentWidth) => css`
+export const iconContainer = (
+    disabled: boolean,
+    size: ComponentWidth,
+    multiple: boolean
+) => css`
     ${disabled === false && `cursor: pointer;`}
     margin: 17px 20px 0 0;
     ${size === ComponentWidth.ExtraSmall && `margin: 2px 0 0 0;`}
+    ${size === ComponentWidth.ExtraSmall &&
+    multiple &&
+    `margin: 7px 0 0 0; padding-right: 9px;`}
     flex: none;
     align-self: start;
 `;
