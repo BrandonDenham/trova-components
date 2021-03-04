@@ -29,6 +29,27 @@ const children: Option[] = [
     { value: 'value15', children: 'Element 15' },
 ];
 
+const daysOfTheWeek: Option[] = [
+    { value: 'monday', children: 'M' },
+    { value: 'tuesday', children: 'Tu' },
+    { value: 'wednesday', children: 'W' },
+    { value: 'thursday', children: 'Th' },
+    { value: 'friday', children: 'F' },
+    { value: 'saturday', children: 'Sa' },
+    { value: 'sunday', children: 'Su' },
+];
+
+export const ExtraSmallDropdown = () => (
+    <Dropdown
+        name="test"
+        value="asd"
+        placeholder="Placeholder"
+        size={ComponentWidth.ExtraSmall}
+        children={daysOfTheWeek}
+        onSearch={action('search')}
+    />
+);
+
 export const SmallDropdown = () => (
     <Dropdown
         name="test"
@@ -183,63 +204,138 @@ export const InfoFilledSearchErrors = () => (
     />
 );
 
-const value: string[] = ['value1'];
+export const ExtraSmallMultipleDropdown = () => {
+    const [stateValue, setStateValue] = useState([
+        'value1',
+        'value3',
+        'value6',
+    ]);
+    return (
+        <MultipleDropdown
+            name="test"
+            value={stateValue}
+            children={daysOfTheWeek}
+            onSearch={action('search')}
+            size={ComponentWidth.ExtraSmall}
+            placeholder="Placeholder"
+            onChange={(e, name, eventValue) => {
+                setStateValue(eventValue);
+                return e;
+            }}
+        />
+    );
+};
 
-export const SmallMediumDropdown = () => (
-    <MultipleDropdown
-        name="test"
-        value={value}
-        label="Form header"
-        children={children}
-        onSearch={action('search')}
-        size={ComponentWidth.Small}
-        placeholder="Placeholder"
-    />
-);
+export const SmallMediumDropdown = () => {
+    const [stateValue, setStateValue] = useState([
+        'value1',
+        'value3',
+        'value6',
+    ]);
+    return (
+        <MultipleDropdown
+            name="test"
+            value={stateValue}
+            label="Form header"
+            children={children}
+            onSearch={action('search')}
+            size={ComponentWidth.Small}
+            placeholder="Placeholder"
+            onChange={(e, name, eventValue) => {
+                setStateValue(eventValue);
+                return e;
+            }}
+        />
+    );
+};
 
-export const MediumMultipleDropdown = () => (
-    <MultipleDropdown
-        name="test"
-        value={value}
-        label="Form header"
-        children={children}
-        onSearch={action('search')}
-        placeholder="Placeholder"
-    />
-);
+export const MediumMultipleDropdown = () => {
+    const [stateValue, setStateValue] = useState([
+        'value1',
+        'value3',
+        'value6',
+    ]);
+    return (
+        <MultipleDropdown
+            name="test"
+            value={stateValue}
+            label="Form header"
+            children={children}
+            onSearch={action('search')}
+            placeholder="Placeholder"
+            onChange={(e, name, eventValue) => {
+                setStateValue(eventValue);
+                return e;
+            }}
+        />
+    );
+};
 
-export const LargeMultipleDropdown = () => (
-    <MultipleDropdown
-        name="test"
-        value={value}
-        label="Form header"
-        children={children}
-        onSearch={action('search')}
-        size={ComponentWidth.Large}
-        placeholder="Placeholder"
-    />
-);
+export const LargeMultipleDropdown = () => {
+    const [stateValue, setStateValue] = useState([
+        'value1',
+        'value3',
+        'value6',
+    ]);
+    return (
+        <MultipleDropdown
+            name="test"
+            value={stateValue}
+            label="Form header"
+            children={children}
+            onSearch={action('search')}
+            size={ComponentWidth.Large}
+            placeholder="Placeholder"
+            onChange={(e, name, eventValue) => {
+                setStateValue(eventValue);
+                return e;
+            }}
+        />
+    );
+};
 
-export const ExtralargeMultipleDropdown = () => (
-    <MultipleDropdown
-        name="test"
-        value={value}
-        label="Form header"
-        children={children}
-        onSearch={action('search')}
-        size={ComponentWidth.ExtraLarge}
-        placeholder="Placeholder"
-    />
-);
+export const ExtralargeMultipleDropdown = () => {
+    const [stateValue, setStateValue] = useState([
+        'value1',
+        'value3',
+        'value6',
+    ]);
+    return (
+        <MultipleDropdown
+            name="test"
+            value={stateValue}
+            label="Form header"
+            children={children}
+            onSearch={action('search')}
+            size={ComponentWidth.ExtraLarge}
+            placeholder="Placeholder"
+            onChange={(e, name, eventValue) => {
+                setStateValue(eventValue);
+                return e;
+            }}
+        />
+    );
+};
 
-export const SearchingMultipleDropdown = () => (
-    <MultipleDropdown
-        name="test"
-        value={value}
-        label="Form header"
-        children={children}
-        onSearch={action('search')}
-        placeholder="Placeholder"
-        searching={true}
-    />
-);
+export const SearchingMultipleDropdown = () => {
+    const [stateValue, setStateValue] = useState([
+        'value1',
+        'value3',
+        'value6',
+    ]);
+    return (
+        <MultipleDropdown
+            name="test"
+            value={stateValue}
+            label="Form header"
+            children={children}
+            onSearch={action('search')}
+            placeholder="Placeholder"
+            searching={true}
+            onChange={(e, name, eventValue) => {
+                setStateValue(eventValue);
+                return e;
+            }}
+        />
+    );
+};

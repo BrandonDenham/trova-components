@@ -14,8 +14,6 @@ import {
     inputMultipleDropdown,
     iconContainer,
     buttonsContainer,
-    button,
-    closeButton,
     loadingIcon,
 } from './dropdown.styles';
 import { ComponentWidth } from '../input';
@@ -26,7 +24,6 @@ import { useOutsideListener } from '../../shared/utils/helpers';
 import DropdownHeader from '../__private/dropdownHeader';
 import ComponentFooter from '../__private/componentFooter';
 import DropdownMenu from '../__private/dropdownMenu';
-import imageClose from '../../shared/images/icons/close.svg';
 import imageSpinner from '../../shared/images/icons/spinner.svg';
 
 /**
@@ -79,57 +76,46 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
         [name, textValue, onSearch]
     );
     const [listVisible, setListVisible] = useState(false);
-    const handleIconClick = useCallback(() => {
+    const handleContainerClick = useCallback(() => {
         if (!disabled) {
             setListVisible(!listVisible);
         }
     }, [listVisible]);
 
-    const removeElement = (elementValue: string) => {
-        value = value.filter(item => item !== elementValue);
-        updateButtons();
-    };
+    const [labels, setLabels] = useState<string[]>([]);
 
-    const [buttons, setButtons] = useState<(JSX.Element | Element)[]>([]);
+    const updateLabels = useCallback(
+        (value: string[]) => {
+            const labelElements: string[] = [];
+            value.forEach(currentValue => {
+                children.forEach(currentChildren => {
+                    if (currentValue === currentChildren.value) {
+                        labelElements.push(currentChildren.children);
+                    }
+                });
+            });
+            setLabels(labelElements);
+        },
+        [children]
+    );
 
-    const updateButtons = useCallback(() => {
-        const buttonElements: (JSX.Element | Element)[] = [];
-        value.forEach(currentValue => {
-            const text = children.filter(item => item.value === currentValue)[0]
-                .children;
-            buttonElements.push(
-                <div key={currentValue} css={button()} data-testid="button">
-                    <div>{text}</div>
-                    <img
-                        alt="Close"
-                        src={imageClose}
-                        css={closeButton()}
-                        onClick={() => removeElement(currentValue)}
-                    />
-                </div>
-            );
-        });
-        setButtons(buttonElements);
+    useEffect(() => {
+        updateLabels(value);
     }, [value]);
-
     const handleClick = useCallback(
         (event: SyntheticEvent) => {
-            const currentValue = (event.target as HTMLLIElement).dataset.value!;
+            const currentValue = (event.target as HTMLInputElement).name!;
             if (value.includes(currentValue)) {
-                value = value.filter(item => item !== currentValue);
+                value = value.filter(function (item) {
+                    return item !== currentValue;
+                });
             } else {
-                value.push(currentValue);
+                value = [...value, currentValue];
             }
-            updateButtons();
             onChange ? onChange(event, name, value) : event.stopPropagation();
         },
         [value]
     );
-
-    useEffect(() => {
-        updateButtons();
-    }, []);
-
     const containerRef = useRef(null);
     useOutsideListener(containerRef, () => setListVisible(false));
 
@@ -139,7 +125,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
             ref={containerRef}
             className={className}
         >
-            <DropdownHeader label={label} info={info} />
+            {label && <DropdownHeader label={label} info={info} />}
             <div
                 css={inputContainerMultipleDropdown(
                     theme,
@@ -147,9 +133,10 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
                     listVisible,
                     size
                 )}
+                onClick={handleContainerClick}
             >
                 <div css={buttonsContainer(size)}>
-                    {buttons}
+                    {labels.join(', ')}
                     <input
                         data-testid="input"
                         type="text"
@@ -163,10 +150,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
                 {searching ? (
                     <img alt="Close" src={imageSpinner} css={loadingIcon()} />
                 ) : (
-                    <div
-                        onClick={handleIconClick}
-                        css={iconContainer(disabled, size)}
-                    >
+                    <div css={iconContainer(disabled, size, true)}>
                         <Icon
                             name={IconName.DropdownArrow}
                             color={Colors.Primary}
@@ -180,6 +164,10 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
                 searching={searching}
                 listVisible={listVisible}
                 handleClick={handleClick}
+                size={size}
+                label={label}
+                multiple={true}
+                value={value}
             />
             <ComponentFooter
                 disabled={disabled}
