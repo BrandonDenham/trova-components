@@ -5,6 +5,7 @@ export const labelContainer = () => css`
     display: flex;
     justify-content: space-between;
     height: 1rem;
+    margin-bottom: 10px;
 `;
 
 export const labelSpan = (theme: Theme) => css`

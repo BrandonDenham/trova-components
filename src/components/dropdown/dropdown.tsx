@@ -75,7 +75,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         [name, onSearch]
     );
     const [listVisible, setListVisible] = useState(false);
-    const handleIconClick = useCallback(() => {
+    const handleContainerClick = useCallback(() => {
         if (!disabled) {
             setListVisible(!listVisible);
         }
@@ -100,7 +100,10 @@ const Dropdown: React.FC<DropdownProps> = ({
             className={className}
         >
             {label && <DropdownHeader label={label} info={info} />}
-            <div css={inputContainer(theme, error, listVisible, size)}>
+            <div
+                css={inputContainer(theme, error, listVisible, size, disabled)}
+                onClick={handleContainerClick}
+            >
                 <input
                     data-testid="input"
                     type="text"
@@ -114,10 +117,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 {searching ? (
                     <img alt="Close" src={imageSpinner} css={loadingIcon()} />
                 ) : (
-                    <div
-                        onClick={handleIconClick}
-                        css={iconContainer(disabled, size)}
-                    >
+                    <div css={iconContainer(disabled, size, false)}>
                         <Icon
                             name={IconName.DropdownArrow}
                             color={Colors.Primary}
@@ -132,6 +132,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 listVisible={listVisible}
                 handleClick={handleClick}
                 size={size}
+                label={label}
             />
             <ComponentFooter
                 disabled={disabled}

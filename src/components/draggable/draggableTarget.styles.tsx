@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
 
 export const draggableTarget = (
-    cursor: string = `pointer`,
+    cursor: string|undefined = undefined,
     backgroundColor: Colors = Colors.PrimaryContentBackground
 ) => css`
     display: flex;
