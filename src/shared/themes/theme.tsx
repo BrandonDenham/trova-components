@@ -52,6 +52,10 @@ const theme = {
         fiveColumns: 64 * 5 + 29 * 4,
         sixColumns: 64 * 6 + 29 * 5,
     },
+    cursor: {
+        grab: 'grab',
+        webkitGrabbing: '-webkit-grabbing',
+    },
 };
 
 export default theme;

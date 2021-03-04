@@ -1,4 +1,7 @@
 import { css, Theme } from '@emotion/react';
+import styled from '@emotion/styled';
+
+import Button from './button';
 import { ButtonType } from './buttonType';
 import { Colors } from '../../shared/constants/colors';
 
@@ -130,4 +133,11 @@ export const buttonSubtext = (theme: Theme) => css`
 
 export const buttonChildren = () => css`
     align-self: center;
+`;
+
+export const StyledDraggableButton = styled(Button)`
+    cursor: ${props => (props.theme as Theme).cursor.grab};
+    cursor: ${props =>
+        (props.theme as Theme).cursor
+            .webkitGrabbing}; /* fallback if grab cursor is unsupported (chrome) */
 `;

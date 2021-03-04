@@ -55,5 +55,9 @@ declare module '@emotion/react' {
             fiveColumns: number;
             sixColumns: number;
         };
+        cursor: {
+            grab: string;
+            webkitGrabbing: string;
+        }
     }
 }
