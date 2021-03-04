@@ -94,7 +94,6 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
                     }
                 });
             });
-            labelElements.sort();
             setLabels(labelElements);
         },
         [children]
