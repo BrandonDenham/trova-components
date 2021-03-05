@@ -7,7 +7,7 @@ import { Colors } from '../../shared/constants/colors';
 import DraggableSourceProps from '../draggable/draggableSource.types';
 import ButtonProps from './button.types';
 import useDragSpecs from '../draggable/useDragSpecs';
-import { StyledDraggableButton } from './button.styles';
+import { StyledDraggableButton } from './button.components';
 
 type MergeProps = DraggableSourceProps & ButtonProps;
 
