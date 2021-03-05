@@ -3,10 +3,11 @@ import { Colors } from '../../shared/constants/colors';
 
 import { TextareaSize } from './textareaSize';
 
-export const mainContainer = (theme: Theme) => css`
+export const mainContainer = (theme: Theme, size: TextareaSize) => css`
     display: flex;
     flex-direction: column;
-    width: ${theme.columns.fiveColumns}px;
+    ${size !== TextareaSize.Flexible && `width: ${theme.columns.fiveColumns}px;`}
+
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
     }
@@ -30,7 +31,8 @@ export const textarea = (
         line-height: 19px;
         color: ${Colors.Dark};
         ${size === TextareaSize.Medium && `height:91px;`}
-        ${size === TextareaSize.Large && `height:155px;`}
+        ${(size === TextareaSize.Large || size === TextareaSize.Flexible) &&
+        `height:155px;`}
         ${!error &&
         `:focus {
         border: 1px solid ${Colors.Active};

@@ -1,12 +1,14 @@
 import { css, Theme } from '@emotion/react';
 import { ButtonType } from './buttonType';
 import { Colors } from '../../shared/constants/colors';
+import { ButtonSize } from './buttonSize';
 
 export const button = (
     buttonType: ButtonType,
     selected: boolean,
     subtext: string | undefined,
     icon: React.ReactNode,
+    size: ButtonSize,
     backgroundColor?: Colors
 ) => css`
     cursor: pointer;
@@ -22,6 +24,7 @@ export const button = (
     `padding: 21px 0px;
     min-width: 157px;
     `}
+    ${size === ButtonSize.Flexible && `min-width: 100%;`}
     ${buttonType === ButtonType.Primary &&
     `background-color: ${backgroundColor ? backgroundColor : Colors.Primary};
     color: ${Colors.White};

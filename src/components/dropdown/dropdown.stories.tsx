@@ -329,16 +329,27 @@ export const ExtralargeMultipleDropdown = () => {
     );
 };
 
-export const FlexibleMultipleDropdown = () => (
-    <MultipleDropdown
-        name="test"
-        value={value}
-        label="Form header"
-        children={children}
-        onSearch={action('search')}
-        placeholder="Placeholder"
-    />
-);
+export const FlexibleMultipleDropdown = () => {
+    const [stateValue, setStateValue] = useState([
+        'value1',
+        'value3',
+        'value6',
+    ]);
+    return (
+        <MultipleDropdown
+            name="test"
+            value={stateValue}
+            label="Form header"
+            children={children}
+            onSearch={action('search')}
+            placeholder="Placeholder"
+            onChange={(e, name, eventValue) => {
+                setStateValue(eventValue);
+                return e;
+            }}
+        />
+    );
+};
 
 export const SearchingMultipleDropdown = () => {
     const [stateValue, setStateValue] = useState([

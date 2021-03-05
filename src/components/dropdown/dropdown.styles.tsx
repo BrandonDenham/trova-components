@@ -167,14 +167,14 @@ export const iconContainer = (
     multiple: boolean
 ) => css`
     ${disabled === false && `cursor: pointer;`}
-    margin: 5px 20px 0 0;
+    margin: 15px 20px 0 0;
     ${size === ComponentWidth.ExtraSmall && `margin: 2px 0 0 0;`}
     ${size === ComponentWidth.ExtraSmall &&
     multiple &&
     `margin: 7px 0 0 0; padding-right: 9px;`}
         flex: none;
     align-self: start;
-    ${size === ComponentWidth.Flexible && `margin: 5px calc(18px + 2%) 0 0;`}
+    ${size === ComponentWidth.Flexible && `margin: 15px calc(18px + 2%) 0 0;`}
 `;
 
 export const loadingIcon = () => css`

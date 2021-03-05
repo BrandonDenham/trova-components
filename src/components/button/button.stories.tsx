@@ -6,6 +6,7 @@ import Icon, { IconName, IconSize } from '../icon/';
 import { Colors } from '../../shared/constants/colors';
 import DraggableContainer from '../draggable/draggableContainer';
 import DraggableButton from './draggableButton';
+import { ButtonSize } from './buttonSize';
 
 export default {
     title: 'Button',
@@ -13,7 +14,7 @@ export default {
 };
 
 export const Primary = () => (
-    <Button buttonType={ButtonType.Primary} backgroundColor={Colors.Purple}>
+    <Button buttonType={ButtonType.Primary}>
         Text
     </Button>
 );
@@ -96,7 +97,13 @@ export const TabCallout = () => (
     <Button buttonType={ButtonType.TabCallout}>Text</Button>
 );
 
-export const DragButton = () => (
+export const Purple = () => (
+    <Button buttonType={ButtonType.Primary} backgroundColor={Colors.Purple}>
+        Text
+    </Button>
+);
+
+export const Draggable = () => (
     <DraggableContainer>
         <DraggableButton
             dragTargetConfiguration={{ item: { type: `string` } }}
@@ -106,4 +113,18 @@ export const DragButton = () => (
             Transfer
         </DraggableButton>
     </DraggableContainer>
+);
+
+export const PrimaryFlexible = () => (
+    <Button buttonType={ButtonType.Primary} size={ButtonSize.Flexible}>Text</Button>
+);
+
+export const PrimaryAddFlexible = () => (
+    <Button
+        buttonType={ButtonType.Primary}
+        size={ButtonSize.Flexible}
+        icon={<Icon name={IconName.Plus} color={Colors.White} />}
+    >
+        Add new trip
+    </Button>
 );

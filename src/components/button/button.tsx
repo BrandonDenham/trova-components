@@ -9,6 +9,7 @@ import {
     buttonChildren,
 } from './button.styles';
 import { ButtonType } from './buttonType';
+import { ButtonSize } from './buttonSize';
 
 const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
     (
@@ -22,6 +23,7 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
             subtext,
             backgroundColor,
             className,
+            size = ButtonSize.Fixed,
         },
         ref
     ) => {
@@ -40,7 +42,8 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
                     selected,
                     subtext,
                     icon,
-                    backgroundColor
+                    size,
+                    backgroundColor,
                 )}
                 onClick={handleButtonClicked}
                 ref={ref}
