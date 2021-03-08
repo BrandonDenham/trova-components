@@ -7,6 +7,7 @@ import {
     buttonText,
     buttonSubtext,
     buttonChildren,
+    iconContainer,
 } from './button.styles';
 import { ButtonType } from './buttonType';
 import { ButtonSize } from './buttonSize';
@@ -51,10 +52,10 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
             >
                 <div
                     data-testid="button__text"
-                    css={buttonText(theme, buttonType, subtext)}
+                    css={buttonText(theme, buttonType, subtext, size, icon)}
                 >
                     <div css={buttonChildren()}>{children}</div>
-                    {icon}
+                    <div css={iconContainer(size)}>{icon}</div>               
                 </div>
                 {subtext && (
                     <div
