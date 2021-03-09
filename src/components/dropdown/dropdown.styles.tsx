@@ -13,6 +13,9 @@ export const mainContainer = (theme: Theme, size: ComponentWidth) => css`
     ${size === ComponentWidth.Large && `width:${theme.columns.fourColumns}px;`}
     ${size === ComponentWidth.ExtraLarge &&
     `width:${theme.columns.fiveColumns}px;`}
+    ${size === ComponentWidth.Flexible &&
+    `   width: 100%;
+    `}
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
     }
