@@ -39,7 +39,7 @@ const Textarea: React.FC<TextareaProps> = ({
         [name, value, onChange]
     );
     return (
-        <div css={mainContainer(theme)} className={className}>
+        <div css={mainContainer(theme, size)} className={className}>
             <div css={labelContainer()}>
                 {label && <span css={labelSpan(theme)}>{label}</span>}
                 {info && (

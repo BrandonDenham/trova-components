@@ -68,6 +68,7 @@ export const MediumDropdown = () => (
         value="value1"
         placeholder="Placeholder"
         label="Form header"
+        size={ComponentWidth.Medium}
         children={children}
         onSearch={action('search')}
     />
@@ -99,6 +100,17 @@ export const ExtraLargeDropdown = () => (
         placeholder="Placeholder"
         label="Form header"
         size={ComponentWidth.ExtraLarge}
+        children={children}
+        onSearch={action('search')}
+    />
+);
+
+export const FlexibleDropdown = () => (
+    <Dropdown
+        name="test"
+        value="value1"
+        placeholder="Placeholder"
+        label="Form header"
         children={children}
         onSearch={action('search')}
     />
@@ -308,6 +320,28 @@ export const ExtralargeMultipleDropdown = () => {
             children={children}
             onSearch={action('search')}
             size={ComponentWidth.ExtraLarge}
+            placeholder="Placeholder"
+            onChange={(e, name, eventValue) => {
+                setStateValue(eventValue);
+                return e;
+            }}
+        />
+    );
+};
+
+export const FlexibleMultipleDropdown = () => {
+    const [stateValue, setStateValue] = useState([
+        'value1',
+        'value3',
+        'value6',
+    ]);
+    return (
+        <MultipleDropdown
+            name="test"
+            value={stateValue}
+            label="Form header"
+            children={children}
+            onSearch={action('search')}
             placeholder="Placeholder"
             onChange={(e, name, eventValue) => {
                 setStateValue(eventValue);

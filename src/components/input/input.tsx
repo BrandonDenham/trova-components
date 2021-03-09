@@ -28,7 +28,7 @@ const Input: React.FC<InputProps> = ({
     error,
     detail,
     placeholder,
-    size = ComponentWidth.Medium,
+    size = ComponentWidth.Flexible,
     icon,
     disabled = false,
     disabledText,

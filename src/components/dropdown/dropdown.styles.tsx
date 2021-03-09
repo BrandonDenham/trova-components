@@ -52,6 +52,7 @@ export const inputContainer = (
         listVisible && `border-radius: 5px 5px 0px 0px;`
     }`}
     ${error && error.length && `border-color: ${Colors.Danger};`}
+    ${size === ComponentWidth.Flexible && `padding-left: calc(14px + 1%);`}
 `;
 
 export const input = (theme: Theme, size: ComponentWidth) => css`
@@ -70,6 +71,7 @@ export const input = (theme: Theme, size: ComponentWidth) => css`
     ${size === ComponentWidth.Small && `width:99px;`}
     ${size === ComponentWidth.Medium && `width:190px;`}
     ${size === ComponentWidth.ExtraSmall && `width:50px;`}
+    ${size === ComponentWidth.Flexible && `width:80%;`}
 `;
 
 export const inputContainerMultipleDropdown = (
@@ -107,6 +109,7 @@ export const inputContainerMultipleDropdown = (
     } font-size: ${theme.fontSizes.extraSmallDropdown};`}
     ${size === ComponentWidth.Small && `width:159px;`}
     ${size === ComponentWidth.Medium && `width:249px;`}
+    ${size === ComponentWidth.Flexible && `padding-left: calc(14px + 1%);`}
 `;
 
 export const inputMultipleDropdown = (theme: Theme) => css`
@@ -164,13 +167,14 @@ export const iconContainer = (
     multiple: boolean
 ) => css`
     ${disabled === false && `cursor: pointer;`}
-    margin: 17px 20px 0 0;
+    margin: 15px 20px 0 0;
     ${size === ComponentWidth.ExtraSmall && `margin: 2px 0 0 0;`}
     ${size === ComponentWidth.ExtraSmall &&
     multiple &&
     `margin: 7px 0 0 0; padding-right: 9px;`}
-    flex: none;
+        flex: none;
     align-self: start;
+    ${size === ComponentWidth.Flexible && `margin: 15px calc(18px + 2%) 0 0;`}
 `;
 
 export const loadingIcon = () => css`
