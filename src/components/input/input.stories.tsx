@@ -37,6 +37,7 @@ export const MediumInput = () => (
         placeholder="Placeholder"
         label="Form header"
         detail="Describe the trip in 2-3 sentences."
+        size={ComponentWidth.Medium}
     />
 );
 
@@ -59,6 +60,17 @@ export const ExtraLargeInput = () => (
         label="Form header"
         detail="Describe the trip in 2-3 sentences."
         size={ComponentWidth.ExtraLarge}
+    />
+);
+
+
+export const FlexibleInput = () => (
+    <Input
+        name="test"
+        value="Text"
+        placeholder="Placeholder"
+        label="Form header"
+        detail="Describe the trip in 2-3 sentences."
     />
 );
 

@@ -51,7 +51,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     info,
     error,
     placeholder,
-    size = ComponentWidth.Medium,
+    size = ComponentWidth.Flexible,
     disabled = false,
     disabledText,
     children,

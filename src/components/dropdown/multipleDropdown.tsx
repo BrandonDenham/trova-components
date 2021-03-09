@@ -50,7 +50,7 @@ const MultipleDropdown: React.FC<MultipleDropdownProps> = ({
     name,
     info,
     error,
-    size = ComponentWidth.Medium,
+    size = ComponentWidth.Flexible,
     disabled = false,
     disabledText,
     placeholder,

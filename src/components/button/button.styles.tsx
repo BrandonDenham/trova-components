@@ -2,18 +2,21 @@ import { css, Theme } from '@emotion/react';
 
 import { ButtonType } from './buttonType';
 import { Colors } from '../../shared/constants/colors';
+import { ButtonSize } from './buttonSize';
 
 export const button = (
     buttonType: ButtonType,
     selected: boolean,
     subtext: string | undefined,
     icon: React.ReactNode,
+    size: ButtonSize,
     backgroundColor?: Colors
 ) => css`
     cursor: pointer;
     border-radius: 14px;
     display: inline-flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     min-width: 181px;
     min-height: 50px;
@@ -23,6 +26,10 @@ export const button = (
     `padding: 21px 0px;
     min-width: 157px;
     `}
+    ${size === ButtonSize.Flexible &&
+    `   width: 100%;
+    `}
+
     ${buttonType === ButtonType.Primary &&
     `background-color: ${backgroundColor ? backgroundColor : Colors.Primary};
     color: ${Colors.White};
@@ -107,10 +114,11 @@ export const button = (
 export const buttonText = (
     theme: Theme,
     buttonType: ButtonType,
-    subtext: string | undefined
+    subtext: string | undefined,
+    size: ButtonSize,
+    icon: React.ReactNode,
 ) => css`
     display: flex;
-    justify-content: space-around;
     font-family: ${theme.fonts.robotoBold};
     ${(buttonType === ButtonType.Tab || buttonType === ButtonType.TabCallout) &&
     `font-family: ${theme.fonts.robotoMedium};`}
@@ -121,6 +129,14 @@ export const buttonText = (
     line-height: 16px;
     align-self:flex-start
     `}
+
+    ${size === ButtonSize.Flexible &&
+    `
+    justify-content: center;
+    align-items: center;
+    `}
+    ${icon && size !== ButtonSize.Flexible && `justify-content: space-around;
+    width: 100%;`}
 `;
 
 export const buttonSubtext = (theme: Theme) => css`
@@ -131,4 +147,12 @@ export const buttonSubtext = (theme: Theme) => css`
 
 export const buttonChildren = () => css`
     align-self: center;
+`;
+
+export const iconContainer = (
+    size: ButtonSize
+) => css`
+${size === ButtonSize.Flexible && `
+    margin-left: 0.8rem;
+    `}
 `;
