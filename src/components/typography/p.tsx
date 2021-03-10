@@ -12,13 +12,14 @@ const P: React.FC<Typography> = ({
     color = Colors.Dark,
     children,
     className,
+    isBold,
     ...otherProps
 }) => {
     const theme = useTheme();
     return (
         <p
             data-testid="p"
-            css={pStyle(size, theme, color)}
+            css={pStyle(size, theme, color, isBold)}
             className={className}
             {...otherProps}
         >

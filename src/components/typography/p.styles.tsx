@@ -2,8 +2,14 @@ import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
 import { ParagraphSize } from './paragraphSize';
 
-export const pStyle = (size: ParagraphSize, theme: Theme, color: Colors) => css`
+export const pStyle = (
+    size: ParagraphSize,
+    theme: Theme,
+    color: Colors,
+    isBold: boolean
+) => css`
     font-family: ${theme.fonts.robotoRegular};
+    ${isBold && `font-family: ${theme.fonts.robotoBold};`}
     color: ${color};
     ${size === ParagraphSize.Small &&
     `
