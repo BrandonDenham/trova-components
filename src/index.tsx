@@ -2,7 +2,7 @@ import Sidebar, { SidebarItem, SidebarMenu } from './components/sidebar';
 import MainNavigation, {
     MainNavigationItem,
 } from './components/mainNavigation';
-import Button, { ButtonType, DraggableButton } from './components/button';
+import Button, { ButtonType, DraggableButton, ButtonSize } from './components/button';
 import Card from './components/card';
 import Icon, { IconName, IconSize } from './components/icon';
 import Input from './components/input';
@@ -31,6 +31,7 @@ export {
     MainNavigationItem,
     Button,
     ButtonType,
+    ButtonSize,
     Card,
     Icon,
     IconName,
