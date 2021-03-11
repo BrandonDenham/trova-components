@@ -138,7 +138,7 @@ export const inputMultipleDropdown = (theme: Theme) => css`
 
 export const buttonsContainer = (size: ComponentWidth) =>
     css`
-        padding-top: 5px;
+        padding-top: 4px;
         height: 22px;
         overflow: hidden;
         white-space: nowrap;
