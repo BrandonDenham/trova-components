@@ -22,6 +22,7 @@ import { ComponentWidth } from './components/input/componentWidth';
 import { TextareaSize } from './components/textarea/textareaSize';
 import { Cell, Row, Table, TableBody, TableHead } from './components/grid/';
 import Number from './components/number';
+import TrovaDateTime from './components/TrovaDateTime';
 
 export {
     Sidebar,
@@ -64,4 +65,5 @@ export {
     TableBody,
     TableHead,
     Number,
+    TrovaDateTime,
 };

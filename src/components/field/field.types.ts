@@ -1,10 +1,11 @@
+import { Moment } from 'moment';
 import { SyntheticEvent } from 'react';
 
 import { SimpleComponent } from '../../shared/interfaces/SimpleComponent.types';
 
 export interface FieldProps<DataType> extends SimpleComponent {
     onChange?(
-        event: SyntheticEvent,
+        event: SyntheticEvent | string | Moment,
         name?: string | string[],
         value?: DataType
     ): SyntheticEvent | void;
