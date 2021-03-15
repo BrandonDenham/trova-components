@@ -25,6 +25,7 @@ const TrovaDateTime: React.FC<DateTimeProps> = ({
     disabledText,
     detail,
     className,
+    value,
 }) => {
     const theme = useTheme();
     const disabledProp = disabled ? true : false;
@@ -42,6 +43,7 @@ const TrovaDateTime: React.FC<DateTimeProps> = ({
                 inputProps={{ placeholder, disabled: disabledProp }}
                 onChange={onChange}
                 error={error}
+                value={value}
             />
             {disabled && disabledText && (
                 <span css={disabledSpan()}>{disabledText}</span>
