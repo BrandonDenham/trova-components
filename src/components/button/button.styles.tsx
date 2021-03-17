@@ -7,6 +7,7 @@ import { ButtonSize } from './buttonSize';
 export const button = (
     buttonType: ButtonType,
     selected: boolean,
+    disabled: boolean,
     subtext: string | undefined,
     icon: React.ReactNode,
     size: ButtonSize,
@@ -31,6 +32,7 @@ export const button = (
     `}
 
     ${buttonType === ButtonType.Primary &&
+    !disabled &&
     `background-color: ${backgroundColor ? backgroundColor : Colors.Primary};
     color: ${Colors.White};
     &:hover {
@@ -45,6 +47,16 @@ export const button = (
         };
         opacity: ${backgroundColor ? 0.5 : 1};
     }`}
+
+    ${buttonType === ButtonType.Primary &&
+    disabled &&
+    `background-color: ${
+        backgroundColor ? backgroundColor : Colors.LightPrimary
+    };
+        color: ${Colors.White};
+        cursor: auto;
+`}
+
     ${buttonType === ButtonType.Secondary &&
     `background-color: ${Colors.Secondary};
     color: ${Colors.Primary};
@@ -116,7 +128,7 @@ export const buttonText = (
     buttonType: ButtonType,
     subtext: string | undefined,
     size: ButtonSize,
-    icon: React.ReactNode,
+    icon: React.ReactNode
 ) => css`
     display: flex;
     font-family: ${theme.fonts.robotoBold};
@@ -135,7 +147,9 @@ export const buttonText = (
     justify-content: center;
     align-items: center;
     `}
-    ${icon && size !== ButtonSize.Flexible && `justify-content: space-around;
+    ${icon &&
+    size !== ButtonSize.Flexible &&
+    `justify-content: space-around;
     width: 100%;`}
 `;
 
@@ -149,10 +163,9 @@ export const buttonChildren = () => css`
     align-self: center;
 `;
 
-export const iconContainer = (
-    size: ButtonSize
-) => css`
-${size === ButtonSize.Flexible && `
+export const iconContainer = (size: ButtonSize) => css`
+    ${size === ButtonSize.Flexible &&
+    `
     margin-left: 0.8rem;
     `}
 `;

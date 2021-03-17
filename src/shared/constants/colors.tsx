@@ -9,6 +9,7 @@ export enum Colors {
     Silver = '#DCE3F2',
     Primary = '#DC5F4F',
     DarkPrimary = '#F65C4E',
+    LightPrimary = '#E6A8A4',
     Secondary = '#F9E7E5',
     DarkSecondary = '#F8CFCA',
     White = '#FFFFFF',
