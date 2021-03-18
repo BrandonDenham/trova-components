@@ -32,9 +32,11 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
         const theme = useTheme();
         const handleButtonClicked = useCallback(
             (event: SyntheticEvent) => {
-                onClick ? onClick(event, id) : event.stopPropagation();
+                onClick && !disabled
+                    ? onClick(event, id)
+                    : event.stopPropagation();
             },
-            [id, onClick]
+            [id, onClick, disabled]
         );
         return (
             <div
