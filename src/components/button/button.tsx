@@ -18,6 +18,7 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
             children,
             buttonType = ButtonType.Primary,
             selected = false,
+            disabled = false,
             id,
             onClick,
             icon,
@@ -31,9 +32,11 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
         const theme = useTheme();
         const handleButtonClicked = useCallback(
             (event: SyntheticEvent) => {
-                onClick ? onClick(event, id) : event.stopPropagation();
+                onClick && !disabled
+                    ? onClick(event, id)
+                    : event.stopPropagation();
             },
-            [id, onClick]
+            [id, onClick, disabled]
         );
         return (
             <div
@@ -41,10 +44,11 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
                 css={button(
                     buttonType,
                     selected,
+                    disabled,
                     subtext,
                     icon,
                     size,
-                    backgroundColor,
+                    backgroundColor
                 )}
                 onClick={handleButtonClicked}
                 ref={ref}
@@ -55,7 +59,7 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
                     css={buttonText(theme, buttonType, subtext, size, icon)}
                 >
                     <div css={buttonChildren()}>{children}</div>
-                    <div css={iconContainer(size)}>{icon}</div>               
+                    <div css={iconContainer(size)}>{icon}</div>
                 </div>
                 {subtext && (
                     <div

@@ -35,6 +35,7 @@ export const input = (
         font-family: ${theme.fonts.robotoRegular};
         font-size: ${theme.fontSizes.input};
         line-height: 19px;
+        background-color: ${Colors.White};
         ${size === ComponentWidth.ExtraSmall &&
         `border-radius: 5px;padding: 5px 9px; width: 100%;font-size: ${theme.fontSizes.extraSmallInput};min-height: 31px;margin-top: 0px;line-height: 16px;`}
         color: ${Colors.Dark};
@@ -43,7 +44,7 @@ export const input = (
         border: 1px solid ${Colors.Active};
         }`}
         :disabled {
-            background-color: ${Colors.White};
+            background-color: ${Colors.LightSilver};
         }
         ${error && error.length && `border-color: ${Colors.Danger};`}
     `;

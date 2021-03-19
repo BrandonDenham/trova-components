@@ -37,6 +37,7 @@ export const checkbox = (error: string | string[] | undefined) =>
         border-radius: 4px;
         border: 1px solid ${Colors.LightGray};
         ${error && error.length && `border: 1px solid ${Colors.Danger};`}
+        background-color: ${Colors.White};
         width: 25px;
         height: 25px;
         box-sizing: border-box;

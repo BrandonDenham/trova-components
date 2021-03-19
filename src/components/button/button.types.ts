@@ -10,6 +10,7 @@ export default interface ButtonProps extends SimpleComponent{
     children: string;
     buttonType?: ButtonType;
     selected?: boolean;
+    disabled?: boolean;
     id?: string;
     onClick?: (event: SyntheticEvent, id: string | undefined) => void;
     icon?: React.ReactNode;

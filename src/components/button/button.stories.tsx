@@ -14,7 +14,11 @@ export default {
 };
 
 export const Primary = () => (
-    <Button buttonType={ButtonType.Primary}>
+    <Button buttonType={ButtonType.Primary}>Text</Button>
+);
+
+export const PrimaryDisabled = () => (
+    <Button buttonType={ButtonType.Primary} disabled={true}>
         Text
     </Button>
 );
@@ -107,7 +111,7 @@ export const Draggable = () => (
     <DraggableContainer>
         <DraggableButton
             dragTargetConfiguration={{ item: { type: `string` } }}
-            onCollect={(item) => item}
+            onCollect={item => item}
             buttonType={ButtonType.Secondary}
         >
             Transfer
@@ -116,7 +120,9 @@ export const Draggable = () => (
 );
 
 export const PrimaryFlexible = () => (
-    <Button buttonType={ButtonType.Primary} size={ButtonSize.Flexible}>Text</Button>
+    <Button buttonType={ButtonType.Primary} size={ButtonSize.Flexible}>
+        Text
+    </Button>
 );
 
 export const PrimaryAddFlexible = () => (
