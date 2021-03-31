@@ -15,6 +15,15 @@ export const NumberExample = () => (
     />
 );
 
+export const Disabled = () => (
+    <Number
+        name="test"
+        value={5}
+        label="Form header disabled"
+        disabled={true}
+    />
+);
+
 export const Error = () => (
     <Number
         name="test"

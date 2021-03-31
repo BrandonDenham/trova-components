@@ -14,4 +14,5 @@ export interface FieldProps<DataType> extends SimpleComponent {
     name: string;
     info?: string;
     error?: string | string[];
+    disabled?: boolean;
 }
