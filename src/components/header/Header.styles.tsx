@@ -27,6 +27,7 @@ export const headerTitle = (theme: Theme) => css`
     padding-top: 3.8rem;
     padding-left: 2.31rem;
     padding-bottom: 0.7rem;
+    text-shadow:-1px 1px 1px ${Colors.TextShadowLight}, -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.sm}px) {
         font-size: ${theme.fontSizes.h1Mobile};
         padding-left: 0rem;
@@ -50,6 +51,7 @@ export const headerDetails = (theme: Theme) => css`
 export const headerDates = (theme: Theme) => css`
     padding-left: 2.31rem;
     padding-bottom: 2rem;
+    text-shadow:-1px 1px 1px ${Colors.TextShadowMedium}, -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.sm}px) {
         padding-top: 0.9rem;
         padding-left: 0em;
@@ -61,6 +63,7 @@ export const headerDates = (theme: Theme) => css`
 export const headerLocation = (theme: Theme) => css`
     padding-left: 0.9rem;
     padding-bottom: 2rem;
+    text-shadow:-1px 1px 1px ${Colors.TextShadowMedium}, -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.sm}px) {
         padding-left: 0rem;
         flex-basis: 100%;

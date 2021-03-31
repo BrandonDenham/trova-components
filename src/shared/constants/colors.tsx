@@ -19,8 +19,10 @@ export enum Colors {
     NavButtonLightGray = '#E2E9F7',
     Active = '#4270D1',
     DangerText = '#ED5547',
-    PrimaryContentBackground = LightSilver,
     Black = '#000000',
+    BlackAlphaExtraLight = '#0000001f',
+    BlackAlphaLight = '#00000055',
+    BlackAlphaMedium = '#00000080',
     TableDarkGray = '#3B4759',
     TableLightGray = '#F6F7F8',
     MediumSpringGreen = '#22BEB0',
@@ -30,4 +32,10 @@ export enum Colors {
     ParagraphDarkGray = '#203049',
     CardDashedBorderGray = '#C3CFEC',
     CardDashedBorderLightGray = '#C2CEEB',
+    // Background
+    PrimaryContentBackground = LightSilver,
+    // Text shadows
+    TextShadowExtraLight = BlackAlphaExtraLight,
+    TextShadowLight = BlackAlphaLight,
+    TextShadowMedium = BlackAlphaMedium,    
 }
