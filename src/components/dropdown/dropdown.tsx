@@ -26,10 +26,6 @@ const getSelectedValue = (children: Option[], value: string) => {
     return childValue ? childValue.children : '';
 };
 
-// const useSearchValue = ()
-
-
-
 /**
  * Renders a <Dropdown /> component
  * @param  props
@@ -91,10 +87,11 @@ const Dropdown: React.FC<DropdownProps> = ({
 
     const [listVisible, setListVisible] = useState(false);
 
-
+    const inputRef = useRef<HTMLInputElement>(null);
     const handleContainerClick = useCallback(() => {
         if (!disabled) {
             setListVisible(!listVisible);
+            inputRef.current?.focus();
         }
     }, [listVisible]);
     const handleClick = useCallback(
@@ -106,7 +103,8 @@ const Dropdown: React.FC<DropdownProps> = ({
         [value]
     );
 
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+
     useOutsideListener(containerRef, () => setListVisible(false));
 
     return (
@@ -121,6 +119,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 onClick={handleContainerClick}
             >
                 <input
+                    ref={inputRef}
                     data-testid="input"
                     type="text"
                     onChange={handleSearch}
