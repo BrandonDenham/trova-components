@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, useTheme } from '@emotion/react';
-import React, { SyntheticEvent, useCallback, useState, useRef } from 'react';
+import React, { SyntheticEvent, useCallback, useState, useRef, useEffect } from 'react';
 
 import {
     mainContainer,
@@ -25,6 +25,10 @@ const getSelectedValue = (children: Option[], value: string) => {
         children && children.find(child => child.value === value);
     return childValue ? childValue.children : '';
 };
+
+// const useSearchValue = ()
+
+
 
 /**
  * Renders a <Dropdown /> component
@@ -62,19 +66,32 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
     const theme = useTheme();
 
+    const [searchValue, setSearchValue] = useState(getSelectedValue(children, value));
     const handleSearch = useCallback(
         (event: SyntheticEvent) => {
+            const eventValue : string = (event.target as HTMLInputElement).value;
+            setSearchValue(eventValue);
             onSearch
                 ? onSearch(
                       event,
                       name,
-                      (event.target as HTMLInputElement).value
+                      eventValue
                   )
                 : event.stopPropagation();
         },
         [name, onSearch]
     );
+    useEffect(() => {
+        const newSearchValue : string = getSelectedValue(children, value);
+        if (newSearchValue !== searchValue) {
+            setSearchValue(newSearchValue);
+        }
+    }, [value]);
+
+
     const [listVisible, setListVisible] = useState(false);
+
+
     const handleContainerClick = useCallback(() => {
         if (!disabled) {
             setListVisible(!listVisible);
@@ -92,7 +109,6 @@ const Dropdown: React.FC<DropdownProps> = ({
     const containerRef = useRef(null);
     useOutsideListener(containerRef, () => setListVisible(false));
 
-    const selectedValue = getSelectedValue(children, value);
     return (
         <div
             css={mainContainer(theme, size)}
@@ -109,7 +125,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                     type="text"
                     onChange={handleSearch}
                     placeholder={placeholder}
-                    value={selectedValue}
+                    value={searchValue}
                     disabled={disabled}
                     css={input(theme, size)}
                     name={name}
