@@ -23,6 +23,7 @@ import { FieldProps } from '../field/field.types';
  * @param  props.error - any errors
  * @param  props.label - The label of the component
  * @param  props.className - For usage as an emotion styled component.
+ * @param  props.disabled - For usage as disabled.
  */
 
 const Number: React.FC<FieldProps<number>> = ({
@@ -31,6 +32,7 @@ const Number: React.FC<FieldProps<number>> = ({
     error,
     className,
     name,
+    disabled,
     onChange,
 }) => {
     const theme = useTheme();
@@ -45,29 +47,34 @@ const Number: React.FC<FieldProps<number>> = ({
             <div css={labelContainer()}>
                 {label && <span css={labelSpan(theme)}>{label}</span>}
             </div>
-            <div css={innerContainer(error)}>
-                <div
-                    css={changeButton()}
-                    onClick={(e) => handleChange(e, value - 1)}
-                    data-testid="substract"
-                >
-                    <img alt="Substract" src={imageSubstract} />
-                </div>
+            <div css={innerContainer(disabled, error)}>
+                {!disabled && (
+                    <div
+                        css={changeButton()}
+                        onClick={e => handleChange(e, value - 1)}
+                        data-testid="substract"
+                    >
+                        <img alt="Substract" src={imageSubstract} />
+                    </div>
+                )}
                 <input
                     data-testid="input"
                     type="text"
                     value={value}
                     css={input(theme)}
-                    onChange={(e) => handleChange(e, parseInt(e.target.value))}
+                    onChange={e => handleChange(e, parseInt(e.target.value))}
                     name={name}
+                    disabled={disabled}
                 />
-                <div
-                    css={changeButton()}
-                    onClick={(e) => handleChange(e, value + 1)}
-                    data-testid="add"
-                >
-                    <img alt="Add" src={imageAdd} />
-                </div>
+                {!disabled && (
+                    <div
+                        css={changeButton()}
+                        onClick={e => handleChange(e, value + 1)}
+                        data-testid="add"
+                    >
+                        <img alt="Add" src={imageAdd} />
+                    </div>
+                )}
             </div>
             {error && typeof error === 'string' && (
                 <span css={errorSpan(theme)}>{error}</span>
