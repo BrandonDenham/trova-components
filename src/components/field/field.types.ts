@@ -11,6 +11,7 @@ export interface FieldProps<DataType> extends SimpleComponent {
     ): SyntheticEvent | void;
     value?: DataType;
     label?: string;
+    detail?: string;
     name: string;
     info?: string;
     error?: string | string[];

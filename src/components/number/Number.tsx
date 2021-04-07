@@ -10,6 +10,7 @@ import {
     changeButton,
     errorSpan,
     input,
+    detailSpan,
 } from './Number.styles';
 import imageSubstract from '../../shared/images/icons/substract.svg';
 import imageAdd from '../../shared/images/icons/add.svg';
@@ -34,6 +35,7 @@ const Number: React.FC<FieldProps<number>> = ({
     name,
     disabled,
     onChange,
+    detail,
 }) => {
     const theme = useTheme();
     const handleChange = useCallback(
@@ -47,6 +49,7 @@ const Number: React.FC<FieldProps<number>> = ({
             <div css={labelContainer()}>
                 {label && <span css={labelSpan(theme)}>{label}</span>}
             </div>
+            {detail && <span css={detailSpan(theme)}>{detail}</span>}
             <div css={innerContainer(disabled, error)}>
                 {!disabled && (
                     <div

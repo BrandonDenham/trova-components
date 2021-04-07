@@ -23,10 +23,13 @@ export const labelSpan = (theme: Theme) => css`
     color: ${Colors.DarkGray};
 `;
 
-export const innerContainer = (disabled: boolean | undefined, error: string | string[] | undefined) => css`
+export const innerContainer = (
+    disabled: boolean | undefined,
+    error: string | string[] | undefined
+) => css`
     box-sizing: border-box;
     border-radius: 10px;
-    ${`background: ${ disabled ? Colors.LightSilver : Colors.White}`};
+    ${`background: ${disabled ? Colors.LightSilver : Colors.White}`};
     border: 1px solid ${Colors.LightGray};
     ${error && error.length && `border-color: ${Colors.Danger};`}
     min-height: 50px;
@@ -68,8 +71,16 @@ export const input = (theme: Theme) => css`
     :focus {
         border: transparent;
     }
-    :disabled{
+    :disabled {
         background-color: ${Colors.LightSilver};
         cursor: auto;
     }
+`;
+
+export const detailSpan = (theme: Theme) => css`
+    font-family: ${theme.fonts.robotoRegular};
+    font-size: ${theme.fontSizes.inputDetail};
+    line-height: 16px;
+    margin-top: 9px;
+    color: ${Colors.DarkGray};
 `;

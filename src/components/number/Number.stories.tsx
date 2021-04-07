@@ -12,6 +12,7 @@ export const NumberExample = () => (
         name="test"
         value={5}
         label="Form header"
+        detail="A text detail in the number input"
     />
 );
 
