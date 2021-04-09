@@ -8,4 +8,6 @@ export default interface DateTimeProps extends FieldProps<string> {
     icon?: React.ReactNode;
     disabled?: boolean;
     disabledText?: string;
+    timeFormat?: boolean;
+    dateFormat?: boolean;
 }

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import TrovaDateTime from './TrovaDateTime';
+import TrovaTimePicker from './TrovaTimePicker';
 import { ComponentWidth } from '../input/componentWidth';
 
 export default {
@@ -29,7 +30,6 @@ export const LargeDateTime = () => (
         size={ComponentWidth.Large}
     />
 );
-
 
 export const FlexibleDateTime = () => (
     <TrovaDateTime
@@ -73,3 +73,19 @@ export const MultipleErrorsDateTime = () => (
         label="Trip description"
     />
 );
+
+export const TimePicker = () => {
+    const [value, setValue] = useState(`15:00`);
+    const onChange = newValue => {
+        setValue(newValue);
+    };
+    return (
+        <TrovaTimePicker
+            name="test"
+            value={value}
+            placeholder="Placeholder"
+            label="Trip description"
+            onChange={onChange}
+        />
+    );
+};

@@ -2,9 +2,7 @@
 import { jsx, useTheme } from '@emotion/react';
 
 import { ComponentWidth } from '../input/componentWidth';
-import {
-    StyledDateTime,
-} from './TrovaDateTime.components';
+import { StyledDateTime } from './TrovaDateTime.components';
 import {
     mainContainer,
     labelContainer,
@@ -26,6 +24,8 @@ const TrovaDateTime: React.FC<DateTimeProps> = ({
     detail,
     className,
     value,
+    timeFormat = false,
+    dateFormat = false,
 }) => {
     const theme = useTheme();
     const disabledProp = disabled ? true : false;
@@ -38,8 +38,8 @@ const TrovaDateTime: React.FC<DateTimeProps> = ({
             )}
             {detail && <span css={detailSpan(theme)}>{detail}</span>}
             <StyledDateTime
-                timeFormat={false}
-                dateFormat={`MM/DD/Y`}
+                timeFormat={timeFormat && `HH:mm`}
+                dateFormat={dateFormat && `MM/DD/Y`}
                 inputProps={{ placeholder, disabled: disabledProp }}
                 onChange={onChange}
                 error={error}
