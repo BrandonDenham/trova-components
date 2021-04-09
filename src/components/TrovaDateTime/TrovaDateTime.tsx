@@ -25,7 +25,7 @@ const TrovaDateTime: React.FC<DateTimeProps> = ({
     className,
     value,
     timeFormat = false,
-    dateFormat = false,
+    dateFormat = true,
 }) => {
     const theme = useTheme();
     const disabledProp = disabled ? true : false;
