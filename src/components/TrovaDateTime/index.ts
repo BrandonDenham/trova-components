@@ -1,5 +1,5 @@
-import TrovaDateTime from './TrovaDateTime';
-import TrovaTimePicker from './TrovaTimePicker';
+import DatePicker from './DatePicker';
+import TimePicker from './TimePicker';
 
-export { default } from './TrovaDateTime';
-export { TrovaDateTime, TrovaTimePicker };
+export { default } from './DatePicker';
+export { DatePicker, TimePicker };

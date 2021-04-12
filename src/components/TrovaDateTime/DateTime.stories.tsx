@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
-import TrovaDateTime from './TrovaDateTime';
-import TrovaTimePicker from './TrovaTimePicker';
+import DatePicker from './DatePicker';
+import TimePicker from './TimePicker';
 import { ComponentWidth } from '../input/componentWidth';
 
 export default {
-    title: 'TrovaDateTime',
-    component: TrovaDateTime,
+    title: 'DateTimePicker',
+    component: DatePicker,
 };
 
 export const MediumDateTime = () => (
-    <TrovaDateTime
+    <DatePicker
         name="test"
         value=""
         placeholder="Placeholder"
@@ -21,7 +21,7 @@ export const MediumDateTime = () => (
 );
 
 export const LargeDateTime = () => (
-    <TrovaDateTime
+    <DatePicker
         name="test"
         value=""
         placeholder="Placeholder"
@@ -32,7 +32,7 @@ export const LargeDateTime = () => (
 );
 
 export const FlexibleDateTime = () => (
-    <TrovaDateTime
+    <DatePicker
         name="test"
         value=""
         placeholder="Placeholder"
@@ -43,7 +43,7 @@ export const FlexibleDateTime = () => (
 );
 
 export const DisabledDateTime = () => (
-    <TrovaDateTime
+    <DatePicker
         name="test"
         value=""
         placeholder="Placeholder"
@@ -55,7 +55,7 @@ export const DisabledDateTime = () => (
 );
 
 export const SingleErrorDateTime = () => (
-    <TrovaDateTime
+    <DatePicker
         name="test"
         value=""
         error="Invalid Date"
@@ -65,7 +65,7 @@ export const SingleErrorDateTime = () => (
 );
 
 export const MultipleErrorsDateTime = () => (
-    <TrovaDateTime
+    <DatePicker
         name="test"
         value=""
         error={['Invalid date', 'You need to be over 18']}
@@ -74,13 +74,13 @@ export const MultipleErrorsDateTime = () => (
     />
 );
 
-export const TimePicker = () => {
+export const SimpleTimePicker = () => {
     const [value, setValue] = useState(`15:00`);
     const onChange = newValue => {
         setValue(newValue);
     };
     return (
-        <TrovaTimePicker
+        <TimePicker
             name="test"
             value={value}
             placeholder="Placeholder"

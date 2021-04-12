@@ -2,14 +2,10 @@
 import { jsx } from '@emotion/react';
 import moment, { isMoment } from 'moment';
 import { useCallback } from 'react';
-import TrovaDateTime from './TrovaDateTime';
-import DateTimeProps from './TrovaDateTime.types';
+import DateTimeComponent from './DateTimeComponent';
+import DateTimeProps from './DateTime.types';
 
-const TrovaTimePicker: React.FC<DateTimeProps> = ({
-    value,
-    onChange,
-    ...props
-}) => {
+const TimePicker: React.FC<DateTimeProps> = ({ value, onChange, ...props }) => {
     let parsedValue = value;
     if (value) {
         const day = moment().zone('GMT');
@@ -34,14 +30,14 @@ const TrovaTimePicker: React.FC<DateTimeProps> = ({
     );
 
     return (
-        <TrovaDateTime
+        <DateTimeComponent
             {...props}
             dateFormat={false}
-            timeFormat={true}
+            timeFormat={`HH:mm`}
             value={parsedValue}
             onChange={onChangeWrapper}
         />
     );
 };
 
-export default TrovaTimePicker;
+export default TimePicker;
