@@ -2,7 +2,11 @@ import Sidebar, { SidebarItem, SidebarMenu } from './components/sidebar';
 import MainNavigation, {
     MainNavigationItem,
 } from './components/mainNavigation';
-import Button, { ButtonType, DraggableButton, ButtonSize } from './components/button';
+import Button, {
+    ButtonType,
+    DraggableButton,
+    ButtonSize,
+} from './components/button';
 import Card from './components/card';
 import Icon, { IconName, IconSize } from './components/icon';
 import Input from './components/input';
@@ -22,7 +26,8 @@ import { ComponentWidth } from './components/input/componentWidth';
 import { TextareaSize } from './components/textarea/textareaSize';
 import { Cell, Row, Table, TableBody, TableHead } from './components/grid/';
 import Number from './components/number';
-import TrovaDateTime from './components/TrovaDateTime';
+import DatePicker from './components/TrovaDateTime/DatePicker';
+import TimePicker from './components/TrovaDateTime/TimePicker';
 
 export {
     Sidebar,
@@ -65,5 +70,6 @@ export {
     TableBody,
     TableHead,
     Number,
-    TrovaDateTime,
+    DatePicker,
+    TimePicker,
 };

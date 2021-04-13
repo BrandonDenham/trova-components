@@ -2,9 +2,7 @@
 import { jsx, useTheme } from '@emotion/react';
 
 import { ComponentWidth } from '../input/componentWidth';
-import {
-    StyledDateTime,
-} from './TrovaDateTime.components';
+import { StyledDateTime } from './DateTime.components';
 import {
     mainContainer,
     labelContainer,
@@ -12,10 +10,10 @@ import {
     errorSpan,
     disabledSpan,
     detailSpan,
-} from './TrovaDateTime.styles';
-import DateTimeProps from './TrovaDateTime.types';
+} from './DateTime.styles';
+import { DateTimeComponentProps } from './DateTime.types';
 
-const TrovaDateTime: React.FC<DateTimeProps> = ({
+const DatePicker: React.FC<DateTimeComponentProps> = ({
     placeholder,
     onChange,
     error,
@@ -26,6 +24,8 @@ const TrovaDateTime: React.FC<DateTimeProps> = ({
     detail,
     className,
     value,
+    timeFormat,
+    dateFormat,
 }) => {
     const theme = useTheme();
     const disabledProp = disabled ? true : false;
@@ -38,8 +38,8 @@ const TrovaDateTime: React.FC<DateTimeProps> = ({
             )}
             {detail && <span css={detailSpan(theme)}>{detail}</span>}
             <StyledDateTime
-                timeFormat={false}
-                dateFormat={`MM/DD/Y`}
+                timeFormat={timeFormat}
+                dateFormat={dateFormat}
                 inputProps={{ placeholder, disabled: disabledProp }}
                 onChange={onChange}
                 error={error}
@@ -62,4 +62,4 @@ const TrovaDateTime: React.FC<DateTimeProps> = ({
     );
 };
 
-export default TrovaDateTime;
+export default DatePicker;
