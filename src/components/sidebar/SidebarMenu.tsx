@@ -31,11 +31,10 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
     return (
         <div
             data-testid="sidebar__menu"
-            onClick={() => toggle()}
             css={sidebarMenu}
             className={className}
         >
-            <div css={sidebarMenuDiv}>
+            <div css={sidebarMenuDiv} onClick={() => toggle()}>
                 <h5 css={sidebarMenuTitle(theme)}>{title}</h5>
                 <img alt="Arrow" src={imgArrow} css={sidebarMenuDivImg} />
             </div>
