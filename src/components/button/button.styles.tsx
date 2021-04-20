@@ -8,12 +8,24 @@ export const button = (
     buttonType: ButtonType,
     selected: boolean,
     disabled: boolean,
+    draggable: boolean,
     subtext: string | undefined,
     icon: React.ReactNode,
     size: ButtonSize,
     backgroundColor?: Colors
 ) => css`
     cursor: pointer;
+    ${draggable &&
+    `cursor: pointer;
+        cursor: grab;
+        cursor: -moz-grab;
+        cursor: -webkit-grab;
+        &:active {
+            cursor: grabbing;
+            cursor: -moz-grabbing;
+            cursor: -webkit-grabbing;
+        }
+            `}
     border-radius: 14px;
     display: inline-flex;
     justify-content: center;
