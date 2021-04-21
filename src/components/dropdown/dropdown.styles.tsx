@@ -65,6 +65,12 @@ export const input = (theme: Theme, size: ComponentWidth) => css`
     line-height: 19px;
     color: ${Colors.Dark};
     border: transparent;
+    ::-webkit-search-decoration,
+    ::-webkit-search-cancel-button,
+    ::-webkit-search-results-button,
+    ::-webkit-search-results-decoration {
+      display: none;
+    }
     :disabled {
         background-color: ${Colors.White};
     }
