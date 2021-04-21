@@ -121,7 +121,8 @@ const Dropdown: React.FC<DropdownProps> = ({
                 <input
                     ref={inputRef}
                     data-testid="input"
-                    type="text"
+                    type="search"
+                    autoComplete="off"
                     onChange={handleSearch}
                     placeholder={placeholder}
                     value={searchValue}
