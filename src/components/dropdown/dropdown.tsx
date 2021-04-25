@@ -82,7 +82,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         if (newSearchValue !== searchValue) {
             setSearchValue(newSearchValue);
         }
-    }, [value, children]);
+    }, [value]);
 
 
     const [listVisible, setListVisible] = useState(false);
