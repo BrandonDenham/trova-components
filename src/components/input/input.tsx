@@ -44,24 +44,25 @@ const Input: React.FC<InputProps> = ({
     let textInput: HTMLInputElement;
     const handleClick = useCallback(() => textInput.focus(), []);
     return (
-        <div css={mainContainer(theme, size)} className={className}>
-            {label && <div css={labelContainer()}>
-                <span css={labelSpan(theme)}>{label}</span>
-                {info && (
-                    <div css={infoImageContainer()} title={info}>
-                        <label>
-                            <img
-                                css={infoImage()}
-                                alt="Info."
-                                src={imageInfo}
-                            />
-                            <input type="checkbox"></input>
-                            <span css={tooltip(theme)}>{info}</span>
-                        </label>
-                    </div>
-                )}
-            </div>}
-            {detail && <span css={detailSpan(theme)}>{detail}</span>}
+        <div css={mainContainer(theme)} className={className}>
+            {label && (
+                <div css={labelContainer(theme, size)}>
+                    <span css={labelSpan(theme)}>{label}</span>
+                    {info && (
+                        <div css={infoImageContainer()} title={info}>
+                            <label>
+                                <img
+                                    css={infoImage()}
+                                    alt="Info."
+                                    src={imageInfo}
+                                />
+                                <input type="checkbox"></input>
+                                <span css={tooltip(theme)}>{info}</span>
+                            </label>
+                        </div>
+                    )}
+                </div>
+            )}
             {icon && (
                 <div css={inputContainer(theme, error)} onClick={handleClick}>
                     <input
@@ -92,6 +93,7 @@ const Input: React.FC<InputProps> = ({
                     name={name}
                 />
             )}
+            {detail && <span css={detailSpan(theme)}>{detail}</span>}
             {disabled && disabledText && (
                 <span css={disabledSpan(theme)}>{disabledText}</span>
             )}

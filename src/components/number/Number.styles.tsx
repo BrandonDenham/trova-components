@@ -4,7 +4,6 @@ import { Colors } from '../../shared/constants/colors';
 export const mainContainer = (theme: Theme) => css`
     display: flex;
     flex-direction: column;
-    width: ${theme.columns.twoColumns}px;
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
     }
@@ -24,6 +23,7 @@ export const labelSpan = (theme: Theme) => css`
 `;
 
 export const innerContainer = (
+    theme: Theme,
     disabled: boolean | undefined,
     error: string | string[] | undefined
 ) => css`
@@ -38,6 +38,7 @@ export const innerContainer = (
     align-items: center;
     justify-content: space-between;
     padding: 0 0.8rem;
+    width: ${theme.columns.twoColumns}px;
     svg {
         margin-right: 20px;
     }

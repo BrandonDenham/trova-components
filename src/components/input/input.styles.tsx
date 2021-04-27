@@ -2,19 +2,9 @@ import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
 import { ComponentWidth } from './componentWidth';
 
-export const mainContainer = (theme: Theme, size: ComponentWidth) => css`
+export const mainContainer = (theme: Theme) => css`
     display: flex;
     flex-direction: column;
-    ${size === ComponentWidth.ExtraSmall && `min-width: 64px; max-width:100px;`}
-    ${size === ComponentWidth.Small && `width:${theme.columns.twoColumns}px;`}
-    ${size === ComponentWidth.Medium &&
-    `width:${theme.columns.threeColumns}px;`}
-    ${size === ComponentWidth.Large && `width:${theme.columns.fourColumns}px;`}
-    ${size === ComponentWidth.ExtraLarge &&
-    `width:${theme.columns.fiveColumns}px;`}
-    ${size === ComponentWidth.Flexible &&
-    `   width: 100%;
-    `}
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
     }
@@ -47,12 +37,36 @@ export const input = (
             background-color: ${Colors.LightSilver};
         }
         ${error && error.length && `border-color: ${Colors.Danger};`}
+
+        ${size === ComponentWidth.ExtraSmall &&
+        `min-width: 64px; max-width:100px;`}
+        ${size === ComponentWidth.Small &&
+        `width:${theme.columns.twoColumns}px;`}
+        ${size === ComponentWidth.Medium &&
+        `width:${theme.columns.threeColumns}px;`}
+        ${size === ComponentWidth.Large &&
+        `width:${theme.columns.fourColumns}px;`}
+        ${size === ComponentWidth.ExtraLarge &&
+        `width:${theme.columns.fiveColumns}px;`}
+        ${size === ComponentWidth.Flexible &&
+        `   width: 100%;
+            `}
     `;
 
-export const labelContainer = () => css`
+export const labelContainer = (theme: Theme, size: ComponentWidth) => css`
     display: flex;
     justify-content: space-between;
     height: 1rem;
+    ${size === ComponentWidth.ExtraSmall && `min-width: 64px; max-width:100px;`}
+    ${size === ComponentWidth.Small && `width:${theme.columns.twoColumns}px;`}
+    ${size === ComponentWidth.Medium &&
+    `width:${theme.columns.threeColumns}px;`}
+    ${size === ComponentWidth.Large && `width:${theme.columns.fourColumns}px;`}
+    ${size === ComponentWidth.ExtraLarge &&
+    `width:${theme.columns.fiveColumns}px;`}
+    ${size === ComponentWidth.Flexible &&
+    `   width: 100%;
+        `}
 `;
 
 export const labelSpan = (theme: Theme) => css`
