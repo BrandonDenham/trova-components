@@ -19,6 +19,7 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
             buttonType = ButtonType.Primary,
             selected = false,
             disabled = false,
+            draggable = false,
             id,
             onClick,
             icon,
@@ -45,10 +46,11 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
                     buttonType,
                     selected,
                     disabled,
+                    draggable,
                     subtext,
                     icon,
                     size,
-                    backgroundColor
+                    backgroundColor,
                 )}
                 onClick={handleButtonClicked}
                 ref={ref}

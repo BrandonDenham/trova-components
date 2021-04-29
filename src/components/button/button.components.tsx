@@ -1,11 +1,12 @@
-import { Theme } from '@emotion/react';
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-import Button from './button';
-
-export const StyledDraggableButton = styled(Button)`
-    cursor: ${props => (props.theme as Theme).cursor.grab};
-    cursor: ${props =>
-        (props.theme as Theme).cursor
-            .webkitGrabbing}; /* fallback if grab cursor is unsupported (chrome) */
+export const draggableButtonStyle = () => css`
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    &:active {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+    }
 `;
