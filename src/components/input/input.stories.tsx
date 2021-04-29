@@ -80,7 +80,6 @@ export const DisabledInput = () => (
         value="Text"
         placeholder="Placeholder"
         label="Form header"
-        detail="Describe the trip in 2-3 sentences."
         disabled={true}
         disabledText="This cannot be updated."
     />

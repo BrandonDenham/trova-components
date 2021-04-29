@@ -49,8 +49,7 @@ const Number: React.FC<FieldProps<number>> = ({
             <div css={labelContainer()}>
                 {label && <span css={labelSpan(theme)}>{label}</span>}
             </div>
-            {detail && <span css={detailSpan(theme)}>{detail}</span>}
-            <div css={innerContainer(disabled, error)}>
+            <div css={innerContainer(theme, disabled, error)}>
                 {!disabled && (
                     <div
                         css={changeButton()}
@@ -79,6 +78,7 @@ const Number: React.FC<FieldProps<number>> = ({
                     </div>
                 )}
             </div>
+            {detail && <span css={detailSpan(theme)}>{detail}</span>}
             {error && typeof error === 'string' && (
                 <span css={errorSpan(theme)}>{error}</span>
             )}
