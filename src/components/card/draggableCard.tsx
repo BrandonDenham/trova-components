@@ -3,17 +3,17 @@ import DraggableSourceProps from '../draggable/draggableSource.types';
 import DraggableTargetProps from '../draggable/draggableTarget.types';
 import Card from './card';
 import CardProps from './card.types';
-import { draggableTarget } from '../draggable/draggableTarget.styles';
 import useDropSpecs from '../draggable/useDropSpecs';
 import useDragSpecs from '../draggable/useDragSpecs';
+import { draggableCardStyle } from './draggableCard.styles';
 
 type DragAndDropProps = DraggableSourceProps & DraggableTargetProps & CardProps;
 
 function mergeRefs<T = any>(
     refs: Array<React.MutableRefObject<T> | React.LegacyRef<T>>
 ): React.RefCallback<T> {
-    return (value) => {
-        refs.forEach((ref) => {
+    return value => {
+        refs.forEach(ref => {
             if (typeof ref === 'function') {
                 ref(value);
             } else if (ref != null) {
@@ -29,7 +29,8 @@ const DraggableCard: React.FC<DragAndDropProps> = ({
     children,
     ...cardProps
 }) => {
-    const [collectedDragProps, useDragRef] = useDragSpecs({
+    
+    const [{ isDragging }, useDragRef] = useDragSpecs({
         dragTargetConfiguration,
         onCollect,
     });
@@ -39,11 +40,11 @@ const DraggableCard: React.FC<DragAndDropProps> = ({
         onCollect,
     });
 
-    const { isDragging } = collectedDragProps;
-    const cursor = isDragging ? `move` : `pointer`;
-
     const dragAndDrop = mergeRefs([useDragRef, useDropRef]);
-    const draggableStyles = draggableTarget(cursor, cardProps.backgroundColor);
+    const draggableStyles = draggableCardStyle(
+        isDragging,
+        cardProps.backgroundColor
+    );
 
     return (
         <Card customCss={draggableStyles} ref={dragAndDrop} {...cardProps}>
