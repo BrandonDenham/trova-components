@@ -28,6 +28,8 @@ import { Cell, Row, Table, TableBody, TableHead } from './components/grid/';
 import Number from './components/number';
 import DatePicker from './components/TrovaDateTime/DatePicker';
 import TimePicker from './components/TrovaDateTime/TimePicker';
+import Loading from './components/loading';
+
 
 export {
     Sidebar,
@@ -72,4 +74,5 @@ export {
     Number,
     DatePicker,
     TimePicker,
+    Loading,
 };
