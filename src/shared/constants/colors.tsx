@@ -29,13 +29,18 @@ export enum Colors {
     LightBlue = '#26C6DA',
     Purple = '#AC51B5',
     LightOrange = '#F2A364',
+    Teal = '#26C6DA',
+
     ParagraphDarkGray = '#203049',
     CardDashedBorderGray = '#C3CFEC',
     CardDashedBorderLightGray = '#C2CEEB',
+    // Branding
+    LogoTeal = Teal,
     // Background
     PrimaryContentBackground = LightSilver,
+    BackdropOverlay = BlackAlphaExtraLight,
     // Text shadows
     TextShadowExtraLight = BlackAlphaExtraLight,
     TextShadowLight = BlackAlphaLight,
-    TextShadowMedium = BlackAlphaMedium,    
+    TextShadowMedium = BlackAlphaMedium,
 }
