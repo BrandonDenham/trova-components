@@ -29,16 +29,3 @@ export const LoaderFullScreen = () => (
         <Loader color={Colors.LogoTeal} size={loaderSize.Md} />
     </div>
 );
-
-// Should I leave this commented?
-// export const LoadingOverrideIterator = () => (
-//     <Loader
-//         duration={8}
-//         begin={4}
-//         iterations={1}
-//         color={'#03b1c9'}
-//         utterance={4}
-//         size={270}
-//         overrideIterator={'1;0;0;1;'}
-//     />
-// );
