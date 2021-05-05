@@ -2,7 +2,6 @@
 import { jsx } from '@emotion/react';
 import React from 'react';
 
-import { loaderSize } from './loaderSize';
 import LoaderProps from './loader.types';
 
 import { Colors } from '../../shared/constants/colors';
