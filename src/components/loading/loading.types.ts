@@ -3,6 +3,12 @@ import { loadingSize } from './loadingSize';
 
 
 export default interface LoadingProps extends SimpleComponent{
-    size?: loadingSize;
+    size?: number;
     color?: string;
+    speed?: number,
+    overrideIterator?: string,
+    utterance?: number,
+    begin?: number,
+    duration?: number,
+    iterations?: number
 }
