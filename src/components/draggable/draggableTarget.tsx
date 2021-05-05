@@ -11,13 +11,14 @@ const DraggableTarget: React.FC<DraggableTargetProps> = ({
     children,
     className,
 }) => {
-    const [, drop] = useDropSpecs({
+    const [{ isOver, canDrop }, drop] = useDropSpecs({
         dropTargetConfiguration,
         onCollect,
     });
 
+    const actualCss = draggableTarget(undefined, undefined, isOver, canDrop);
     return (
-        <div css={draggableTarget()} ref={drop} className={className}>
+        <div css={actualCss} ref={drop} className={className}>
             {children}
         </div>
     );
