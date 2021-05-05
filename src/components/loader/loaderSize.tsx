@@ -1,5 +1,5 @@
 export enum loaderSize {
-    Sm,
-    Md,
-    Lg,
+    Sm = 20,
+    Md = 100,
+    Lg = 274,
 }
