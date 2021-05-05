@@ -7,6 +7,33 @@ import LoaderProps from './loader.types';
 import { loader, containerLoader } from './loader.styles';
 import { Colors } from '../../shared/constants/colors';
 
+const getIteratorValues = (iterations, overrideIterator) => {
+    return [...new Array(iterations)]
+        .map(value => overrideIterator)
+        .join(' ')
+}
+const createBreakpoints = ({values, begin, utterance, duration, color}) => {
+    const loaderStyles = `stop-color: ${color}; stop-opacity: 0`;
+    const arrayBreaks = [...new Array(100)];
+    let htmlBreakpoints = '';
+    for (
+        let vectorIndex = 0;
+        vectorIndex < arrayBreaks.length;
+        vectorIndex++
+    ) {
+        htmlBreakpoints += `<stop offset="${vectorIndex}%" style="${loaderStyles}">
+       <animate
+         attributeName="stop-opacity"
+         values="${values}"
+         begin="${begin * 100 + vectorIndex * utterance}ms"
+         dur="${duration * 100}ms"
+         fill="freeze"
+         repeatCount="1000"​
+       />
+     </stop>`;
+    }
+    return htmlBreakpoints;
+}
 const createMarkup = ({
     size = 240,
     color = Colors.Dark,
@@ -17,37 +44,14 @@ const createMarkup = ({
     utterance = 4,
     overrideIterator = '0;1;1;0;',
 }) => {
-    const values = [...new Array(iterations)]
-        .map(value => overrideIterator)
-        .join(' ');
-    const loaderStyles = `stop-color: ${color}; stop-opacity: 0`;
-    function makeBreakpoints() {
-        const arrayBreaks = [...new Array(100)];
-        let htmlBreakpoints = '';
-        for (
-            let vectorIndex = 0;
-            vectorIndex < arrayBreaks.length;
-            vectorIndex++
-        ) {
-            htmlBreakpoints += `<stop offset="${vectorIndex}%" style="${loaderStyles}">
-           <animate
-             attributeName="stop-opacity"
-             values="${values}"
-             begin="${begin * 100 + vectorIndex * utterance}ms"
-             dur="${duration * 100}ms"
-             fill="freeze"
-             repeatCount="1000"​
-           />
-         </stop>`;
-        }
-        return htmlBreakpoints;
-    }
-
+    const values = getIteratorValues(iterations, overrideIterator);
+    const doBreakpoints = createBreakpoints({values, begin, utterance, duration, color});
+    
     return {
         __html: `<svg id="trovaLoading" width="${size}" height="${size}" preserveAspectRatio="xMaxYMid meet" viewBox="0 0 274 274">
                     <defs>
                     <lineargradient id="trovaGradient" x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse">
-                        ${makeBreakpoints()}
+                        ${doBreakpoints}
                     </lineargradient>
                     </defs>
                     <g>
