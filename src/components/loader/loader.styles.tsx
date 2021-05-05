@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
-import { loadingSize } from './loadingSize';
-import iconLoading from '../../shared/images/icons/loading.svg';
+import { loaderSize } from './loaderSize';
+import iconLoader from '../../shared/images/icons/loader.svg';
 
 export const containerLoader = () => css`
     width: 100%;
@@ -15,12 +15,12 @@ export const containerLoader = () => css`
     z-index: 99999999;
 `;
 
-export const loading = (size: loadingSize, color: string) =>
+export const loader = (size: loaderSize, color: string) =>
     css`
-      -webkit-mask: url(${iconLoading});
-      ${size === loadingSize.Sm && `width: 2rem; height: 2rem;`}
-      ${size === loadingSize.Md && `width: 3rem; height: 3rem;`}
-      ${size === loadingSize.Lg && `width: 4rem; height: 4rem;`}
+      -webkit-mask: url(${iconLoader});
+      ${size === loaderSize.Sm && `width: 2rem; height: 2rem;`}
+      ${size === loaderSize.Md && `width: 3rem; height: 3rem;`}
+      ${size === loaderSize.Lg && `width: 4rem; height: 4rem;`}
       background: ${color};
       -webkit-mask-size: contain;
       -webkit-mask-repeat: no-repeat;

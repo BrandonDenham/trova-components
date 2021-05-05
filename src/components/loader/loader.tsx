@@ -2,12 +2,12 @@
 import { jsx } from '@emotion/react';
 import React from 'react';
 
-import { loadingSize } from './loadingSize';
-import LoadingProps from './loading.types';
-import { loading, containerLoader } from './loading.styles';
+import { loaderSize } from './loaderSize';
+import LoaderProps from './loader.types';
+import { loader, containerLoader } from './loader.styles';
 import { Colors } from '../../shared/constants/colors';
 
-const Loading: React.FC<LoadingProps> = ({
+const Loader: React.FC<LoaderProps> = ({
     size = 240,
     color = Colors.Dark,
     iterations = 1,
@@ -17,7 +17,7 @@ const Loading: React.FC<LoadingProps> = ({
     utterance = 4,
     overrideIterator = '0;1;1;0;',
 }) => {
-    const loadingStyles = `stop-color: ${color}; stop-opacity: 0`;
+    const loaderStyles = `stop-color: ${color}; stop-opacity: 0`;
     const createMarkup = () => {
         const values = [...new Array(iterations)]
             .map(value => overrideIterator)
@@ -30,7 +30,7 @@ const Loading: React.FC<LoadingProps> = ({
                 vectorIndex < arrayBreaks.length;
                 vectorIndex++
             ) {
-                htmlBreakpoints += `<stop offset="${vectorIndex}%" style="${loadingStyles}">
+                htmlBreakpoints += `<stop offset="${vectorIndex}%" style="${loaderStyles}">
                <animate
                  attributeName="stop-opacity"
                  values="${values}"
@@ -73,4 +73,4 @@ const Loading: React.FC<LoadingProps> = ({
     return <div dangerouslySetInnerHTML={createMarkup()} />;
 };
 
-export default Loading;
+export default Loader;

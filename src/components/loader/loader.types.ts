@@ -1,8 +1,8 @@
 import { SimpleComponent } from '../../shared/interfaces/SimpleComponent.types';
-import { loadingSize } from './loadingSize';
+import { loaderSize } from './loaderSize';
 
 
-export default interface LoadingProps extends SimpleComponent{
+export default interface LoaderProps extends SimpleComponent{
     size?: number;
     color?: string;
     speed?: number,

@@ -1,4 +1,4 @@
-export enum loadingSize {
+export enum loaderSize {
     Sm,
     Md,
     Lg,

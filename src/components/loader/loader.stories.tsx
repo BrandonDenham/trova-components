@@ -1,20 +1,20 @@
 import React from 'react';
 
-import Loading from '.';
-import { loadingSize } from '.';
+import Loader from '.';
+import { loaderSize } from '.';
 import { Colors } from '../../shared/constants/colors';
 
 export default {
-    title: 'Loading',
-    component: Loading,
+    title: 'Loader',
+    component: Loader,
 };
 
-export const LoadingSm = () => <Loading iterations={2} size={20} />;
-export const LoadingMd = () => (
-    <Loading duration={10} iterations={1} color={Colors.Primary} size={100} />
+export const LoaderSm = () => <Loader iterations={2} size={20} />;
+export const LoaderMd = () => (
+    <Loader duration={10} iterations={1} color={Colors.Primary} size={100} />
 );
-export const LoadingLg = () => (
-    <Loading
+export const LoaderLg = () => (
+    <Loader
         duration={8}
         begin={4}
         iterations={1}
@@ -25,7 +25,7 @@ export const LoadingLg = () => (
 );
 
 export const LoadingOverrideIterator = () => (
-    <Loading
+    <Loader
         duration={8}
         begin={4}
         iterations={1}
