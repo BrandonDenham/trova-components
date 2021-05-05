@@ -4,23 +4,17 @@ import React from 'react';
 
 import { loaderSize } from './loaderSize';
 import LoaderProps from './loader.types';
-import { loader, containerLoader } from './loader.styles';
+
 import { Colors } from '../../shared/constants/colors';
 
 const getIteratorValues = (iterations, overrideIterator) => {
-    return [...new Array(iterations)]
-        .map(value => overrideIterator)
-        .join(' ')
-}
-const createBreakpoints = ({values, begin, utterance, duration, color}) => {
+    return [...new Array(iterations)].map(value => overrideIterator).join(' ');
+};
+const createBreakpoints = ({ values, begin, utterance, duration, color }) => {
     const loaderStyles = `stop-color: ${color}; stop-opacity: 0`;
     const arrayBreaks = [...new Array(100)];
     let htmlBreakpoints = '';
-    for (
-        let vectorIndex = 0;
-        vectorIndex < arrayBreaks.length;
-        vectorIndex++
-    ) {
+    for (let vectorIndex = 0; vectorIndex < arrayBreaks.length; vectorIndex++) {
         htmlBreakpoints += `<stop offset="${vectorIndex}%" style="${loaderStyles}">
        <animate
          attributeName="stop-opacity"
@@ -33,7 +27,7 @@ const createBreakpoints = ({values, begin, utterance, duration, color}) => {
      </stop>`;
     }
     return htmlBreakpoints;
-}
+};
 const createMarkup = ({
     size = 240,
     color = Colors.Dark,
@@ -45,8 +39,14 @@ const createMarkup = ({
     overrideIterator = '0;1;1;0;',
 }) => {
     const values = getIteratorValues(iterations, overrideIterator);
-    const doBreakpoints = createBreakpoints({values, begin, utterance, duration, color});
-    
+    const doBreakpoints = createBreakpoints({
+        values,
+        begin,
+        utterance,
+        duration,
+        color,
+    });
+
     return {
         __html: `<svg id="trovaLoading" width="${size}" height="${size}" preserveAspectRatio="xMaxYMid meet" viewBox="0 0 274 274">
                     <defs>
