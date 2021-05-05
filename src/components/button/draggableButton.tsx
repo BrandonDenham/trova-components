@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import React from 'react';
-import { useTheme } from '@emotion/react';
 
 import Icon from '../icon/icon';
 import { IconName } from '../icon/iconName';
@@ -10,7 +9,6 @@ import DraggableSourceProps from '../draggable/draggableSource.types';
 import Button from './button';
 import ButtonProps from './button.types';
 import useDragSpecs from '../draggable/useDragSpecs';
-import { draggableButtonStyle } from './button.components';
 
 type MergeProps = DraggableSourceProps & ButtonProps;
 
@@ -24,7 +22,6 @@ const DraggableButton: React.FC<MergeProps> = ({
         dragTargetConfiguration,
         onCollect,
     });
-    const theme = useTheme();
 
     return (
         <Button
@@ -32,7 +29,6 @@ const DraggableButton: React.FC<MergeProps> = ({
             {...buttonProps}
             draggable={true}
             ref={drag}
-            theme={theme}
         >
             {children}
         </Button>
