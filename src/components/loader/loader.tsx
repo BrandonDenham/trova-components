@@ -2,14 +2,23 @@
 import { jsx } from '@emotion/react';
 import React from 'react';
 
-import LoaderProps from './loader.types';
+import LoaderProps, { getIteratorValuesProps, createBreakpointsProps, createMarkupProps } from './loader.types';
 
 import { Colors } from '../../shared/constants/colors';
 
-const getIteratorValues = (iterations, overrideIterator) => {
+const getIteratorValues: React.FC<getIteratorValuesProps> = ({
+    iterations, overrideIterator
+}) => {
     return [...new Array(iterations)].map(value => overrideIterator).join(' ');
 };
-const createBreakpoints = ({ values, begin, utterance, duration, color }) => {
+
+const createBreakpoints: React.FC<createBreakpointsProps> = ({
+    values = '0;1;1;0;', 
+    begin = 4, 
+    utterance = 4, 
+    duration = 10, 
+    color = Colors.Dark
+}) => {
     const loaderStyles = `stop-color: ${color}; stop-opacity: 0`;
     const arrayBreaks = [...new Array(100)];
     let htmlBreakpoints = '';
@@ -27,17 +36,17 @@ const createBreakpoints = ({ values, begin, utterance, duration, color }) => {
     }
     return htmlBreakpoints;
 };
-const createMarkup = ({
+
+const createMarkup: React.FC<createMarkupProps> = ({
     size = 240,
     color = Colors.Dark,
     iterations = 1,
     duration = 10,
     begin = 4,
-    className,
     utterance = 4,
-    overrideIterator = '0;1;1;0;',
+    overrideIterator = '0;1;1;0;'
 }) => {
-    const values = getIteratorValues(iterations, overrideIterator);
+    const values = getIteratorValues({iterations, overrideIterator});
     const doBreakpoints = createBreakpoints({
         values,
         begin,
