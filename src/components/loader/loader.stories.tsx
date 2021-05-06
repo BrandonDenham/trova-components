@@ -1,8 +1,8 @@
 import React from 'react';
 import { Colors } from '../../shared/constants/colors';
 
-import Loader from '.';
-import { loaderSize } from '.';
+import Loader from './loader';
+import { loaderSize } from './loaderSize';
 import { containerLoader } from './loader.styles';
 
 export default {
