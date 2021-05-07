@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { matchers } from '@emotion/jest';
-import UserItem from './UserItem';
-import UserMenu from './UserMenu';
-import UserMenuProps from './UserMenu.types';
+import MenuItem from './MenuItem';
+import Menu from './Menu';
+import MenuProps from './Menu.types';
 import { ThemeProvider } from '@emotion/react';
 import userEvent from '@testing-library/user-event';
 import theme from '../../shared/themes/theme';
@@ -11,44 +11,34 @@ import theme from '../../shared/themes/theme';
 expect.extend(matchers);
 
 describe('User Menu', () => {
-    let propsOpen: UserMenuProps;
-    let propsClosed: UserMenuProps;
+    let propsOpen: MenuProps;
+    let propsClosed: MenuProps;
 
     beforeEach(() => {
         propsOpen = {
             title: 'Title',
             open: true,
-            children: (
-                <UserItem
-                    title="Profile"
-                    selected={true}
-                />
-            ),
+            children: <MenuItem title="Profile" selected={true} />,
             onToggle: jest.fn(),
         };
 
         propsClosed = {
             title: 'Title',
             open: false,
-            children: (
-                <UserItem
-                    title="Profile"
-                    selected={true}
-                />
-            ),
+            children: <MenuItem title="Profile" selected={true} />,
         };
     });
 
     const renderOpenComponent = () =>
         render(
             <ThemeProvider theme={theme}>
-                <UserMenu {...propsOpen} />
+                <Menu {...propsOpen} />
             </ThemeProvider>
         );
     const renderClosedComponent = () =>
         render(
             <ThemeProvider theme={theme}>
-                <UserMenu {...propsClosed} />
+                <Menu {...propsClosed} />
             </ThemeProvider>
         );
 

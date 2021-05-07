@@ -2,25 +2,18 @@
 import { jsx } from '@emotion/react';
 import React, { useCallback, useState } from 'react';
 
-import UserMenuProps from './UserMenu.types';
+import MenuProps from './Menu.types';
 
-import {
-    userMenu,
-    userMenuButton,
-    userMenuAvatar,
-    userMenuDropdown,
-} from './UserMenu.styles';
+import { menu, menuButton, menuAvatar, menuDropdown } from './Menu.styles';
 
 import profileImageUrl from '../../shared/images/ProfilePhoto.png';
 
-
-const UserMenu: React.FC<UserMenuProps> = ({
+const Menu: React.FC<MenuProps> = ({
     open = true,
     onToggle,
     children,
     className,
 }) => {
-
     const [openMenu, setOpenMenu] = useState(open);
 
     const toggle = useCallback(() => {
@@ -31,17 +24,17 @@ const UserMenu: React.FC<UserMenuProps> = ({
     }, [openMenu]);
 
     return (
-        <div data-testid="user__menu" css={userMenu} className={className}>
-            <button css={userMenuButton} onClick={() => toggle()}>
+        <div data-testid="user__menu" css={menu} className={className}>
+            <button css={menuButton} onClick={() => toggle()}>
                 <img
                     alt="Profile picture"
                     src={profileImageUrl}
-                    css={userMenuAvatar}
+                    css={menuAvatar}
                 />
             </button>
-            <div css={userMenuDropdown}>{openMenu ? children : null}</div>
+            <div css={menuDropdown}>{openMenu ? children : null}</div>
         </div>
     );
 };
 
-export default UserMenu;
+export default Menu;

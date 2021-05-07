@@ -2,17 +2,16 @@
 import { jsx, useTheme } from '@emotion/react';
 import React, { useCallback, SyntheticEvent } from 'react';
 
-import UserItemProps from './UserItem.types';
-import { userItem, userItemTitle } from './UserItem.styles';
+import MenuItemProps from './MenuItem.types';
+import { menuItem, menuItemTitle } from './MenuItem.styles';
 
-const UserItem: React.FC<UserItemProps> = ({
+const MenuItem: React.FC<MenuItemProps> = ({
     title,
     selected = false,
     id,
     onClick,
     className,
 }) => {
-    
     const theme = useTheme();
     const itemClicked = useCallback(
         (event: SyntheticEvent) => {
@@ -24,13 +23,13 @@ const UserItem: React.FC<UserItemProps> = ({
     return (
         <div
             data-testid="user__item"
-            css={userItem(selected)}
+            css={menuItem(selected)}
             onClick={itemClicked}
             className={className}
         >
-            <span css={userItemTitle(theme)}>{title}</span>
+            <span css={menuItemTitle(theme)}>{title}</span>
         </div>
     );
 };
 
-export default UserItem;
+export default MenuItem;

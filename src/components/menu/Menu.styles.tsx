@@ -1,15 +1,15 @@
 import { css } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
 
-export const userMenu = css`
+export const menu = css`
     position: relative;
 `;
 
-export const userMenuButton = css`
+export const menuButton = css`
     border: none;
     background-color: #ffffff;
     cursor: pointer;
-    padding: .25rem .5rem;
+    padding: 0.25rem 0.5rem;
     &:active,
     &:focus {
         box-shadow: none;
@@ -17,13 +17,13 @@ export const userMenuButton = css`
     }
 `;
 
-export const userMenuAvatar = css`
+export const menuAvatar = css`
     width: 50px;
     height: 50px;
     vertical-align: middle;
 `;
 
-export const userMenuDropdown = css`
+export const menuDropdown = css`
     position: absolute;
     display: flex;
     flex-direction: column;

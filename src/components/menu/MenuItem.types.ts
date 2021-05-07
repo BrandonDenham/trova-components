@@ -1,7 +1,7 @@
 import { SyntheticEvent } from 'react';
 import { SimpleComponent } from '../../shared/interfaces/SimpleComponent.types';
 
-export default interface UserItemProps extends SimpleComponent {
+export default interface MenuItemProps extends SimpleComponent {
     title: string;
     subtitle?: string;
     selected?: boolean;

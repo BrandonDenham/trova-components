@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { matchers } from '@emotion/jest';
-import UserItem from './UserItem';
-import UserItemProps from './UserItem.types';
+import MenuItem from './MenuItem';
+import MenuItemProps from './MenuItem.types';
 import { ThemeProvider } from '@emotion/react';
 import userEvent from '@testing-library/user-event';
 import theme from '../../shared/themes/theme';
@@ -10,8 +10,8 @@ import theme from '../../shared/themes/theme';
 expect.extend(matchers);
 
 describe('User Item', () => {
-    let propsStatusText: UserItemProps;
-    let propsStatusTextDefaultColor: UserItemProps;
+    let propsStatusText: MenuItemProps;
+    let propsStatusTextDefaultColor: MenuItemProps;
 
     beforeEach(() => {
         propsStatusText = {
@@ -27,13 +27,13 @@ describe('User Item', () => {
     const renderStatusTextComponent = () =>
         render(
             <ThemeProvider theme={theme}>
-                <UserItem {...propsStatusText} />
+                <MenuItem {...propsStatusText} />
             </ThemeProvider>
         );
     const renderStatusTextDefaultColorComponent = () =>
         render(
             <ThemeProvider theme={theme}>
-                <UserItem {...propsStatusTextDefaultColor} />
+                <MenuItem {...propsStatusTextDefaultColor} />
             </ThemeProvider>
         );
 
