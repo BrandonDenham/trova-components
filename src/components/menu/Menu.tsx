@@ -1,40 +1,31 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
+import { usePopper } from 'react-popper';
 
 import MenuProps from './Menu.types';
 
-import { menu, menuButton, menuAvatar, menuDropdown } from './Menu.styles';
-
-import profileImageUrl from '../../shared/images/ProfilePhoto.png';
-
+import { menuDropdown } from './Menu.styles';
 const Menu: React.FC<MenuProps> = ({
     open = true,
-    onToggle,
     children,
-    className,
+    referenceRef = {},
 }) => {
-    const [openMenu, setOpenMenu] = useState(open);
+    const [menuRef, setMenuRef] = useState<HTMLDivElement | null>();
+    const { styles, attributes } = usePopper(referenceRef.current, menuRef);
 
-    const toggle = useCallback(() => {
-        if (onToggle) {
-            onToggle(!openMenu);
-        }
-        setOpenMenu(!openMenu);
-    }, [openMenu]);
-
+    const popperStyles = styles
+        ? { ...styles.popper, ...styles.offset }
+        : undefined;
     return (
-        <div data-testid="user__menu" css={menu} className={className}>
-            <button css={menuButton} onClick={() => toggle()}>
-                <img
-                    alt="Profile picture"
-                    src={profileImageUrl}
-                    css={menuAvatar}
-                />
-            </button>
-            <div css={menuDropdown}>{openMenu ? children : null}</div>
+        <div
+            css={menuDropdown}
+            ref={ref => setMenuRef(ref)}
+            style={popperStyles}
+            {...attributes.popper}
+        >
+            {open && children}
         </div>
     );
 };
-
 export default Menu;

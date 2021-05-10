@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+
+import { menu, menuButton, menuAvatar } from './Menu.styles';
+import profileImageUrl from '../../shared/images/ProfilePhoto.png';
 
 import Menu from './Menu';
 import MenuItem from './MenuItem';
@@ -8,10 +11,30 @@ export default {
     component: Menu,
 };
 
-export const UserMenuLogged = () => (
-    <Menu open={true} title="User">
-        <MenuItem title="Profile" />
-        <MenuItem title="Change Password" />
-        <MenuItem title="Log Out" />
-    </Menu>
-);
+export const UserMenuLogged = () => {
+    const parentRef = useRef(null);
+    const [openMenu, setOpenMenu] = useState(true);
+
+    const toggle = () => {
+        setOpenMenu(!openMenu);
+    };
+
+    return (
+        <>
+            <div css={menu} ref={parentRef}>
+                <button css={menuButton} onClick={() => toggle()}>
+                    <img
+                        alt="Profile picture"
+                        src={profileImageUrl}
+                        css={menuAvatar}
+                    />
+                </button>
+            </div>
+            <Menu open={true} title="User" referenceRef={parentRef}>
+                <MenuItem title="Profile" />
+                <MenuItem title="Change Password" />
+                <MenuItem title="Log Out" />
+            </Menu>
+        </>
+    );
+};

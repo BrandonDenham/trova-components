@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
-import { Colors } from '../../shared/constants/colors';
 
 export const menu = css`
     position: relative;
+    left: 250px;
 `;
 
 export const menuButton = css`
