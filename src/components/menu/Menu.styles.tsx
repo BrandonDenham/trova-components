@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 export const menu = css`
     position: relative;
     left: 250px;
+    width: 50px;
 `;
 
 export const menuButton = css`
@@ -25,8 +26,6 @@ export const menuAvatar = css`
 
 export const menuDropdown = css`
     position: absolute;
-    display: flex;
-    flex-direction: column;
     min-width: 10rem;
     background-color: #ffffff;
     box-shadow: 0 0 2px 0 rgba(120, 120, 120, 0.5);

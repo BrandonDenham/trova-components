@@ -30,7 +30,7 @@ export const UserMenuLogged = () => {
                     />
                 </button>
             </div>
-            <Menu open={true} title="User" referenceRef={parentRef}>
+            <Menu open={openMenu} title="User" referenceRef={parentRef}>
                 <MenuItem title="Profile" />
                 <MenuItem title="Change Password" />
                 <MenuItem title="Log Out" />

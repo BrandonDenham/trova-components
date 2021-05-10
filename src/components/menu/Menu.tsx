@@ -17,6 +17,7 @@ const Menu: React.FC<MenuProps> = ({
     const popperStyles = styles
         ? { ...styles.popper, ...styles.offset }
         : undefined;
+
     return (
         <div
             css={menuDropdown}
