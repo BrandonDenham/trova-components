@@ -20,21 +20,19 @@ export const UserMenuLogged = () => {
     };
 
     return (
-        <>
-            <div css={menu} ref={parentRef}>
-                <button css={menuButton} onClick={() => toggle()}>
-                    <img
-                        alt="Profile picture"
-                        src={profileImageUrl}
-                        css={menuAvatar}
-                    />
-                </button>
-            </div>
+        <div css={menu} ref={parentRef}>
+            <button css={menuButton} onClick={() => toggle()}>
+                <img
+                    alt="Profile picture"
+                    src={profileImageUrl}
+                    css={menuAvatar}
+                />
+            </button>
             <Menu open={openMenu} title="User" referenceRef={parentRef}>
                 <MenuItem title="Profile" />
                 <MenuItem title="Change Password" />
                 <MenuItem title="Log Out" />
             </Menu>
-        </>
+        </div>
     );
 };

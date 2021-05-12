@@ -38,6 +38,7 @@ const theme = {
         checkboxDetail: '15px',
         tableText: '14px',
         number: '16px',
+        menuText: '14px',
     },
     breakpoints: {
         sm: 576,

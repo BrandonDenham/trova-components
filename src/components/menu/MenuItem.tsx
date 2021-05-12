@@ -3,7 +3,7 @@ import { jsx, useTheme } from '@emotion/react';
 import React, { useCallback, SyntheticEvent } from 'react';
 
 import MenuItemProps from './MenuItem.types';
-import { menuItem, menuItemTitle } from './MenuItem.styles';
+import { menuItem, menuItemText } from './MenuItem.styles';
 
 const MenuItem: React.FC<MenuItemProps> = ({
     title,
@@ -27,7 +27,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
             onClick={itemClicked}
             className={className}
         >
-            <span css={menuItemTitle(theme)}>{title}</span>
+            <span css={menuItemText(theme)}>{title}</span>
         </div>
     );
 };

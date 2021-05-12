@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { Colors } from '../../shared/constants/colors';
 
 export const menu = css`
     position: relative;
@@ -8,7 +9,7 @@ export const menu = css`
 
 export const menuButton = css`
     border: none;
-    background-color: #ffffff;
+    background-color: ${Colors.White};
     cursor: pointer;
     padding: 0.25rem 0.5rem;
     &:active,
@@ -27,6 +28,6 @@ export const menuAvatar = css`
 export const menuDropdown = css`
     position: absolute;
     min-width: 10rem;
-    background-color: #ffffff;
+    background-color: ${Colors.White};
     box-shadow: 0 0 2px 0 rgba(120, 120, 120, 0.5);
 `;
