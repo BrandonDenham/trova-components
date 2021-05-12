@@ -3,7 +3,6 @@ import { css } from '@emotion/react';
 export const menu = css`
     position: relative;
     left: 250px;
-    width: 50px;
 `;
 
 export const menuButton = css`

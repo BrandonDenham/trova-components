@@ -12,7 +12,9 @@ const Menu: React.FC<MenuProps> = ({
     referenceRef = {},
 }) => {
     const [menuRef, setMenuRef] = useState<HTMLDivElement | null>();
-    const { styles, attributes } = usePopper(referenceRef.current, menuRef);
+    const { styles, attributes } = usePopper(referenceRef.current, menuRef, {
+        placement: `bottom-start`,
+    });
 
     const popperStyles = styles
         ? { ...styles.popper, ...styles.offset }
