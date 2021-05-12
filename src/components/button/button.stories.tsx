@@ -97,6 +97,12 @@ export const TabUnselected = () => (
     <Button buttonType={ButtonType.Tab}>Text</Button>
 );
 
+export const TabDisabled = () => (
+    <Button buttonType={ButtonType.Tab} disabled={true}>
+        Text
+    </Button>
+);
+
 export const TabCallout = () => (
     <Button buttonType={ButtonType.TabCallout}>Text</Button>
 );

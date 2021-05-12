@@ -133,6 +133,13 @@ export const button = (
      &:active{
         background-color: ${Colors.DarkPrimary};
     }`}
+    ${buttonType === ButtonType.Tab &&
+    disabled &&
+    `
+        cursor: not-allowed;
+        background-color: ${Colors.NavButtonExtraLightGray};
+        color: ${Colors.LightGray};
+    `}
 `;
 
 export const buttonText = (
