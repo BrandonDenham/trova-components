@@ -30,6 +30,7 @@ const Textarea: React.FC<TextareaProps> = ({
     disabled = false,
     disabledText,
     className,
+    expandable = false,
 }) => {
     const theme = useTheme();
     const handleChange = useCallback(
@@ -58,7 +59,7 @@ const Textarea: React.FC<TextareaProps> = ({
             </div>
             <textarea
                 data-testid="textarea"
-                css={textarea(theme, error, size)}
+                css={textarea(theme, error, size, expandable)}
                 onChange={handleChange}
                 placeholder={placeholder}
                 value={value}
