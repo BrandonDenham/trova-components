@@ -56,7 +56,6 @@ const Textarea: React.FC<TextareaProps> = ({
                     </div>
                 )}
             </div>
-            {detail && <span css={detailSpan(theme)}>{detail}</span>}
             <textarea
                 data-testid="textarea"
                 css={textarea(theme, error, size)}
@@ -66,6 +65,7 @@ const Textarea: React.FC<TextareaProps> = ({
                 disabled={disabled}
                 name={name}
             />
+            {detail && <span css={detailSpan(theme)}>{detail}</span>}
             {disabled && disabledText && (
                 <span css={disabledSpan(theme)}>{disabledText}</span>
             )}
