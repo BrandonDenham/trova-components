@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { loaderSize } from './loaderSize';
+import { loaderSize } from '../loaderSize';
 
 export const containerLoader = (bgColor: string) => css`
     width: 100%;
