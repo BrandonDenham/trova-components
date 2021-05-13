@@ -2,23 +2,21 @@
 import { jsx } from '@emotion/react';
 import React from 'react';
 
-import LoaderProps, { getIteratorValuesProps, createBreakpointsProps, createMarkupProps } from '../loader.types';
+import LoaderProps from '../loader.types';
 
 import { Colors } from '../../../shared/constants/colors';
 
-const getIteratorValues: React.FC<getIteratorValuesProps> = ({
-    iterations, overrideIterator
-}) => {
-    return [...new Array(iterations)].map(value => overrideIterator).join(' ');
+const getIteratorValues = (iterations: number, overrideIterator: string) => {
+    return [...new Array(iterations)].map(_ => overrideIterator).join(' ');
 };
 
-const createBreakpoints: React.FC<createBreakpointsProps> = ({
-    values = '0;1;1;0;', 
-    begin = 4, 
-    utterance = 4, 
-    duration = 10, 
-    color = Colors.Dark
-}) => {
+const createBreakpoints = (
+    values = '0;1;1;0;',
+    begin = 4,
+    utterance = 4,
+    duration = 10,
+    color: string = Colors.Dark
+) => {
     const loaderStyles = `stop-color: ${color}; stop-opacity: 0`;
     const arrayBreaks = [...new Array(100)];
     let htmlBreakpoints = '';
@@ -37,24 +35,23 @@ const createBreakpoints: React.FC<createBreakpointsProps> = ({
     return htmlBreakpoints;
 };
 
-const createMarkup: React.FC<createMarkupProps> = ({
+const createMarkup = ({
     size = 240,
     color = Colors.Dark,
     iterations = 1,
     duration = 10,
     begin = 4,
     utterance = 4,
-    overrideIterator = '0;1;1;0;'
-}) => {
-    
-    const values = getIteratorValues({iterations, overrideIterator});
-    const doBreakpoints = createBreakpoints({
+    overrideIterator = '0;1;1;0;',
+}: LoaderProps) => {
+    const values = getIteratorValues(iterations, overrideIterator);
+    const doBreakpoints = createBreakpoints(
         values,
         begin,
         utterance,
         duration,
-        color,
-    });
+        color
+    );
 
     return {
         __html: `<svg id="trovaLoading" width="${size}" height="${size}" preserveAspectRatio="xMaxYMid meet" viewBox="0 0 274 274">
@@ -83,7 +80,8 @@ const createMarkup: React.FC<createMarkupProps> = ({
 };
 
 const Loader: React.FC<LoaderProps> = props => {
-    return <div dangerouslySetInnerHTML={createMarkup(props)} />;
+    const propsAsObject = { ...props };
+    return <div dangerouslySetInnerHTML={createMarkup(propsAsObject)} />;
 };
 
 export default Loader;
