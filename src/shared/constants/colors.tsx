@@ -14,9 +14,11 @@ export enum Colors {
     Secondary = '#F9E7E5',
     DarkSecondary = '#F8CFCA',
     White = '#FFFFFF',
+    // Blue-Gray
     NavButtonGray = '#CFDCF4',
     NavButtonDarkGray = '#A9BCE7',
     NavButtonLightGray = '#E2E9F7',
+    NavButtonExtraLightGray = '#e8edf7',
     Active = '#4270D1',
     DangerText = '#ED5547',
     Black = '#000000',
@@ -37,5 +39,5 @@ export enum Colors {
     // Text shadows
     TextShadowExtraLight = BlackAlphaExtraLight,
     TextShadowLight = BlackAlphaLight,
-    TextShadowMedium = BlackAlphaMedium,    
+    TextShadowMedium = BlackAlphaMedium,
 }
