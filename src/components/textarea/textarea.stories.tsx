@@ -30,6 +30,16 @@ export const LargeTextarea = () => (
     />
 );
 
+export const ExpandableTextarea = () => (
+    <Textarea
+        name="test"
+        value="Explore the land and sea that inspired some of Darwin's greatest theories of evolution and the animals that paved the way! This 9 day adventure across the islands of the Galapagos will have you face-to-face with blue footed boobies, marine iguanas, finches, and sharks; all found only here in the Galapagos!"
+        placeholder="Placeholder"
+        label="Trip description"
+        detail="Describe the trip in 2-3 sentences."
+        expandable={true}
+    />
+);
 
 export const FlexibleTextarea = () => (
     <Textarea
