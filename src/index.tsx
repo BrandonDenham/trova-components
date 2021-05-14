@@ -29,6 +29,7 @@ import Number from './components/number';
 import DatePicker from './components/TrovaDateTime/DatePicker';
 import TimePicker from './components/TrovaDateTime/TimePicker';
 import Menu, { MenuItem } from './components/menu';
+import Loader from './components/loader';
 
 export {
     Sidebar,
@@ -75,4 +76,5 @@ export {
     TimePicker,
     Menu,
     MenuItem,
+    Loader,
 };

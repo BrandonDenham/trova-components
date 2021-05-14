@@ -13,6 +13,7 @@ describe('Text Area', () => {
     let mediumProps: TextareaProps;
     let largeProps: TextareaProps;
     let disabledProps: TextareaProps;
+    let expandableProps: TextareaProps;
 
     beforeEach(() => {
         mediumProps = {
@@ -39,6 +40,14 @@ describe('Text Area', () => {
             detail: 'Describe the trip in 2-3 sentences.',
             disabled: true,
         };
+        expandableProps = {
+            name: 'test',
+            value: 'Text',
+            placeholder: 'Placeholder',
+            label: 'Form header',
+            detail: 'Describe the trip in 2-3 sentences.',
+            expandable: true,
+        };
     });
 
     const renderMediumComponent = () =>
@@ -61,6 +70,13 @@ describe('Text Area', () => {
             </ThemeProvider>
         );
 
+    const renderExpandableComponent = () =>
+        render(
+            <ThemeProvider theme={theme}>
+                <Textarea {...expandableProps} />
+            </ThemeProvider>
+        );
+
     it('default component should have height:91px', () => {
         const { getByTestId } = renderMediumComponent();
         const element = getByTestId('textarea');
@@ -77,6 +93,12 @@ describe('Text Area', () => {
         const { getByTestId } = renderDisabledComponent();
         const element = getByTestId('textarea');
         expect(element).toBeDisabled();
+    });
+
+    it('expandable component should be expandable', () => {
+        const { getByTestId } = renderExpandableComponent();
+        const element = getByTestId('textarea');
+        expect(element).toHaveStyleRule('resize', 'vertical');
     });
 
     it('onChange method should be triggered', () => {

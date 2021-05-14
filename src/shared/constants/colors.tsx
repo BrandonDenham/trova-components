@@ -14,9 +14,11 @@ export enum Colors {
     Secondary = '#F9E7E5',
     DarkSecondary = '#F8CFCA',
     White = '#FFFFFF',
+    // Blue-Gray
     NavButtonGray = '#CFDCF4',
     NavButtonDarkGray = '#A9BCE7',
     NavButtonLightGray = '#E2E9F7',
+    NavButtonExtraLightGray = '#e8edf7',
     Active = '#4270D1',
     DangerText = '#ED5547',
     Black = '#000000',
@@ -29,13 +31,18 @@ export enum Colors {
     LightBlue = '#26C6DA',
     Purple = '#AC51B5',
     LightOrange = '#F2A364',
+    Teal = '#26C6DA',
+
     ParagraphDarkGray = '#203049',
     CardDashedBorderGray = '#C3CFEC',
     CardDashedBorderLightGray = '#C2CEEB',
+    // Branding
+    LogoTeal = Teal,
     // Background
     PrimaryContentBackground = LightSilver,
+    BackdropOverlay = BlackAlphaExtraLight,
     // Text shadows
     TextShadowExtraLight = BlackAlphaExtraLight,
     TextShadowLight = BlackAlphaLight,
-    TextShadowMedium = BlackAlphaMedium,    
+    TextShadowMedium = BlackAlphaMedium,
 }

@@ -6,7 +6,8 @@ import { TextareaSize } from './textareaSize';
 export const mainContainer = (theme: Theme, size: TextareaSize) => css`
     display: flex;
     flex-direction: column;
-    ${size !== TextareaSize.Flexible && `width: ${theme.columns.fiveColumns}px;`}
+    ${size !== TextareaSize.Flexible &&
+    `width: ${theme.columns.fiveColumns}px;`}
 
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
@@ -16,7 +17,8 @@ export const mainContainer = (theme: Theme, size: TextareaSize) => css`
 export const textarea = (
     theme: Theme,
     error: string | string[] | undefined,
-    size: TextareaSize
+    size: TextareaSize,
+    expandable: boolean
 ) =>
     css`
         resize: none;
@@ -30,6 +32,7 @@ export const textarea = (
         font-size: ${theme.fontSizes.textarea};
         line-height: 19px;
         color: ${Colors.Dark};
+        ${expandable && `resize: vertical;`}
         ${size === TextareaSize.Medium && `height:91px;`}
         ${(size === TextareaSize.Large || size === TextareaSize.Flexible) &&
         `height:155px;`}
