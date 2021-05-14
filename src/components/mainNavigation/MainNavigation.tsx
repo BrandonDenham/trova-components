@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, useTheme } from '@emotion/react';
-import React, { useState, useCallback, SyntheticEvent } from 'react';
+import React, { useState, useCallback, SyntheticEvent, useRef } from 'react';
 import { Visible, Hidden } from 'react-grid-system';
 import MainNavigationProps from './MainNavigation.types';
 import {
@@ -21,6 +21,7 @@ import imageBell from '../../shared/images/icons/inactive.svg';
 import imageClose from '../../shared/images/icons/close.svg';
 import imageLogo from '../../shared/images/trovatrip logo.svg';
 import imageHamburger from '../../shared/images/icons/hamburger.svg';
+import Menu from '../menu';
 
 const MainNavigation: React.FC<MainNavigationProps> = ({
     children,
@@ -35,6 +36,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     secondaryItems,
     anchor = false,
     className,
+    menuItems,
 }) => {
     const theme = useTheme();
     const [itemsShown, setItemsShown] = useState(showItems);
@@ -58,6 +60,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
             ? onClickProfileImage(event)
             : event.stopPropagation();
     }, []);
+    const menuTargetRef = useRef(null);
     return (
         <nav
             data-testid="mainnavigation"
@@ -88,6 +91,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
                         onClick={handleBellClicked}
                     />
                     <img
+                        ref={menuTargetRef}
                         alt="Profile picture"
                         data-testid="mainnavigation__profilePicture"
                         src={profileImageUrl}
@@ -118,6 +122,13 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
                     <div>{secondaryItems ? secondaryItems : children}</div>
                 )}
             </Visible>
+            {menuItems && (
+                <Menu targetRef={menuTargetRef}>
+                    {React.Children.map(menuItems, element => {
+                        return React.cloneElement(element);
+                    })}
+                </Menu>
+            )}
         </nav>
     );
 };

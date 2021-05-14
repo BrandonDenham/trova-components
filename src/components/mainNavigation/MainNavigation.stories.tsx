@@ -1,4 +1,5 @@
 import React from 'react';
+import { MenuItem } from '../menu';
 
 import MainNavigation from './MainNavigation';
 import MainNavigationItem from './MainNavigationItem';
@@ -14,6 +15,20 @@ export const ShowItems = () => (
         logoUrl={imgLogo}
         hasAlerts={false}
         profileImageUrl={imgProfile}
+        menuItems={[
+            <MenuItem
+                title={`Profile`}
+                onClick={() => console.log(`Go to profile`)}
+            />,
+            <MenuItem
+                title={`Change password`}
+                onClick={() => console.log(`Change password`)}
+            />,
+            <MenuItem
+                title={`Log out`}
+                onClick={() => console.log(`Log out`)}
+            />,
+        ]}
     >
         <MainNavigationItem content="Trips" selected={true} />
         <MainNavigationItem content="Livestreams" />
