@@ -26,7 +26,7 @@ const Menu: React.FC<MenuProps> = ({
         return () => {
             if (targetRef.current) {
                 targetRef.current.onclick = null;
-                targetRef.current.style.cursor = `initial`;
+                targetRef.current.style.cursor = `default`;
             }
         };
     }, [targetRef, targetRef.current, setOpen, open]);
