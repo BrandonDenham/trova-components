@@ -9,7 +9,6 @@ export const menu = css`
 export const menuButton = css`
     border: none;
     background-color: ${Colors.White};
-    cursor: pointer;
     padding: 0.25rem 0.5rem;
     &:active,
     &:focus {

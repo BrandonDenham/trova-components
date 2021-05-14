@@ -16,8 +16,8 @@ export const UserMenuLogged = () => {
 
     return (
         <>
-            <div css={menu} ref={parentRef}>
-                <button css={menuButton}>
+            <div css={menu}>
+                <button css={menuButton} ref={parentRef}>
                     <img
                         alt="Profile picture"
                         src={profileImageUrl}

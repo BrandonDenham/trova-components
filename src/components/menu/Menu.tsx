@@ -20,11 +20,13 @@ const Menu: React.FC<MenuProps> = ({
     useEffect(() => {
         if (targetRef.current) {
             targetRef.current.onclick = () => setOpen(!open);
+            targetRef.current.style.cursor = `pointer`;
         }
 
         return () => {
             if (targetRef.current) {
                 targetRef.current.onclick = null;
+                targetRef.current.style.cursor = `initial`;
             }
         };
     }, [targetRef, targetRef.current, setOpen, open]);
