@@ -122,13 +122,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
                     <div>{secondaryItems ? secondaryItems : children}</div>
                 )}
             </Visible>
-            {menuItems && (
-                <Menu targetRef={menuTargetRef}>
-                    {React.Children.map(menuItems, element => {
-                        return React.cloneElement(element);
-                    })}
-                </Menu>
-            )}
+            {menuItems && <Menu targetRef={menuTargetRef}>{menuItems}</Menu>}
         </nav>
     );
 };
