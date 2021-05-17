@@ -1,5 +1,6 @@
-import { ReactNode, SyntheticEvent } from 'react';
+import { ReactElement, ReactNode, SyntheticEvent } from 'react';
 import { SimpleComponent } from '../../shared/interfaces/SimpleComponent.types';
+import { MenuItem } from '../menu';
 
 export default interface MainNavigationProps extends SimpleComponent {
     children: ReactNode;
@@ -14,4 +15,5 @@ export default interface MainNavigationProps extends SimpleComponent {
     onClickProfileImage?: (event: SyntheticEvent | undefined) => void;
     secondaryItems?: object;
     anchor?: boolean;
+    menuItems?: Array<ReactElement<typeof MenuItem>>;
 }
