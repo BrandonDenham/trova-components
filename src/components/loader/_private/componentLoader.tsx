@@ -79,7 +79,7 @@ const createMarkup = ({
     };
 };
 
-const Loader: React.FC<LoaderProps> = props => {
+const Loader: React.FC<LoaderProps> = (props: any) => {
     const propsAsObject = { ...props };
     return <div dangerouslySetInnerHTML={createMarkup(propsAsObject)} />;
 };
