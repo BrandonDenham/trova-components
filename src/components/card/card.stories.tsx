@@ -31,12 +31,12 @@ export const CardText = () => (
 export const DragCard = () => (
     <DraggableContainer>
         <DraggableCard
-            dropTargetConfiguration={{ accept: `string`, drop: (item) => item }}
+            dropTargetConfiguration={{ accept: `string`, drop: item => item }}
             dragTargetConfiguration={{
                 item: { type: `string` },
             }}
-            onCollect={(item) => item}
-            backgroundColor={Colors.LightGray}
+            onCollect={item => item}
+            backgroundColor={Colors.LightSilver}
         >
             <React.Fragment>
                 <P>Drag me</P>

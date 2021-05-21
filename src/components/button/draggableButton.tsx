@@ -9,6 +9,7 @@ import DraggableSourceProps from '../draggable/draggableSource.types';
 import Button from './button';
 import ButtonProps from './button.types';
 import useDragSpecs from '../draggable/useDragSpecs';
+import { draggableButtonStyle } from './button.components';
 
 type MergeProps = DraggableSourceProps & ButtonProps;
 
@@ -29,6 +30,7 @@ const DraggableButton: React.FC<MergeProps> = ({
             {...buttonProps}
             draggable={true}
             ref={drag}
+            css={draggableButtonStyle()}
         >
             {children}
         </Button>
