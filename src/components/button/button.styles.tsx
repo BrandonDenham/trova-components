@@ -49,13 +49,13 @@ export const button = (
     color: ${Colors.White};
     &:hover {
         background-color: ${
-            backgroundColor ? backgroundColor : Colors.DarkPrimary
+            backgroundColor ? backgroundColor : Colors.PrimaryShiny
         };
         opacity: ${backgroundColor ? 0.5 : 1};
     }
      &:active{
         background-color: ${
-            backgroundColor ? backgroundColor : Colors.DarkPrimary
+            backgroundColor ? backgroundColor : Colors.PrimaryShiny
         };
         opacity: ${backgroundColor ? 0.5 : 1};
     }`}
@@ -92,10 +92,10 @@ export const button = (
     `background-color: ${Colors.Primary};
     color: ${Colors.White};
     &:hover {
-        background-color: ${Colors.DarkPrimary};
+        background-color: ${Colors.PrimaryShiny};
     }
      &:active{
-        background-color: ${Colors.DarkPrimary};
+        background-color: ${Colors.PrimaryShiny};
     }`}
     ${buttonType === ButtonType.Tertiary &&
     !selected &&
@@ -128,10 +128,10 @@ export const button = (
     background-color: ${Colors.Primary};
     color: ${Colors.White};
     &:hover {
-        background-color: ${Colors.DarkPrimary};
+        background-color: ${Colors.PrimaryShiny};
     }
      &:active{
-        background-color: ${Colors.DarkPrimary};
+        background-color: ${Colors.PrimaryShiny};
     }`}
     ${buttonType === ButtonType.Tab &&
     disabled &&

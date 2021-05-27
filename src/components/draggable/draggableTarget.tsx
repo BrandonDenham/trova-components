@@ -16,7 +16,7 @@ const DraggableTarget: React.FC<DraggableTargetProps> = ({
         onCollect,
     });
 
-    const actualCss = draggableTarget(undefined, undefined, isOver, canDrop);
+    const actualCss = draggableTarget(isOver, canDrop);
     return (
         <div css={actualCss} ref={drop} className={className}>
             {children}
