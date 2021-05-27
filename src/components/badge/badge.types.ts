@@ -1,10 +1,10 @@
-import { FieldProps } from '../field/field.types';
-
+import { Colors } from '../../shared/constants/colors';
+import { SyntheticEvent } from 'react';
 export default interface BadgeProps {
     label?: string;
     backgroundColor?: string;
-    color?: string;
+    color?: Colors;
     fontSize?: number;
     borderRadius?: number;
-    onClick: any
+    onClick?: (event: SyntheticEvent) => void;
 }

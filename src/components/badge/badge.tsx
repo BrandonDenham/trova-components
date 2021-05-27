@@ -1,10 +1,9 @@
 /** @jsx jsx */
-import { jsx, useTheme } from '@emotion/react';
+import { jsx } from '@emotion/react';
 import React, { SyntheticEvent, useCallback } from 'react';
 
 import BadgeProps from './badge.types';
-import { mainContainer, detailSpan } from './badge.styles';
-import ComponentFooter from '../__private/componentFooter';
+import { badgeContainer, badgeText } from './badge.styles';
 
 /**
  * Renders a <Badge /> component
@@ -17,12 +16,9 @@ const Badge: React.FC<BadgeProps> = ({
     onClick,
     backgroundColor = '#00b3ca',
     color = '#ffffff',
-    borderRadius = 4,
-    fontSize = 20,
     label,
 }) => {
-    const theme = useTheme();
-    const handleBadge = useCallback(
+    const handleBadgeClick = useCallback(
         (event: SyntheticEvent) => {
             onClick ? onClick(event) : event.stopPropagation();
         },
@@ -30,14 +26,13 @@ const Badge: React.FC<BadgeProps> = ({
     );
     return (
         <div
-            css={mainContainer(
+            css={badgeContainer(
                 backgroundColor,
-                borderRadius,
             )}
-            onClick={handleBadge}
+            onClick={handleBadgeClick}
         >
             {label && (
-                <span css={detailSpan( color, fontSize )}>{label}</span>
+                <span css={badgeText( color )}>{label}</span>
             )}
         </div>
     );
