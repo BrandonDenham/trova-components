@@ -35,6 +35,7 @@ export const draggableTarget = (
         padding: 1rem;
         p {
             color: ${color};
+            cursor: default;
         }
     `;
 };

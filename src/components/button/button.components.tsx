@@ -12,17 +12,21 @@ export const draggableButtonStyle = () => css`
         box-shadow: -3px -3px 4px rgb(255 255 255 / 80%),
             1px 1px 0px rgb(0 0 0 / 5%), 2px 2px 5px rgb(0 0 0 / 55%);
         transform: translate3d(0px, -1px, 0px);
+        opacity: 1;
     }
 
     &:active {
         cursor: grabbing;
         cursor: -moz-grabbing;
         cursor: -webkit-grabbing;
-
+        opacity: 0.9;
         box-shadow: inset 4px 4px 1px rgb(255 255 255 / 20%),
             inset 1px 1px 1px rgb(255 255 255 / 80%),
             inset -1px -1px 1px rgb(255 255 255 / 80%),
             inset -4px -4px 1px rgb(255 255 255 / 20%);
-        -webkit-mask-image: -webkit-radial-gradient(${Colors.White}, ${Colors.Black});
+        -webkit-mask-image: -webkit-radial-gradient(
+            ${Colors.White},
+            ${Colors.Black}
+        );
     }
 `;
