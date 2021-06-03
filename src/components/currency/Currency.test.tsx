@@ -4,14 +4,14 @@ import { matchers } from '@emotion/jest';
 import userEvent from '@testing-library/user-event';
 
 import Currency from './Currency';
-import CurrencyProps from './Currency.types';
+import {CurrencyProps} from './Currency.types';
 import { ThemeProvider } from '@emotion/react';
 import theme from '../../shared/themes/theme';
 
 expect.extend(matchers);
 
 describe('Currency', () => {
-    let currencyProps: CurrencyProps;
+    let currencyProps: CurrencyProps<number>;
 
     beforeEach(() => {
         currencyProps = {

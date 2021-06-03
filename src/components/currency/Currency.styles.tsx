@@ -1,5 +1,6 @@
 import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
+import { ComponentWidth } from './componentWidth';
 
 export const mainContainer = (theme: Theme) => css`
     display: flex;
@@ -9,10 +10,11 @@ export const mainContainer = (theme: Theme) => css`
     }
 `;
 
-export const labelContainer = () => css`
+export const labelContainer = (size: ComponentWidth) => css`
     display: flex;
     justify-content: space-between;
     height: 1rem;
+    ${size === ComponentWidth.ExtraSmall && `min-width: 64px; max-width:100px;`}
 `;
 
 export const labelSpan = (theme: Theme) => css`
@@ -24,7 +26,8 @@ export const labelSpan = (theme: Theme) => css`
 
 export const innerContainer = (
     theme: Theme,
-    disabled: boolean | undefined
+    disabled: boolean | undefined,
+    size: ComponentWidth
 ) => css`
     display: flex;
     flex-wrap: wrap;
@@ -36,9 +39,14 @@ export const innerContainer = (
     ${`background: ${disabled ? Colors.LightSilver : Colors.White}`};
     margin-top: 10px;
     width: ${theme.columns.twoColumns}px;
+    ${size === ComponentWidth.ExtraSmall && `max-width: 120px;`}
 `;
 
-export const currencyType = (theme: Theme) => css`
+export const currencyTypeStyle = (
+    theme: Theme,
+    size: ComponentWidth,
+    currencyPosition: string
+) => css`
     display: flex;
     align-items: center;
     min-height: 50px;
@@ -52,20 +60,16 @@ export const currencyType = (theme: Theme) => css`
     text-align: center;
     white-space: nowrap;
     background-color: ${Colors.LightSilver};
-`;
-
-export const errorSpan = (theme: Theme) => css`
-    box-sizing: border-box;
-    font-family: ${theme.fonts.robotoBold};
-    font-size: ${theme.fontSizes.inputError};
-    line-height: 16px;
-    padding-top: 9px;
-    color: ${Colors.DangerText};
+    ${size === ComponentWidth.ExtraSmall &&
+    `min-height: 31px; padding: 0 .5rem; font-size: ${theme.fontSizes.extraSmallInput};margin-top: 0px;line-height: 16px;`}
+    ${currencyPosition === 'right' && `border-radius: 0 0.5rem 0.5rem 0;`}
 `;
 
 export const input = (
     theme: Theme,
-    error: string | string[] | undefined
+    error: string | string[] | undefined,
+    size: ComponentWidth,
+    currencyPosition: string
 ) => css`
     box-sizing: border-box;
     min-height: 50px;
@@ -80,6 +84,9 @@ export const input = (
     flex-grow: 1;
     text-align: center;
     ${error && error.length && `border-color: ${Colors.Danger};`}
+    ${size === ComponentWidth.ExtraSmall &&
+    `min-height: 31px; font-size:${theme.fontSizes.extraSmallInput};line-height: 16px;`}
+    ${currencyPosition === 'right' && `border-radius: 0.5rem 0 0 0.5rem;`}
     :focus {
         border: transparent;
     }
@@ -95,4 +102,13 @@ export const detailSpan = (theme: Theme) => css`
     line-height: 16px;
     margin-top: 9px;
     color: ${Colors.DarkGray};
+`;
+
+export const errorSpan = (theme: Theme) => css`
+    box-sizing: border-box;
+    font-family: ${theme.fonts.robotoBold};
+    font-size: ${theme.fontSizes.inputError};
+    line-height: 16px;
+    padding-top: 9px;
+    color: ${Colors.DangerText};
 `;
