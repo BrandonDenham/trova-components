@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Badge from './badge';
+import { Colors } from '../..';
 
 export default {
     title: 'Badge',
@@ -9,20 +10,18 @@ export default {
 
 export const Default = () => (
     <Badge
-        label="test"
+        text="test"
         backgroundColor="#00b3ca"
-        borderRadius={4}
-        color="#ffffff"
+        color={Colors.White}
         onClick={() => {}}
     />
 );
 
 export const BadgeNumber = () => (
     <Badge
-        label="12"
+        text="12"
         backgroundColor="#00b3ca"
-        borderRadius={50}
-        color="#ffffff"
+        color={Colors.White}
         onClick={() => {}}
     />
 );
