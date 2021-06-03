@@ -49,7 +49,9 @@ const Currency: React.FC<CurrencyProps<number>> = ({
     const handleChange = useCallback(
         (event: SyntheticEvent) => {
             const value = Number(
-                Number.parseFloat(event.target.value).toFixed(decimalPlaces)
+                Number.parseFloat(
+                    (event.target as HTMLInputElement).value
+                ).toFixed(decimalPlaces)
             );
             onChange ? onChange(event, name, value) : event.stopPropagation();
         },
