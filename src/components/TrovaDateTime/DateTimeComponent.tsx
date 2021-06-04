@@ -26,6 +26,7 @@ const DatePicker: React.FC<DateTimeComponentProps> = ({
     value,
     timeFormat,
     dateFormat,
+    renderInput,
 }) => {
     const theme = useTheme();
     const disabledProp = disabled ? true : false;
@@ -44,6 +45,7 @@ const DatePicker: React.FC<DateTimeComponentProps> = ({
                 onChange={onChange}
                 error={error}
                 value={value}
+                renderInput={renderInput}
             />
             {disabled && disabledText && (
                 <span css={disabledSpan()}>{disabledText}</span>

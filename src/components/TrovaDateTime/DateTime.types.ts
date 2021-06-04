@@ -19,4 +19,11 @@ export interface DateTimeComponentProps extends FieldProps<string> {
     disabledText?: string;
     timeFormat?: string | boolean;
     dateFormat?: string | boolean;
+    renderInput?: RenderInput;
 }
+
+export type RenderInput = (
+    props: any,
+    openCalendar: Function,
+    closeCalendar: Function,
+) => JSX.Element;

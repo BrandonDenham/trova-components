@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import moment, { isMoment } from 'moment';
-import { useCallback } from 'react';
+import { SyntheticEvent, useCallback } from 'react';
 import DateTimeComponent from './DateTimeComponent';
-import DateTimeProps from './DateTime.types';
+import InputMask from 'react-input-mask';
+import DateTimeProps, { RenderInput } from './DateTime.types';
 
 const TimePicker: React.FC<DateTimeProps> = ({ value, onChange, ...props }) => {
     let parsedValue = value;
@@ -15,6 +16,33 @@ const TimePicker: React.FC<DateTimeProps> = ({ value, onChange, ...props }) => {
             .minutes(parseInt(splitTime[1]))
             .format(`HH:mm`);
     }
+
+    const renderInput: RenderInput = (props, openCalendar) => {
+        
+        const regEx = /^(2[0-3]|[0-1]?[\d]):[0-5][\d]$/;
+
+        const handleChange = (e: SyntheticEvent) => {
+            const eventValue = (e.target as HTMLInputElement).value;
+            regEx.test(eventValue)
+                ? props.onChange(e)
+                : props.onChange(props.value);
+        };
+
+        const handleFocus = (_: any) => {
+            openCalendar();
+        };
+
+        return (
+            <InputMask
+                {...props}
+                onFocus={handleFocus}
+                mask="99:99"
+                maskChar={'0'}
+                value={props.value}
+                onChange={handleChange}
+            />
+        );
+    };
 
     const onChangeWrapper = useCallback(
         (value: moment.Moment | string) => {
@@ -36,6 +64,7 @@ const TimePicker: React.FC<DateTimeProps> = ({ value, onChange, ...props }) => {
             timeFormat={`HH:mm`}
             value={parsedValue}
             onChange={onChangeWrapper}
+            renderInput={renderInput}
         />
     );
 };
