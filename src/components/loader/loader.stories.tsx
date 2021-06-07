@@ -1,10 +1,8 @@
 import React from 'react';
 import { Colors } from '../../shared/constants/colors';
 
-import Loader from './loader';
 import ComponentLoader from './_private/componentLoader';
-import { loaderSize } from './loaderSize';
-import { containerLoader } from './_private/componentLoader.styles';
+import { LoaderSize } from './LoaderSize';
 
 export default {
     title: 'Loader',
@@ -12,22 +10,23 @@ export default {
 };
 
 export const LoaderSm = () => (
-    <ComponentLoader color={Colors.LogoTeal} size={loaderSize.Sm} />
+    <ComponentLoader color={Colors.LogoTeal} size={LoaderSize.Sm} />
 );
 export const LoaderMd = () => (
-    <ComponentLoader color={Colors.LogoTeal} size={loaderSize.Md} />
+    <ComponentLoader color={Colors.LogoTeal} size={LoaderSize.Md} />
 );
 export const LoaderLg = () => (
-    <ComponentLoader color={Colors.LogoTeal} size={loaderSize.Lg} />
+    <ComponentLoader color={Colors.LogoTeal} size={LoaderSize.Lg} />
 );
 
 export const LoaderBlack = () => (
-    <ComponentLoader color={Colors.DarkGray} size={loaderSize.Md} />
+    <ComponentLoader color={Colors.DarkGray} size={LoaderSize.Md} />
 );
 
-
 export const LoaderFullScreen = () => (
-    <div css={containerLoader(Colors.BackdropOverlay)}>
-        <ComponentLoader color={Colors.LogoTeal} size={loaderSize.Md} />
-    </div>
+    <ComponentLoader
+        color={Colors.LogoTeal}
+        size={LoaderSize.Md}
+        fullscreen={true}
+    />
 );

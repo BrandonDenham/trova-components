@@ -1,5 +1,4 @@
 import { css } from '@emotion/react';
-import { loaderSize } from '../loaderSize';
 
 export const containerLoader = (bgColor: string) => css`
     width: 100%;
@@ -15,8 +14,3 @@ export const containerLoader = (bgColor: string) => css`
     justify-content: center;
     background-color: ${bgColor};
 `;
-
-export const loader = (size: loaderSize, color: string) =>
-    css`
-      background: ${color};
-    `;

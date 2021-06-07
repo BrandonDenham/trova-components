@@ -29,6 +29,7 @@ export enum Colors {
     BlackAlphaExtraLight = '#0000001f',
     BlackAlphaLight = '#00000055',
     BlackAlphaMedium = '#00000080',
+    BlackAlphaDark = '#000000b8',
     TableDarkGray = '#3B4759',
     TableLightGray = '#F6F7F8',
     MediumSpringGreen = '#22BEB0',
@@ -44,7 +45,7 @@ export enum Colors {
     LogoTeal = Teal,
     // Background
     PrimaryContentBackground = LightSilver,
-    BackdropOverlay = BlackAlphaExtraLight,
+    BackdropOverlay = BlackAlphaDark,
     // Text shadows
     TextShadowExtraLight = BlackAlphaExtraLight,
     TextShadowLight = BlackAlphaLight,

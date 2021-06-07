@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react';
 import React from 'react';
 
-import LoaderProps from '../loader.types';
+import InternalLoaderProps from '../Loader.types';
 
 import { Colors } from '../../../shared/constants/colors';
 
@@ -43,7 +43,7 @@ const createMarkup = ({
     begin = 4,
     utterance = 4,
     overrideIterator = '0;1;1;0;',
-}: LoaderProps) => {
+}: InternalLoaderProps) => {
     const values = getIteratorValues(iterations, overrideIterator);
     const doBreakpoints = createBreakpoints(
         values,
@@ -79,7 +79,7 @@ const createMarkup = ({
     };
 };
 
-const Loader: React.FC<LoaderProps> = (props) => {
+const Loader: React.FC<InternalLoaderProps> = props => {
     const propsAsObject = { ...props };
     return <div dangerouslySetInnerHTML={createMarkup(propsAsObject)} />;
 };
