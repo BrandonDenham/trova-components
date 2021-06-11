@@ -43,6 +43,8 @@ const theme = {
     breakpoints: {
         sm: 576,
         md: 768,
+        lg: 960,
+        xl: 1280,
     },
     columns: {
         column: 64,

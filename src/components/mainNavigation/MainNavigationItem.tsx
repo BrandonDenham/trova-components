@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx, useTheme } from '@emotion/react';
 import { SyntheticEvent, useCallback } from 'react';
-import { Visible } from 'react-grid-system';
+import Hidden from '@material-ui/core/Hidden';
+
 import MainNavigationItemProps from './MainNavigationItem.types';
 import {
     mainNavigationItem,
@@ -38,15 +39,9 @@ const MainNavigationItem: React.FC<MainNavigationItemProps> = ({
             >
                 {content}
             </p>
-            <Visible xs sm md>
-                <div>
-                    <img
-                        alt="Arrow"
-                        src={imgArrow}
-                        css={mainNavigationItemArrow}
-                    />
-                </div>
-            </Visible>
+            <Hidden mdUp>
+                <img alt="Arrow" src={imgArrow} css={mainNavigationItemArrow} />
+            </Hidden>
         </div>
     );
 };

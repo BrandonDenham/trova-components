@@ -3,8 +3,14 @@ import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
 
 export const mainNavigation = (theme: Theme) => css`
-    @media (min-width: ${theme.breakpoints.md + 1}px) {
+    @media (min-width: ${theme.breakpoints.lg + 1}px) {
         padding: 1.5rem 3.5rem 3rem 2rem;
+    }
+    @media (max-width: ${theme.breakpoints.md}px) {
+        width: 100%;
+        position: fixed;
+        z-index: 1200;
+        top: 0;
     }
     box-sizing: border-box;
     background-color: ${Colors.White};
@@ -13,17 +19,27 @@ export const mainNavigationMainContainer = (
     theme: Theme,
     anchor: boolean
 ) => css`
-    @media (max-width: ${theme.breakpoints.md}px) {
-        padding: 1.5rem 0 3.5rem 0;
-        ${anchor === true && `position: sticky; top: 0rem; background: white`}
-    }
     display: flex;
     justify-content: space-between;
+    @media (max-width: ${theme.breakpoints.lg}px) {
+        padding: 1.5rem;
+    }
+    @media (max-width: ${theme.breakpoints.md}px) {
+        padding: 1.5rem 0 1rem 0;
+        ${anchor === true &&
+        `position: sticky; background: white; 
+        top: 0;`}
+    }
 `;
 export const mainNavigationSmallContainer = css`
     display: flex;
     align-items: center;
     overflow: auto;
+`;
+export const mainNavigationItemContainer = (theme: Theme) => css`
+    padding: 2rem 0;
+    @media (max-width: ${theme.breakpoints.md}px) {
+    }
 `;
 export const mainNavigationLogo = (theme: Theme) => css`
     @media (min-width: ${theme.breakpoints.md + 1}px) {
@@ -31,7 +47,7 @@ export const mainNavigationLogo = (theme: Theme) => css`
         width: 16rem;
     }
     @media (max-width: ${theme.breakpoints.md}px) {
-        width: 9rem;
+        width: 10rem;
         padding-left: 1rem;
     }
 `;
@@ -59,30 +75,26 @@ export const mainNavigationBellImage = (theme: Theme) => css`
 export const mainNavigationProfilePictureImage = (theme: Theme) => css`
     @media (min-width: ${theme.breakpoints.md + 1}px) {
         margin-left: 1.5rem;
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 2.25rem;
+        height: 2.25rem;
         border-radius: 2rem;
     }
     @media (max-width: ${theme.breakpoints.md}px) {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
         border-radius: 2rem;
     }
     cursor: pointer;
 `;
 export const mainNavigationCloseImage = css`
-    width: 3.5rem;
+    width: 2rem;
     height: 1.5rem;
-    flex-grow: 1;
-    padding-right: 1.3rem;
-    padding-left: 1rem;
+    padding: 0 1.3rem 0 1rem;
     cursor: pointer;
 `;
 export const mainNavigationHamburgerImage = css`
-    width: 3.5rem;
+    width: 2rem;
     height: 1.5rem;
-    flex-grow: 1;
-    padding-right: 1.3rem;
-    padding-left: 1rem;
+    padding: 0 1.3rem 0 1rem;
     cursor: pointer;
 `;

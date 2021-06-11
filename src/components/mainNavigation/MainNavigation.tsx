@@ -1,12 +1,14 @@
 /** @jsx jsx */
 import { jsx, useTheme } from '@emotion/react';
 import React, { useState, useCallback, SyntheticEvent, useRef } from 'react';
-import { Visible, Hidden } from 'react-grid-system';
+import Hidden from '@material-ui/core/Hidden';
+
 import MainNavigationProps from './MainNavigation.types';
 import {
     mainNavigation,
     mainNavigationMainContainer,
     mainNavigationSmallContainer,
+    mainNavigationItemContainer,
     mainNavigationLogo,
     mainNavigationDesktopChildren,
     mainNavigationImagesContainer,
@@ -76,7 +78,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
                             css={mainNavigationLogo(theme)}
                         />
                     </div>
-                    <Hidden xs sm md>
+                    <Hidden smDown>
                         <div css={mainNavigationDesktopChildren}>
                             {secondaryItems ? secondaryItems : children}
                         </div>
@@ -98,7 +100,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
                         css={mainNavigationProfilePictureImage(theme)}
                         onClick={handleProfilePictureClicked}
                     />
-                    <Visible xs sm md>
+                    <Hidden mdUp>
                         {itemsShown ? (
                             <img
                                 alt="Close"
@@ -114,14 +116,16 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
                                 onClick={() => handleShowItems()}
                             />
                         )}
-                    </Visible>
+                    </Hidden>
                 </div>
             </div>
-            <Visible xs sm md>
-                {itemsShown && (
-                    <div>{secondaryItems ? secondaryItems : children}</div>
-                )}
-            </Visible>
+            {itemsShown && (
+                <Hidden mdUp>
+                    <div css={mainNavigationItemContainer(theme)}>
+                        {secondaryItems ? secondaryItems : children}
+                    </div>
+                </Hidden>
+            )}
             {menuItems && <Menu targetRef={menuTargetRef}>{menuItems}</Menu>}
         </nav>
     );
