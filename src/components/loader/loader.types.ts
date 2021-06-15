@@ -1,6 +1,6 @@
 import { SimpleComponent } from '../../shared/interfaces/SimpleComponent.types';
 
-export default interface LoaderProps extends SimpleComponent {
+export default interface InternalLoaderProps extends SimpleComponent {
     size?: number;
     color?: string;
     speed?: number;
@@ -9,4 +9,10 @@ export default interface LoaderProps extends SimpleComponent {
     begin?: number;
     duration?: number;
     iterations?: number;
+}
+
+export default interface LoaderProps extends SimpleComponent {
+    size?: number;
+    color?: string;
+    fullscreen?: boolean;
 }

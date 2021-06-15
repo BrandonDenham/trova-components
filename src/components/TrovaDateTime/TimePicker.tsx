@@ -3,6 +3,7 @@ import { jsx } from '@emotion/react';
 import moment, { isMoment } from 'moment';
 import { useCallback } from 'react';
 import DateTimeComponent from './DateTimeComponent';
+import InputMaskWrapper from '../__private/InputMaskWrapper';
 import DateTimeProps from './DateTime.types';
 
 const TimePicker: React.FC<DateTimeProps> = ({ value, onChange, ...props }) => {
@@ -36,6 +37,9 @@ const TimePicker: React.FC<DateTimeProps> = ({ value, onChange, ...props }) => {
             timeFormat={`HH:mm`}
             value={parsedValue}
             onChange={onChangeWrapper}
+            renderInput={(props, openCalendar) => (
+                <InputMaskWrapper {...props} openCalendar={openCalendar} />
+            )}
         />
     );
 };

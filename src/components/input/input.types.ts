@@ -8,4 +8,5 @@ export default interface InputProps extends FieldProps<string> {
     icon?: React.ReactNode;
     disabled?: boolean;
     disabledText?: string;
+    type?: string;
 }

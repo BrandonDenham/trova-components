@@ -4,5 +4,6 @@ export enum IconName {
     Search,
     DropdownArrow,
     Location,
-    Minus
+    Minus,
+    Close,
 }

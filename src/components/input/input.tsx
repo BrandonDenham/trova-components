@@ -33,6 +33,7 @@ const Input: React.FC<InputProps> = ({
     disabled = false,
     disabledText,
     className,
+    type = 'text',
 }) => {
     const theme = useTheme();
     const handleChange = useCallback(
@@ -67,7 +68,7 @@ const Input: React.FC<InputProps> = ({
                 <div css={inputContainer(theme, error)} onClick={handleClick}>
                     <input
                         data-testid="input"
-                        type="text"
+                        type={type}
                         onChange={handleChange}
                         placeholder={placeholder}
                         value={value}
@@ -85,7 +86,7 @@ const Input: React.FC<InputProps> = ({
                 <input
                     data-testid="input"
                     css={input(theme, error, size)}
-                    type="text"
+                    type={type}
                     onChange={handleChange}
                     placeholder={placeholder}
                     value={value}
