@@ -8,6 +8,7 @@ import imageSearch from '../../shared/images/icons/search.svg';
 import imageDropdownArrow from '../../shared/images/icons/dropdown_arrow.svg';
 import imageLocation from '../../shared/images/icons/location.svg';
 import imageMinus from '../../shared/images/icons/minus.svg';
+import imageClose from '../../shared/images/icons/close.svg';
 
 const imageIcon = new Map<IconName, string>([
     [IconName.Plus, imagePlus],
@@ -16,6 +17,7 @@ const imageIcon = new Map<IconName, string>([
     [IconName.DropdownArrow, imageDropdownArrow],
     [IconName.Location, imageLocation],
     [IconName.Minus, imageMinus],
+    [IconName.Close, imageClose],
 ]);
 
 export const icon = (name: IconName, size: IconSize, color: string) =>

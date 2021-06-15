@@ -26,3 +26,5 @@ export const Upload = () => <Icon name={IconName.Upload} />;
 export const Search = () => <Icon name={IconName.Search} />;
 
 export const Minus = () => <Icon name={IconName.Minus} />;
+
+export const Close = () => <Icon name={IconName.Close} />;
