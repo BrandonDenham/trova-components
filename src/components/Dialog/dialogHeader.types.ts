@@ -1,4 +1,4 @@
 export default interface DialogHeaderProps {
-    title?: string;
+    title: string;
     subtitle?: string;
 }

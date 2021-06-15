@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Colors } from '../../shared/constants/colors';
-import { P } from '../typography';
-import Button from '../button';
-import { ButtonType } from '../button/buttonType';
+import { Colors } from '../../../shared/constants/colors';
+import { P } from '../../typography';
+import Button from '../../button';
+import { ButtonType } from '../../button/buttonType';
 import { childrenContainer, buttonsContainer } from './dialogStories.styles';
 
-import Dialog from './dialog';
+import Dialog from '../dialog';
 
 export default {
     title: 'Dialog',

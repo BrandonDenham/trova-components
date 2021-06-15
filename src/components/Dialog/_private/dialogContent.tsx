@@ -57,11 +57,10 @@ const DialogContent = React.forwardRef<HTMLInputElement, DialogContentProps>(
 
                     {header && (
                         <div data-testid="header">
-                            {header.title && (
-                                <div css={titleContainer}>
-                                    <H3 isBold={true}>{header.title}</H3>
-                                </div>
-                            )}
+                            <div css={titleContainer}>
+                                <H3 isBold={true}>{header.title}</H3>
+                            </div>
+
                             {header.subtitle && (
                                 <div css={subtitleContainer}>
                                     <P isBold={false}>{header.subtitle}</P>
