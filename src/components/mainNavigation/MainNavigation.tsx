@@ -121,7 +121,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
             </div>
             {itemsShown && (
                 <Hidden mdUp>
-                    <div css={mainNavigationItemContainer(theme)}>
+                    <div css={mainNavigationItemContainer()}>
                         {secondaryItems ? secondaryItems : children}
                     </div>
                 </Hidden>

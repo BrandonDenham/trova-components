@@ -36,10 +36,8 @@ export const mainNavigationSmallContainer = css`
     align-items: center;
     overflow: auto;
 `;
-export const mainNavigationItemContainer = (theme: Theme) => css`
+export const mainNavigationItemContainer = () => css`
     padding: 2rem 0;
-    @media (max-width: ${theme.breakpoints.md}px) {
-    }
 `;
 export const mainNavigationLogo = (theme: Theme) => css`
     @media (min-width: ${theme.breakpoints.md + 1}px) {

@@ -26,4 +26,3 @@ export const mainNavigationItemContent = (
         color: ${Colors.Dark};
     }
 `;
-export const mainNavigationItemArrow = css``;

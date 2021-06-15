@@ -7,7 +7,6 @@ import MainNavigationItemProps from './MainNavigationItem.types';
 import {
     mainNavigationItem,
     mainNavigationItemContent,
-    mainNavigationItemArrow,
 } from './MainNavigationItem.styles';
 
 import imgArrow from '../../shared/images/icons/right.svg';
@@ -40,7 +39,7 @@ const MainNavigationItem: React.FC<MainNavigationItemProps> = ({
                 {content}
             </p>
             <Hidden mdUp>
-                <img alt="Arrow" src={imgArrow} css={mainNavigationItemArrow} />
+                <img alt="Arrow" src={imgArrow} />
             </Hidden>
         </div>
     );
