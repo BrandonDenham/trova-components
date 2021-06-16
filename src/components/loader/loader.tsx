@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core';
 import React from 'react';
 import { Colors } from '../../shared/constants/colors';
 
-import LoaderProps from './Loader.types';
+import LoaderProps from './loader.types';
 import ComponentLoader from './_private/componentLoader';
 import { containerLoader } from './_private/componentLoader.styles';
 

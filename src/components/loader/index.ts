@@ -1,2 +1,2 @@
-export { default } from './Loader';
-export { LoaderSize } from './LoaderSize';
+export { default } from './loader';
+export { LoaderSize } from './loaderSize';

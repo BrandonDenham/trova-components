@@ -2,7 +2,7 @@ import React from 'react';
 import { Colors } from '../../shared/constants/colors';
 
 import ComponentLoader from './_private/componentLoader';
-import { LoaderSize } from './LoaderSize';
+import { LoaderSize } from './loaderSize';
 
 export default {
     title: 'Loader',

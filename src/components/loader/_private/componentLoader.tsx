@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react';
 import React from 'react';
 
-import InternalLoaderProps from '../Loader.types';
+import InternalLoaderProps from '../loader.types';
 
 import { Colors } from '../../../shared/constants/colors';
 
