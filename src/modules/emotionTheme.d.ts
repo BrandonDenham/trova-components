@@ -46,6 +46,8 @@ declare module '@emotion/react' {
         breakpoints: {
             sm: number;
             md: number;
+            lg: number;
+            xl: number;
         };
         columns: {
             column: number;

@@ -5,6 +5,7 @@ export const mainNavigationItem = css`
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    padding: 1rem 1.5rem;
 `;
 export const mainNavigationItemContent = (
     theme: Theme,
@@ -15,19 +16,13 @@ export const mainNavigationItemContent = (
     line-height: 19px;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    padding-left: 1rem;
-    @media (min-width: ${theme.breakpoints.md + 1}px) {
-        padding-right: 3rem;
+    @media (min-width: ${theme.breakpoints.sm + 1}px) {
         ${selected ? `color: ${Colors.Dark}` : `color: ${Colors.LightGray}`}
     }
-    @media (max-width: ${theme.breakpoints.md}px) {
-        padding-bottom: 1rem;
+    @media (max-width: ${theme.breakpoints.sm}px) {
         color: ${Colors.Dark};
     }
     &:hover {
         color: ${Colors.Dark};
     }
-`;
-export const mainNavigationItemArrow = css`
-    padding-right: 1.3rem;
 `;
