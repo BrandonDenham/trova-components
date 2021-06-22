@@ -14,7 +14,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     return (
         <React.Fragment>
             {visible && (
-                <Hidden smDown>
+                <Hidden xsDown>
                     <div
                         data-testid="sidebar"
                         css={sidebar(theme)}
