@@ -1,7 +1,8 @@
 import { FieldProps } from '../field/field.types';
-import Option from '../dropdown/option.types';
+import OptionProps from '../option/option.types';
+import { ReactElement } from 'react';
 
 export default interface RadioGroupProps extends FieldProps<string> {
-    children: Option[];
+    children: ReactElement<OptionProps>[] | ReactElement<OptionProps>;
     disabled?: boolean;
 }

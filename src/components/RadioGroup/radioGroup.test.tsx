@@ -2,15 +2,14 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { matchers } from '@emotion/jest';
 import RadioGroup from './radioGroup';
-import RadioGroupProps  from './radioGroup.types';
+import RadioGroupProps from './radioGroup.types';
 import { ThemeProvider } from '@emotion/react';
 import userEvent from '@testing-library/user-event';
+import Option from '../option/option';
 
 import theme from '../../shared/themes/theme';
 
 expect.extend(matchers);
-
-
 
 describe('RadioGroup', () => {
     let activeProps: RadioGroupProps;
@@ -21,13 +20,13 @@ describe('RadioGroup', () => {
             value: 'yellow',
             onChange: jest.fn(),
             children: [
-                { value: 'green', children: 'Green Color' },
-                { value: 'yellow', children: 'Yellow Color' },
-                { value: 'red', children: 'Red Color' },
-            ]
+                <Option value="green">Green Color</Option>,
+                <Option value="yellow">Yellow Color</Option>,
+                <Option value="red">Red Color</Option>,
+            ],
         };
     });
-    const renderActiveComponent = () => 
+    const renderActiveComponent = () =>
         render(
             <ThemeProvider theme={theme}>
                 <RadioGroup {...activeProps} />

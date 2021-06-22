@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Dropdown from './dropdown';
 import MultipleDropdown from './multipleDropdown';
 import { ComponentWidth } from '../input/';
-import Option from './option.types';
+import Option from '../option/option.types';
 
 export default {
     title: 'Dropdown',

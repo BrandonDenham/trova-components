@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Option from '../dropdown/option.types';
+import Option from '../option';
 import { Colors } from '../../shared/constants/colors';
 import RadioGroup from './radioGroup';
 
@@ -7,12 +7,6 @@ export default {
     title: 'Radio Group',
     component: RadioGroup,
 };
-
-const children: Option[] = [
-    { value: 'green', children: 'Green Color' },
-    { value: 'yellow', children: 'Yellow Color' },
-    { value: 'red', children: 'Red Color' },
-];
 
 export const SingleRadioGroup = () => {
     const [value, setValue] = useState('yellow');
@@ -38,7 +32,9 @@ export const SingleRadioGroup = () => {
                     onChange={handleChange}
                     label={'Select your favorite color'}
                 >
-                    {children}
+                    <Option value="green">Green Color</Option>
+                    <Option value="yellow">Yellow Color</Option>
+                    <Option value="red">Red Color</Option>
                 </RadioGroup>
             </div>
         </>

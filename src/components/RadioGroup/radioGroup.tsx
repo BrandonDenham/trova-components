@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import React, { useCallback, SyntheticEvent, Fragment } from 'react';
+import React, { useCallback, SyntheticEvent } from 'react';
 import { RadioGroup as MaterialRadioGroup } from '@material-ui/core';
 import Radio from './_private/radio';
 import { P, ParagraphSize } from '../typography';
@@ -40,15 +40,25 @@ const RadioGroup = React.forwardRef<HTMLInputElement, RadioGroupProps>(
                     onChange={handleChange}
                     ref={ref}
                 >
-                    {children.map(({ value, children }, index) => (
-                        <Fragment key={`${value}Input${index}`}>
-                            <Radio
-                                name={`${value}Input${index}`}
-                                value={value}
-                                label={children}
-                            />
-                        </Fragment>
-                    ))}
+                    {Array.isArray(children) ? (
+                        React.Children.map(children, (child, index) => {
+                            return (
+                                <Radio
+                                    key={`${value}Input${index}`}
+                                    name={`${value}Input${index}`}
+                                    value={child && child.props.value}
+                                    label={child && child.props.children}
+                                />
+                            );
+                        })
+                    ) : (
+                        <Radio
+                            key={`${children.props.value}Input${1}`}
+                            name={`${value}Input${1}`}
+                            value={children.props.value}
+                            label={children.props.children}
+                        />
+                    )}
                 </MaterialRadioGroup>
             </div>
         );

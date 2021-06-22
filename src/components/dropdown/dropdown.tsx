@@ -18,7 +18,7 @@ import DropdownHeader from '../__private/dropdownHeader';
 import ComponentFooter from '../__private/componentFooter';
 import DropdownMenu from '../__private/dropdownMenu';
 import imageSpinner from '../../shared/images/icons/spinner.svg';
-import Option from '../dropdown/option.types';
+import Option from '../option/option.types';
 
 const getSelectedValue = (children: Option[], value: string) => {
     const childValue =
