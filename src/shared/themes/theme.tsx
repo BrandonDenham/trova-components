@@ -15,7 +15,7 @@ const theme = {
         h3: '22px',
         h4: '18px',
         pSmall: '14px',
-        pSmallMobile: '13px',
+        pSmallMobile: '14px',
         pMedium: '16px',
         pMediumMobile: '14px',
         pLarge: '18px',

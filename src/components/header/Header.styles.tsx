@@ -2,7 +2,7 @@ import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
 
 export const header = (theme: Theme, backgroundImage: any) => css`
-    border-radius: 11px;
+    border-radius: 1.5rem;
     background-color: ${Colors.Black};
     background: linear-gradient(
             rgba(255, 255, 255, 15%),
@@ -12,9 +12,9 @@ export const header = (theme: Theme, backgroundImage: any) => css`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    padding: 1.3rem;
     @media (max-width: ${theme.breakpoints.sm}px) {
-        padding-left: 1.5rem;
-        padding-top: 1.3rem;
+        padding: 1rem 1.5rem;
     }
     font-family: ${theme.fonts.robotoBold};
     color: ${Colors.White};
@@ -24,48 +24,50 @@ export const header = (theme: Theme, backgroundImage: any) => css`
 export const headerTitle = (theme: Theme) => css`
     font-size: ${theme.fontSizes.h1};
     line-height: 40px;
-    padding-top: 3.8rem;
-    padding-left: 2.31rem;
-    padding-bottom: 0.7rem;
-    text-shadow:-1px 1px 1px ${Colors.TextShadowLight}, -2px 2px 1px ${Colors.TextShadowExtraLight};
+    padding: 6.5rem 0 1.7rem 2.31rem;
+    text-shadow: -1px 1px 1px ${Colors.TextShadowLight},
+        -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.sm}px) {
         font-size: ${theme.fontSizes.h1Mobile};
-        padding-left: 0rem;
-        padding-top: 0rem;
+        line-height: 30px;
+        padding: 0.25rem 0 1.5rem 0;
     }
 `;
 
 export const headerDetails = (theme: Theme) => css`
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-end;
+    flex-direction: row;
+    align-items: center;
+    font-family: ${theme.fonts.robotoMedium};
     font-size: ${theme.fontSizes.pSmall};
     line-height: 16px;
     letter-spacing: 0.3px;
     @media (max-width: ${theme.breakpoints.sm}px) {
         font-size: ${theme.fontSizes.pSmallMobile};
+        flex-direction: column;
+        align-items: flex-start;
     }
 `;
 
 export const headerDates = (theme: Theme) => css`
-    padding-left: 2.31rem;
-    padding-bottom: 2rem;
-    text-shadow:-1px 1px 1px ${Colors.TextShadowMedium}, -2px 2px 1px ${Colors.TextShadowExtraLight};
+    padding: 0 0 0.75rem 2.31rem;
+    text-shadow: -1px 1px 1px ${Colors.TextShadowMedium},
+        -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.sm}px) {
-        padding-top: 0.9rem;
-        padding-left: 0em;
-        padding-bottom: 0.7rem;
+        padding: 0 0 0.7rem 0;
         flex-basis: 100%;
     }
 `;
 
 export const headerLocation = (theme: Theme) => css`
-    padding-left: 0.9rem;
-    padding-bottom: 2rem;
-    text-shadow:-1px 1px 1px ${Colors.TextShadowMedium}, -2px 2px 1px ${Colors.TextShadowExtraLight};
+    display: flex;
+    align-items: center;
+    padding: 0 0 0.75rem 1.5rem;
+    text-shadow: -1px 1px 1px ${Colors.TextShadowMedium},
+        -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.sm}px) {
-        padding-left: 0rem;
+        padding: 0 0 .25rem 0;
         flex-basis: 100%;
     }
 `;

@@ -12,6 +12,9 @@ export const sidebarItem = (theme: Theme, selected: boolean) => css`
         transition: 0.5s;
     }
     margin: 0.5rem 0rem;
+    &:last-child {
+        margin: 0.5rem 0 2rem 0;
+    }
     ${selected === true && `background-color: #eff1f7;`}
 `;
 export const sidebarItemTitle = () => css`

@@ -13,7 +13,7 @@ export const sidebarMenuTitle = (theme: Theme) => css`
     font-size: 13px;
     line-height: 15px;
     font-family: ${theme.fonts.robotoBold};
-    padding: 0rem 0rem 0.7rem 1rem;
+    padding: 0 0 1rem 1rem;
     color: ${Colors.Gray};
 `;
 export const sidebarMenuDivImg = css`
