@@ -31,6 +31,8 @@ import TimePicker from './components/TrovaDateTime/TimePicker';
 import Menu, { MenuItem } from './components/menu';
 import Loader, { LoaderSize } from './components/loader';
 import Currency from './components/currency';
+import RadioGroup from './components/RadioGroup';
+import Dialog from './components/Dialog';
 
 export {
     Sidebar,
@@ -80,4 +82,6 @@ export {
     Loader,
     LoaderSize,
     Currency,
+    RadioGroup,
+    Dialog
 };

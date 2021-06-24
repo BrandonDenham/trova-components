@@ -5,7 +5,7 @@ import Dropdown from './dropdown';
 import DropdownProps from './dropdown.types';
 import { ThemeProvider } from '@emotion/react';
 import theme from '../../shared/themes/theme';
-import Option from './option.types';
+import Option from '../option/option.types';
 import MultipleDropdown from './multipleDropdown';
 import MultipleDropdownProps from './multipleDropdown.types';
 
