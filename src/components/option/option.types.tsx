@@ -1,4 +1,4 @@
-export default interface Option {
+export default interface OptionProps {
     /**
      * value: The value that will be chosen if the input is selected for the onChange event
      */
