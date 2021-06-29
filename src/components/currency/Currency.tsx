@@ -48,12 +48,22 @@ const Currency: React.FC<CurrencyProps<number>> = ({
     const theme = useTheme();
     const handleChange = useCallback(
         (event: SyntheticEvent) => {
-            const value = Number(
-                Number.parseFloat(
-                    (event.target as HTMLInputElement).value
-                ).toFixed(decimalPlaces)
-            );
-            onChange ? onChange(event, name, value) : event.stopPropagation();
+            const targetValue = (event.target as HTMLInputElement).value;
+            const inputValue = targetValue
+                ? !isNaN(+targetValue)
+                    ? targetValue
+                    : value
+                : 0;
+            const inputParsedValue = !isNaN(+inputValue)
+                ? Number(
+                      Number.parseFloat(inputValue.toString()).toFixed(
+                          decimalPlaces
+                      )
+                  )
+                : value;
+            onChange
+                ? onChange(event, name, inputParsedValue)
+                : event.stopPropagation();
         },
         [name, value, onChange]
     );
