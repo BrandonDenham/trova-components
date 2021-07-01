@@ -85,13 +85,13 @@ export const mainNavigationProfilePictureImage = (theme: Theme) => css`
     cursor: pointer;
 `;
 export const mainNavigationCloseImage = css`
-    width: 2rem;
+    width: 3.5rem;
     height: 1.5rem;
     padding: 0 1.3rem 0 1rem;
     cursor: pointer;
 `;
 export const mainNavigationHamburgerImage = css`
-    width: 2rem;
+    width: 3.5rem;
     height: 1.5rem;
     padding: 0 1.3rem 0 1rem;
     cursor: pointer;

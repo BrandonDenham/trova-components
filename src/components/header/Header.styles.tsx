@@ -24,13 +24,13 @@ export const header = (theme: Theme, backgroundImage: any) => css`
 export const headerTitle = (theme: Theme) => css`
     font-size: ${theme.fontSizes.h1};
     line-height: 40px;
-    padding: 6.5rem 0 1.7rem 2.31rem;
+    padding: 1.5rem 0 1rem 2.31rem;
     text-shadow: -1px 1px 1px ${Colors.TextShadowLight},
         -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.sm}px) {
         font-size: ${theme.fontSizes.h1Mobile};
         line-height: 30px;
-        padding: 0.25rem 0 1.5rem 0;
+        padding: 0.25rem 0 1rem 0;
     }
 `;
 
@@ -55,7 +55,7 @@ export const headerDates = (theme: Theme) => css`
     text-shadow: -1px 1px 1px ${Colors.TextShadowMedium},
         -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.sm}px) {
-        padding: 0 0 0.7rem 0;
+        padding: 0 0 0.5rem 0;
         flex-basis: 100%;
     }
 `;
