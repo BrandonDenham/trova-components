@@ -69,7 +69,7 @@ export const input = (theme: Theme, size: ComponentWidth) => css`
     ::-webkit-search-cancel-button,
     ::-webkit-search-results-button,
     ::-webkit-search-results-decoration {
-      display: none;
+        display: none;
     }
     :disabled {
         background-color: ${Colors.White};
@@ -119,6 +119,9 @@ export const inputContainerMultipleDropdown = (
     ${size === ComponentWidth.Small && `width:159px;`}
     ${size === ComponentWidth.Medium && `width:249px;`}
     ${size === ComponentWidth.Flexible && `padding-left: calc(14px + 1%);`}
+    @media (max-width: ${theme.breakpoints.sm}px) {
+        width: 100%;
+    }
 `;
 
 export const inputMultipleDropdown = (theme: Theme) => css`

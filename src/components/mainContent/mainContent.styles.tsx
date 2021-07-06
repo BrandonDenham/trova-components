@@ -11,4 +11,7 @@ export const mainContent = (theme: Theme) => css`
         border-radius: 23px 23px 0 0;
         padding: 6rem 1rem 2rem 1rem;
     }
+    @media (max-width: ${theme.breakpoints.sm}px) {
+        padding: 2rem 1rem 5rem 1.5rem;
+    }
 `;

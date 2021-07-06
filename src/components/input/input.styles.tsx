@@ -51,6 +51,9 @@ export const input = (
         ${size === ComponentWidth.Flexible &&
         `   width: 100%;
             `}
+        @media (max-width: ${theme.breakpoints.sm}px) {
+            width: 100%;
+        }
     `;
 
 export const labelContainer = (theme: Theme, size: ComponentWidth) => css`
