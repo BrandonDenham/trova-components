@@ -13,12 +13,14 @@ export const header = (theme: Theme, backgroundImage: any) => css`
     background-repeat: no-repeat;
     background-position: center center;
     padding: 1.3rem;
-    @media (max-width: ${theme.breakpoints.sm}px) {
-        padding: 1rem 1.5rem;
-    }
     font-family: ${theme.fonts.robotoBold};
     color: ${Colors.White};
     text-align: left;
+    @media (max-width: ${theme.breakpoints.sm}px) {
+        border-radius: 0;
+        padding: 8rem 1rem 2rem;
+        margin: 0 -1rem;
+    }
 `;
 
 export const headerTitle = (theme: Theme) => css`
@@ -55,7 +57,7 @@ export const headerDates = (theme: Theme) => css`
     text-shadow: -1px 1px 1px ${Colors.TextShadowMedium},
         -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.sm}px) {
-        padding: 0 0 0.5rem 0;
+        padding: 0 0 0.3rem 0;
         flex-basis: 100%;
     }
 `;
