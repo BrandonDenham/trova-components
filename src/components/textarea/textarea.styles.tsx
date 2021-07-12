@@ -36,6 +36,9 @@ export const textarea = (
         ${size === TextareaSize.Medium && `height:91px;`}
         ${(size === TextareaSize.Large || size === TextareaSize.Flexible) &&
         `height:155px;`}
+        @media (max-width: ${theme.breakpoints.sm}px) {
+            width: 100%;
+        }
         ${!error &&
         `:focus {
         border: 1px solid ${Colors.Active};
