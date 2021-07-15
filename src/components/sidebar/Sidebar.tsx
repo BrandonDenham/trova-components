@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx, useTheme } from '@emotion/react';
 import React from 'react';
-import Hidden from '@material-ui/core/Hidden';
-
 import SidebarProps from './Sidebar.types';
 import { sidebar } from './Sidebar.styles';
 const Sidebar: React.FC<SidebarProps> = ({
@@ -14,15 +12,13 @@ const Sidebar: React.FC<SidebarProps> = ({
     return (
         <React.Fragment>
             {visible && (
-                <Hidden xsDown>
-                    <div
-                        data-testid="sidebar"
-                        css={sidebar(theme)}
-                        className={className}
-                    >
-                        {children}
-                    </div>
-                </Hidden>
+                <div
+                    data-testid="sidebar"
+                    css={sidebar(theme)}
+                    className={className}
+                >
+                    {children}
+                </div>
             )}
         </React.Fragment>
     );
