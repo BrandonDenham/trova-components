@@ -5,8 +5,6 @@ import { MenuItem } from '../menu';
 export default interface MainNavigationProps extends SimpleComponent {
     children: ReactNode;
     showItems?: boolean;
-    onShowItems?: () => void;
-    onDismissItems?: () => void;
     logoUrl: string;
     hasAlerts: boolean;
     visible?: boolean;
@@ -16,4 +14,6 @@ export default interface MainNavigationProps extends SimpleComponent {
     secondaryItems?: object;
     anchor?: boolean;
     menuItems?: Array<ReactElement<typeof MenuItem>>;
+    onMobileMenuOpen?: () => void;
+    onMobileMenuClose?: () => void;
 }

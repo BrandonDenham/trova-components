@@ -28,8 +28,6 @@ import Menu from '../menu';
 const MainNavigation: React.FC<MainNavigationProps> = ({
     children,
     showItems,
-    onShowItems,
-    onDismissItems,
     logoUrl = imageLogo,
     hasAlerts,
     onClickAlerts,
@@ -39,19 +37,21 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     anchor = false,
     className,
     menuItems,
+    onMobileMenuOpen,
+    onMobileMenuClose,
 }) => {
     const theme = useTheme();
-    const [itemsShown, setItemsShown] = useState(showItems);
-    const handleShowItems = useCallback(() => {
+    const [itemsShown, setItemsShown] = useState(false);
+    const handleMobileMenuOpen = useCallback(() => {
         setItemsShown(true);
-        if (onShowItems) {
-            onShowItems();
+        if (onMobileMenuOpen) {
+            onMobileMenuOpen();
         }
     }, []);
-    const handleDismissItems = useCallback(() => {
+    const handleMobileMenuClose = useCallback(() => {
         setItemsShown(false);
-        if (onDismissItems) {
-            onDismissItems();
+        if (onMobileMenuClose) {
+            onMobileMenuClose();
         }
     }, []);
     const handleBellClicked = useCallback((event: SyntheticEvent) => {
@@ -106,20 +106,20 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
                                 alt="Close"
                                 src={imageClose}
                                 css={mainNavigationCloseImage}
-                                onClick={() => handleDismissItems()}
+                                onClick={() => handleMobileMenuClose()}
                             />
                         ) : (
                             <img
                                 alt="Toggle"
                                 src={imageHamburger}
                                 css={mainNavigationHamburgerImage}
-                                onClick={() => handleShowItems()}
+                                onClick={() => handleMobileMenuOpen()}
                             />
                         )}
                     </Hidden>
                 </div>
             </div>
-            {itemsShown && (
+            {showItems && (
                 <Hidden mdUp>
                     <div css={mainNavigationItemContainer()}>
                         {secondaryItems ? secondaryItems : children}
